@@ -1,0 +1,13 @@
+{
+  "name": "shiritori-dictionary-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check dictionary.mjs && node --check import-jawiktionary.mjs && node --check build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

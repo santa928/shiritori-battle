@@ -1,0 +1,15 @@
+{
+  "id": "jawiktionary-20261001-wiktextract-20261002",
+  "version": "dump 2026-10-01; extraction 2026-10-02",
+  "url": "https://kaikki.org/jawiktionary/rawdata.html",
+  "license": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Japanese Wiktionary contributors; extraction by Kaikki.org/Wiktextract",
+  "sha256": "69748737ab9d35f717d0847f6246665a7c07f56128a0fe7036109d52967e50f2",
+  "checksumScope": "downloaded gzip bytes",
+  "exactPageRevisions": "unavailable in raw extraction",
+  "adapterVersion": "0.1.0",
+  "downloadUrl": "https://kaikki.org/jawiktionary/raw-wiktextract-data.jsonl.gz",
+  "wiktextractCommit": "1a05e46",
+  "wikitextprocessorCommit": "e3d6d4e"
+}

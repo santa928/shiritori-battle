@@ -1,0 +1,6 @@
+node_modules/
+*.jsonl.gz
+archive.jsonl
+dictionary.json
+data/
+build-output/
