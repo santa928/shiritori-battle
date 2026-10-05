@@ -42,3 +42,24 @@ test('editing restores board scroll, draft scroll and keyboard focus without res
  assert.equal(root.querySelector('.battle-board').scrollTop,210);assert.equal(root.querySelector('[data-draft]').scrollLeft,90);assert.ok(focused.isConnected);assert.equal(focused.dataset.kana,'れ');
  const del=root.querySelector('[data-action=delete]');del.focus();del.click();assert.equal(root.querySelector('.battle-board').scrollTop,210);assert.ok(focused.isConnected);app.destroy();
 });
+for(const mode of ['individual','shared'])test(`player 1 starts new and repeat ${mode} matches regardless of random starting kana`,async()=>{
+ const {parseHTML}=await import('linkedom');
+ const {document}=parseHTML('<html><body><div id="battle"></div></body></html>');const root=document.querySelector('#battle');
+ const app=mountBattleApp(root,{client:{search:async reading=>({reading,status:'eligible',candidates:[candidate('テスト語','テスト用の語義')],version:'test',sources:[]})},random:()=>0.99,autoTick:false});
+ const click=action=>root.querySelector(`[data-action=${action}]`).click();
+ if(mode==='shared')click('mode-shared');
+ for(let match=0;match<2;match++){
+  click('start');assert.equal(root.querySelector('h1').textContent,'プレイヤー1に渡してね');
+  assert.match(root.textContent,/プレイヤー1が先攻です/);
+  assert.equal(root.querySelector('.starting-kana').textContent,'わ');
+  click('ready');assert.equal(root.querySelector('.battle-turn strong').textContent,'プレイヤー1の番');
+  root.querySelector('[data-kana=か]').click();click('submit');await new Promise(r=>setTimeout(r,0));
+  assert.equal(root.querySelector('[data-action=next]').textContent,'プレイヤー2へ渡す');click('next');
+  assert.equal(root.querySelector('h1').textContent,'プレイヤー2に渡してね');assert.match(root.textContent,/次の番です/);
+  click('ready');assert.equal(root.querySelector('.battle-turn strong').textContent,'プレイヤー2の番');
+  root.querySelector('[data-kana=き]').click();click('submit');await new Promise(r=>setTimeout(r,0));click('next');
+  assert.equal(root.querySelector('h1').textContent,'プレイヤー1に渡してね');click('ready');
+  click('resign');click('confirm-resign');assert.match(root.textContent,/プレイヤー2の勝ち/);click('setup');
+ }
+ app.destroy();
+});

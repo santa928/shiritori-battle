@@ -81,7 +81,7 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
  }
  function start(){
   const starts=KANA.filter(c=>!['ん','を','ぢ','づ'].includes(c));const choose=n=>Math.min(n-1,Math.max(0,Math.floor(random()*n)));
-  opponentOpen=false;resignOpen=false;onMatchState(true);controller=createBattleController({game:createGame({...settings,firstPlayer:choose(2),start:starts[choose(starts.length)]}),client,now,onState:receive});
+  opponentOpen=false;resignOpen=false;onMatchState(true);controller=createBattleController({game:createGame({...settings,firstPlayer:0,start:starts[choose(starts.length)]}),client,now,onState:receive});
  }
  function wordsBlock(words,animated=false){
   const list=el('div',undefined,'battle-words'+(animated?' celebrate':''));
@@ -93,7 +93,7 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
  function render(){
   const g=state.game;root.replaceChildren();root.className='battle-root battle-'+g.phase;
   if(g.phase==='ready'){
-   root.append(heading(`プレイヤー${g.turn+1}に渡してね`,g.history.length?'次の番です':'先攻が決まりました'));
+   root.append(heading(`プレイヤー${g.turn+1}に渡してね`,g.history.length?'次の番です':'プレイヤー1が先攻です'));
    root.append(el('p','次はこの文字から','battle-lead'),el('div',g.start,'starting-kana'),el('p',`${g.seconds}秒 · ${g.mode==='shared'?'ふたりで共有':'文字はひとりずつ'}`,'battle-lead'),button('準備OK、はじめる','ready','battle-primary'));
    root.append(el('p','押すとタイマーが動きます','battle-hint'));return;
   }
