@@ -1,26 +1,12 @@
-import { groupCandidates } from './candidate-groups.mjs?v=20261005-meaning3';
-import { createDictionaryClient } from './dictionary-client.mjs?v=20261005-retry1';
-export function createSearchController(client, onState) {
-  let sequence = 0,
-    active = true;
-  return {
-    async submit(input, { isComposing = false } = {}) {
-      if (isComposing || !active) return;
-      const token = ++sequence;
-      onState({ phase: 'loading' });
-      try {
-        const result = await client.search(input);
-        if (active && token === sequence) onState({ phase: 'result', result });
-      } catch (error) {
-        if (active && token === sequence) onState({ phase: 'error', error });
-      }
-    },
-    destroy() {
-      active = false;
-      sequence++;
-    },
-  };
-}
+import { groupCandidates } from './candidate-groups.mjs?v=20261006-maintainability1';
+import { createSearchController } from './search-controller.mjs?v=20261006-maintainability1';
+export { createSearchController };
+
+/**
+ * 出典リンクをHTTP(S)に限定する。DOMへHTML文字列を挿入しない。
+ * @param {string} value 出典URL。
+ * @returns {string|null} 正規化したURL。不正・非HTTP(S)ならnull。
+ */
 export function safeSourceUrl(value) {
   try {
     const u = new URL(value);
@@ -29,6 +15,11 @@ export function safeSourceUrl(value) {
     return null;
   }
 }
+/**
+ * 辞書の理由コードを日本語で表示する。未知のコードは「要確認」とする。
+ * @param {string} code 採否または保留の理由。
+ * @returns {string} 表示文言。
+ */
 export function reasonText(code) {
   return (
     {
@@ -75,6 +66,12 @@ const labels = {
   pending: ['…', '確認を保留しています', '読みや分類に、未確定の候補があります。'],
   unconfirmed: ['?', 'この辞書では確認できません', '読みを変えて、もう一度しらべてみてください。'],
 };
+/**
+ * 辞書画面の入力・IME・結果表示を接続する。対戦の制約は判定しない。
+ * @param {HTMLElement} root form/input/#results/#feedbackを含む辞書画面。
+ * @param {{client: {search: function(string): Promise<object>}}} options 検索用クライアント。
+ * @returns {{destroy: function(): void}} 通知と入力イベントを停止する。
+ */
 export function mountDictionaryApp(root, { client }) {
   const document = root.ownerDocument;
   const form = root.querySelector('form');
@@ -281,16 +278,4 @@ export function mountDictionaryApp(root, { client }) {
       input.removeEventListener('keydown', key);
     },
   };
-}
-if (typeof document !== 'undefined') {
-  const root = document.querySelector('[data-dictionary-app]');
-  if (root) {
-    const manifestUrl = new URL(root.dataset.manifest, document.baseURI).href;
-    mountDictionaryApp(root, {
-      client: createDictionaryClient({
-        manifestUrl,
-        releaseInfoUrl: new URL('./build-info.json', document.baseURI).href,
-      }),
-    });
-  }
 }

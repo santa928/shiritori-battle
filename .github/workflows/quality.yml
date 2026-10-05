@@ -1,0 +1,22 @@
+name: Verify maintenance changes
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm run verify
+      - name: Verify prepared release and extracted files
+        run: |
+          node verify-site.mjs --assemble "$RUNNER_TEMP/site.zip"
+          python3 -m zipfile -e "$RUNNER_TEMP/site.zip" _site
+          node verify-site.mjs _site

@@ -1,6 +1,12 @@
 import { normalizeReading, createDictionary } from '../dictionary.mjs';
 import { bucketForReading } from '../reading-bucket.mjs';
 const pendingLabels = new Set(['classification-conflict']);
+/**
+ * manifestと必要な区画を遅延取得し、SHA-256・サイズ・版・同一originの参照先を検証する。
+ * @param {object} options manifestUrl、任意のreleaseInfoUrl/fetchImpl/timeoutMs（本文取得を含む）。
+ * @returns {{search: function(string): Promise<object>}} 読み・採否・候補・保留・出典・版を返す。取得/検証失敗はrejectする。
+ * 失敗したPromiseは破棄する。再試行時だけ公開版を再照会し、古い失敗で新しい要求を無効にしない。
+ */
 export function createDictionaryClient({
   manifestUrl,
   releaseInfoUrl,
@@ -13,7 +19,7 @@ export function createDictionaryClient({
   let manifestPromise,
     reload = false;
   const cache = new Map();
-  // Include body transfer in the deadline. A failed connection must not trap a turn.
+  // 本文転送も期限に含め、通信失敗で手番が停止し続けないようにする。
   async function request(url, format, revalidate) {
     const controller = new AbortController();
     let timer;
@@ -136,8 +142,8 @@ export function createDictionaryClient({
           version: m.version,
         };
       } catch (error) {
-        // A cached manifest can outlive a release. Retry revalidates both resources.
-        // Avoid a late failure invalidating a newer concurrent manifest request.
+        // 公開更新後も残るmanifestを再試行時に再検証する。
+        // 遅れた失敗で、新しい同時要求のmanifestを無効にしない。
         if (manifestPromise === current) {
           manifestPromise = null;
           reload = true;

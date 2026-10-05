@@ -11,7 +11,7 @@ import {
   symlink,
 } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, dirname } from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { buildWeb, rebuildWebFromPublished, releaseSources } from './build-web.mjs';
@@ -73,7 +73,10 @@ test('reuse retains an explicitly verified prior dictionary and packages only it
   );
   const root = join(dir, 'root');
   await mkdir(join(root, 'web'), { recursive: true });
-  for (const file of [...releaseSources, 'package-site.py']) await copyFile(file, join(root, file));
+  for (const file of [...releaseSources, 'package-site.py']) {
+    await mkdir(dirname(join(root, file)), { recursive: true });
+    await copyFile(file, join(root, file));
+  }
   const packed = spawnSync(
     'python3',
     [join(root, 'package-site.py'), out, join(current.input, 'dictionary.json')],
@@ -192,7 +195,10 @@ test('package and verifier reject invalid retained dictionary metadata', async (
   const root = join(dir, 'root');
   await mkdir(join(root, 'web'), { recursive: true });
   await mkdir(join(root, 'publish'));
-  for (const file of [...releaseSources, 'package-site.py']) await copyFile(file, join(root, file));
+  for (const file of [...releaseSources, 'package-site.py']) {
+    await mkdir(dirname(join(root, file)), { recursive: true });
+    await copyFile(file, join(root, file));
+  }
   for (const part of current.releaseManifest.zipParts)
     await copyFile(join(current.published, part.path), join(root, 'publish', part.path));
   current.releaseManifest.retainedVersions = ['../private'];

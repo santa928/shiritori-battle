@@ -20,8 +20,13 @@ function matches(candidate, member, rule) {
     )
   );
 }
-// Presentation only: evidence and game eligibility remain on the untouched candidates.
-// A stale or partially present mapping fails closed; no spelling/reading inference.
+/**
+ * 出典・語義・読み・定義まで一致する固定対応表だけで表示候補をまとめる。
+ * @param {object[]} [candidates] 辞書の語義候補。元の採否や出典は変更しない。
+ * @param {string} [reading] 対象の読み。省略時は候補の読みを使う。
+ * @returns {object[]} 代表表記・別表記・全定義・出典・複製した原候補を持つカード。
+ * 一部欠落・不一致なら別カードに戻す。読みや表記から同義を推定しない。
+ */
 export function groupCandidates(candidates = [], reading) {
   const ordered = [...candidates].sort((a, b) =>
     compare(JSON.stringify([a.entryId, a.senseId, a]), JSON.stringify([b.entryId, b.senseId, b])),

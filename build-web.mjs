@@ -5,25 +5,8 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { buildWebDictionary } from './build-web-dictionary.mjs';
 const project = dirname(fileURLToPath(import.meta.url));
-export const releaseSources = [
-  'dictionary.mjs',
-  'reading-bucket.mjs',
-  'build-web-dictionary.mjs',
-  'build-web.mjs',
-  'import-jawiktionary.mjs',
-  'build.mjs',
-  'source.json',
-  'supplement.json',
-  'web/app.mjs',
-  'web/battle-rules.mjs',
-  'web/battle-controller.mjs',
-  'web/battle-app.mjs',
-  'web/candidate-groups.mjs',
-  'web/meaning-equivalences.mjs',
-  'web/dictionary-client.mjs',
-  'web/index.html',
-  'web/styles.css',
-];
+import { releaseSources, copiedSources } from './scripts/release-assets.mjs';
+export { releaseSources };
 async function hashFile(path) {
   const hash = createHash('sha256');
   for await (const chunk of createReadStream(path)) hash.update(chunk);
@@ -175,7 +158,7 @@ async function publishedDictionaries({ siteDir, releaseManifest: m, archivePath 
   if (archivePath) await readPublishedArchive(dirname(archivePath), m);
   if (!shaPattern.test(m.dictionarySha256)) throw Error('invalid base manifest');
   const result = new Map();
-  dictionaryVersions(m); // Validate metadata, but never recursively carry forward old versions.
+  dictionaryVersions(m); // メタデータを検証する。旧版の旧版は再帰的に引き継がない。
   await verifyDictionaryArtifacts(siteDir, m.version, m.artifacts);
   result.set(m.version, { siteDir, artifacts: m.artifacts });
   return result;
@@ -233,19 +216,10 @@ export async function buildWeb(inputDir, outputDir, { retainedReleases = [] } = 
       outputDir: join(outputDir, 'data', version),
       version,
     });
-    for (const name of ['dictionary.mjs', 'reading-bucket.mjs'])
+    for (const name of copiedSources) {
+      await mkdir(dirname(join(outputDir, name)), { recursive: true });
       await copyFile(join(project, name), join(outputDir, name));
-    for (const name of [
-      'app.mjs',
-      'battle-rules.mjs',
-      'battle-controller.mjs',
-      'battle-app.mjs',
-      'candidate-groups.mjs',
-      'meaning-equivalences.mjs',
-      'dictionary-client.mjs',
-      'styles.css',
-    ])
-      await copyFile(join(project, 'web', name), join(outputDir, 'web', name));
+    }
     const retainedVersions = await copyRetained(outputDir, version, retained);
     const buildInfo = {
       schemaVersion: 1,
@@ -320,19 +294,10 @@ export async function rebuildWebFromPublished({
     await mkdir(join(outputDir, 'web'));
     await mkdir(join(outputDir, 'data', version), { recursive: true });
     for (const name of retained) await copyFile(join(siteDir, name), join(outputDir, name));
-    for (const name of ['dictionary.mjs', 'reading-bucket.mjs'])
+    for (const name of copiedSources) {
+      await mkdir(dirname(join(outputDir, name)), { recursive: true });
       await copyFile(join(project, name), join(outputDir, name));
-    for (const name of [
-      'app.mjs',
-      'battle-rules.mjs',
-      'battle-controller.mjs',
-      'battle-app.mjs',
-      'candidate-groups.mjs',
-      'meaning-equivalences.mjs',
-      'dictionary-client.mjs',
-      'styles.css',
-    ])
-      await copyFile(join(project, 'web', name), join(outputDir, 'web', name));
+    }
     const retainedVersions = await copyRetained(outputDir, version, dictionaries);
     const info = {
       schemaVersion: 1,

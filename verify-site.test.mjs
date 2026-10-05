@@ -13,8 +13,10 @@ test('release verifies source and archive, rejects source/artifact drift and ext
   const dir = await mkdtemp(join(tmpdir(), 'release-'));
   try {
     await mkdir(join(dir, 'web'));
-    for (const file of [...releaseSources, 'package-site.py'])
+    for (const file of [...releaseSources, 'package-site.py']) {
+      await mkdir(dirname(join(dir, file)), { recursive: true });
       await copyFile(file, join(dir, file));
+    }
     const input = join(dir, 'input');
     await mkdir(input);
     await writeFile(join(input, 'dictionary.json'), JSON.stringify(dataset()));

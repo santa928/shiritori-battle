@@ -1,12 +1,20 @@
-"""Create a reproducible prepared site archive plus source/content checksums."""
-import hashlib, io, json, pathlib, re, sys, zipfile
+"""再現可能な分割配布アーカイブとソース・内容のチェックサムを作成する。"""
+import hashlib
+import io
+import json
+import pathlib
+import re
+import sys
+import zipfile
 ROOT = pathlib.Path(__file__).resolve().parent
 site = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'dist/web'
 dictionary = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else None
 if not site.is_dir():
     raise SystemExit('Usage: python3 package-site.py BUILT_SITE [DICTIONARY_JSON]')
 sha = lambda data: hashlib.sha256(data).hexdigest()
-sources = ['dictionary.mjs', 'reading-bucket.mjs', 'build-web-dictionary.mjs', 'build-web.mjs', 'import-jawiktionary.mjs', 'build.mjs', 'source.json', 'supplement.json', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs', 'web/index.html', 'web/styles.css', 'package-site.py']
+spec = json.loads((ROOT / 'scripts/release-assets.json').read_text())
+build_sources = list(dict.fromkeys(spec['buildSources'] + spec['copiedSources']))
+sources = build_sources + ['package-site.py']
 info = json.loads((site / 'build-info.json').read_text())
 version_pattern = re.compile(r'v1-[a-f0-9]{16}')
 retained = info.get('retainedVersions', [])
@@ -16,16 +24,16 @@ if (not isinstance(retained, list) or len(retained) > 2 or any(not isinstance(v,
         or len(set(retained)) != len(retained)):
     raise SystemExit('invalid retained dictionary versions')
 versions = [info['version']] + sorted(retained)
-for name in sources[:-1]:
+for name in build_sources:
     if info['sources'].get(name) != sha((ROOT / name).read_bytes()):
         raise SystemExit('stale source: ' + name)
-for name in ['dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs', 'web/styles.css']:
+for name in spec['copiedSources']:
     if (site / name).read_bytes() != (ROOT / name).read_bytes():
         raise SystemExit('stale copied source: ' + name)
 expected_html = (ROOT / 'web/index.html').read_text().replace('__MANIFEST_URL__', './data/' + info['version'] + '/manifest.json')
 if (site / 'index.html').read_text() != expected_html:
     raise SystemExit('stale source: index.html')
-allowed = {'.nojekyll', 'ATTRIBUTION.txt', 'build-info.json', 'index.html', 'dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs', 'web/styles.css'}
+allowed = set(spec['staticArtifacts'] + spec['copiedSources'])
 for version in versions:
     allowed.add('data/' + version + '/manifest.json')
     allowed.update('data/' + version + '/' + format(i, '02x') + '.json' for i in range(256))
@@ -79,7 +87,7 @@ for i, start in enumerate(range(0, len(data), part_bytes), 1):
     part = data[start:start + part_bytes]
     (output / name).write_bytes(part)
     release['zipParts'].append({'path': name, 'bytes': len(part), 'sha256': sha(part)})
-# A prepared release has exactly its declared parts, never a second monolithic copy.
+# 配布物は宣言した分割パートだけを保持し、単一ZIPを重ねて保存しない。
 expected_parts = {p['path'] for p in release['zipParts']}
 for path in output.iterdir():
     if (path.name == 'site.zip' or path.name.startswith('site.zip.part')) and path.name not in expected_parts:

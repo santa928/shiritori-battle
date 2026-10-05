@@ -2,7 +2,6 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { createDictionaryClient } from './dictionary-client.mjs';
-import { bucketForReading } from '../reading-bucket.mjs';
 import { dataset, entry, sense } from '../web-fixtures.mjs';
 async function setup(data, review = []) {
   const shard = { schemaVersion: 1, version: 'v1', dataset: data, review };

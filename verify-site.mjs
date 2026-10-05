@@ -9,6 +9,7 @@ import {
   verifyDictionaryArtifacts,
   readPublishedArchive,
 } from './build-web.mjs';
+import { copiedSources, staticArtifacts } from './scripts/release-assets.mjs';
 const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
 async function files(root, prefix = '') {
   const result = [];
@@ -21,23 +22,7 @@ async function files(root, prefix = '') {
   return result;
 }
 function allowed(versions) {
-  return [
-    '.nojekyll',
-    'ATTRIBUTION.txt',
-    'build-info.json',
-    'index.html',
-    'dictionary.mjs',
-    'reading-bucket.mjs',
-    'web/app.mjs',
-    'web/battle-rules.mjs',
-    'web/battle-controller.mjs',
-    'web/battle-app.mjs',
-    'web/candidate-groups.mjs',
-    'web/meaning-equivalences.mjs',
-    'web/dictionary-client.mjs',
-    'web/styles.css',
-    ...versions.flatMap(dictionaryArtifacts),
-  ].sort();
+  return [...staticArtifacts, ...copiedSources, ...versions.flatMap(dictionaryArtifacts)].sort();
 }
 export async function verifyRelease(root, extractedDir, { assembledArchivePath } = {}) {
   const m = JSON.parse(await readFile(join(root, 'publish/site-manifest.json'), 'utf8'));
@@ -68,18 +53,7 @@ export async function verifyRelease(root, extractedDir, { assembledArchivePath }
       throw Error('dictionary build mismatch');
     for (const file of releaseSources)
       if (info.sources[file] !== m.sources[file]) throw Error('stale build source: ' + file);
-    for (const file of [
-      'dictionary.mjs',
-      'reading-bucket.mjs',
-      'web/app.mjs',
-      'web/battle-rules.mjs',
-      'web/battle-controller.mjs',
-      'web/battle-app.mjs',
-      'web/candidate-groups.mjs',
-      'web/meaning-equivalences.mjs',
-      'web/dictionary-client.mjs',
-      'web/styles.css',
-    ])
+    for (const file of copiedSources)
       if (m.artifacts[file] !== m.sources[file]) throw Error('stale copied source: ' + file);
     const html = (await readFile(join(root, 'web/index.html'), 'utf8')).replaceAll(
       '__MANIFEST_URL__',

@@ -1,5 +1,11 @@
-import { inspectDraft, applyAccepted } from './battle-rules.mjs?v=20261005-longmark1';
+import { inspectDraft, applyAccepted } from './battle-rules.mjs?v=20261006-maintainability1';
 
+/**
+ * 対戦の状態遷移と残り時間を管理する。確認中・通信エラー中は時間を止める。
+ * @param {object} options gameは初期状態、client.searchは辞書検索、nowは単調増加のミリ秒時計、onStateはスナップショット通知先。
+ * @returns {object} ready/edit/submit/next/retry/cancelCheck/resign/tick/destroyの操作群。
+ * cancelCheck・destroy・終了後は遅延応答を無視する。retryと編集復帰は残り時間をリセットしない。
+ */
 export function createBattleController({
   game: initial,
   client,

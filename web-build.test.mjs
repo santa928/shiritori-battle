@@ -17,7 +17,7 @@ test('build copies only public assets, relative paths and shards, refuses overwr
     const out = join(dir, 'out');
     const { version } = await buildWeb(input, out);
     const html = await readFile(join(out, 'index.html'), 'utf8');
-    assert.match(html, /\.\/web\/app.mjs/);
+    assert.match(html, /\.\/web\/bootstrap.mjs/);
     assert.ok(html.includes('./data/' + version + '/manifest.json'));
     assert.ok(!html.includes('__MANIFEST_URL__'));
     assert.deepEqual((await readdir(out)).sort(), [
@@ -35,10 +35,20 @@ test('build copies only public assets, relative paths and shards, refuses overwr
       'battle-app.mjs',
       'battle-controller.mjs',
       'battle-rules.mjs',
+      'bootstrap.mjs',
       'candidate-groups.mjs',
       'dictionary-client.mjs',
+      'input',
       'meaning-equivalences.mjs',
+      'search-controller.mjs',
       'styles.css',
+      'ui',
+    ]);
+    assert.deepEqual((await readdir(join(out, 'web/input'))).sort(), ['transform-kana.mjs']);
+    assert.deepEqual((await readdir(join(out, 'web/ui'))).sort(), [
+      'battle-feedback.mjs',
+      'battle-view.mjs',
+      'candidate-summary.mjs',
     ]);
     await assert.rejects(buildWeb(input, out), /exist/);
   } finally {
@@ -161,26 +171,39 @@ test('new battle page versions stylesheet URL to avoid prior dictionary CSS cach
   const html = await readFile(new URL('./web/index.html', import.meta.url), 'utf8');
   assert.match(html, /href="\.\/web\/styles\.css\?v=[a-zA-Z0-9-]+"/);
 });
-test('meaning release versions both changed entrypoints and grouping dependencies', async () => {
-  const token = '20261005-meaning3';
-  const html = await readFile(new URL('./web/index.html', import.meta.url), 'utf8');
-  for (const file of ['app.mjs', 'battle-app.mjs']) {
-    assert.ok(
-      html.includes(`src="./web/${file}?v=20261005-retry1-meaning3"`),
-      file + ' entrypoint must bypass prior cache',
-    );
-    const source = await readFile(new URL('./web/' + file, import.meta.url), 'utf8');
-    assert.ok(source.includes(`'./candidate-groups.mjs?v=${token}'`));
-  }
-  const groups = await readFile(new URL('./web/candidate-groups.mjs', import.meta.url), 'utf8');
-  assert.ok(groups.includes(`'./meaning-equivalences.mjs?v=${token}'`));
+test('page bootstrap and changed runtime imports bypass cached modules', async () => {
+  const token = '20261006-maintainability1';
+  const read = (file) => readFile(new URL('./web/' + file, import.meta.url), 'utf8');
+  const html = await read('index.html');
+  assert.ok(html.includes(`src="./web/bootstrap.mjs?v=${token}"`));
+  const bootstrap = await read('bootstrap.mjs');
+  for (const file of ['app.mjs', 'battle-app.mjs', 'dictionary-client.mjs'])
+    assert.ok(bootstrap.includes(`'./${file}?v=${token}'`));
+  assert.ok((await read('app.mjs')).includes(`'./candidate-groups.mjs?v=${token}'`));
+  assert.ok((await read('app.mjs')).includes(`'./search-controller.mjs?v=${token}'`));
+  assert.ok(
+    (await read('ui/candidate-summary.mjs')).includes(`'../candidate-groups.mjs?v=${token}'`),
+  );
+  assert.ok(
+    (await read('candidate-groups.mjs')).includes(
+      "'./meaning-equivalences.mjs?v=20261005-meaning3'",
+    ),
+  );
 });
 
-test('recovery release bypasses cached runtime while preserving long-mark rule version', async () => {
+test('battle runtime keeps versioned rule and extracted view dependencies', async () => {
+  const token = '20261006-maintainability1';
   const read = (file) => readFile(new URL('./web/' + file, import.meta.url), 'utf8');
-  for (const file of ['app.mjs', 'battle-app.mjs'])
-    assert.ok((await read(file)).includes("'./dictionary-client.mjs?v=20261005-retry1'"));
-  assert.ok((await read('battle-app.mjs')).includes("'./battle-controller.mjs?v=20261005-retry1'"));
-  for (const file of ['battle-app.mjs', 'battle-controller.mjs'])
-    assert.ok((await read(file)).includes("'./battle-rules.mjs?v=20261005-longmark1'"));
+  const battle = await read('battle-app.mjs');
+  for (const file of [
+    'battle-controller.mjs',
+    'battle-rules.mjs',
+    'ui/battle-view.mjs',
+    'ui/battle-feedback.mjs',
+    'input/transform-kana.mjs',
+  ])
+    assert.ok(battle.includes(`'./${file}?v=${token}'`));
+  assert.ok((await read('battle-controller.mjs')).includes(`'./battle-rules.mjs?v=${token}'`));
+  for (const file of ['ui/battle-view.mjs', 'input/transform-kana.mjs'])
+    assert.ok((await read(file)).includes(`'../battle-rules.mjs?v=${token}'`));
 });

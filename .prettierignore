@@ -1,0 +1,15 @@
+node_modules/
+dist/
+publish/
+data/
+build-output/
+docs/superpowers/
+# 辞書再利用のバイト一致・版計算を維持する。変更時は辞書更新として扱う。
+dictionary.mjs
+reading-bucket.mjs
+build-web-dictionary.mjs
+# 固定の出典・対応表・テストデータは整形で再生成しない。
+web/meaning-equivalences.mjs
+web/meaning-fixtures.mjs
+web-fixtures.mjs
+*.json

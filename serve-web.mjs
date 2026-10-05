@@ -57,8 +57,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1;
   } else {
     const handler = await createStaticHandler(process.argv[2]);
-    createServer(handler).listen(4173, '127.0.0.1', () =>
-      console.log('Private preview: http://127.0.0.1:4173'),
+    const host = process.env.PREVIEW_HOST ?? '127.0.0.1';
+    createServer(handler).listen(4173, host, () =>
+      console.log(`Preview listener: http://${host}:4173`),
     );
   }
 }

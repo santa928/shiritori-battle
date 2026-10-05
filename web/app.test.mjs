@@ -70,37 +70,3 @@ test('only web source links and safe reason copy are accepted', () => {
   assert.equal(reasonText('unknown'), '要確認');
   assert.match(reasonText('part-of-speech'), /品詞/);
 });
-test('public dictionary bootstrap discovers the current release on retry', async () => {
-  const { parseHTML } = await import('linkedom');
-  const { readFile } = await import('node:fs/promises');
-  const { document } = parseHTML(
-    (await readFile(new URL('./index.html', import.meta.url), 'utf8')).replaceAll(
-      '__MANIFEST_URL__',
-      './data/old/manifest.json',
-    ),
-  );
-  Object.defineProperty(document, 'baseURI', { value: 'https://example.invalid/base/' });
-  const oldDocument = globalThis.document,
-    oldFetch = globalThis.fetch;
-  let urls = [];
-  try {
-    globalThis.document = document;
-    globalThis.fetch = async (url) => {
-      urls.push(url);
-      return new Response('', { status: 404 });
-    };
-    await import('./app.mjs?bootstrap-retry-test');
-    const root = document.querySelector('[data-dictionary-app]');
-    root.querySelector('input').value = 'かな';
-    root
-      .querySelector('form')
-      .dispatchEvent(new document.defaultView.Event('submit', { cancelable: true }));
-    await new Promise((r) => setTimeout(r, 0));
-    root.querySelector('.retry').click();
-    await new Promise((r) => setTimeout(r, 0));
-    assert.equal(urls[1], 'https://example.invalid/base/build-info.json');
-  } finally {
-    globalThis.document = oldDocument;
-    globalThis.fetch = oldFetch;
-  }
-});
