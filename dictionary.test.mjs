@@ -61,3 +61,20 @@ test('returned objects and caller changes cannot alter the indexed dictionary', 
 test('compatibility unit glyphs cannot be submitted as kana readings', () => {
   for(const glyph of ['㍑','㌔','㌀','㌢']) assert.equal(normalizeReading(glyph),null);
 });
+
+test('geographic exception is narrow, configurable, and does not suppress exclusions',()=>{
+  const place=sense('place',['proper-noun'],{labels:['proper-name','place']});
+  assert.equal(evaluateSense(place).eligible,true);
+  assert.equal(evaluateSense(place,{allowPlaces:false}).eligible,false);
+  for(const label of ['person','fictional-character','brand','organization','classification-conflict'])
+    assert.equal(evaluateSense({...place,labels:[...place.labels,label]}).eligible,false);
+  assert.equal(evaluateSense({...place,pos:['proper-noun','verb']}).eligible,false);
+});
+test('eligible noun and place survive ineligible homophones and retain extraction evidence',()=>{
+  const evidence=[{label:'place',scope:'sense',field:'categories',value:'日本語 地名'}];
+  const db=dictionary([entry('仮名','かな',[sense('noun'),sense('place',['proper-noun'],{labels:['place'],classificationEvidence:evidence}),sense('person',['proper-noun'],{labels:['person']} )],{readingEvidence:{method:'kana-headword'}})]);
+  const r=db.lookup('かな');
+  assert.deepEqual(r.candidates.map(c=>c.eligible),[true,true,false]);
+  assert.deepEqual(r.candidates[1].classificationEvidence,evidence);
+  assert.equal(r.candidates[1].readingEvidence.method,'kana-headword');
+});

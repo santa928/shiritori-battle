@@ -11,16 +11,19 @@ export function normalizeReading(value) {
 
 export const DEFAULT_POLICY = Object.freeze({
   allowedPos: Object.freeze(['noun']),
-  excludedLabels: Object.freeze(['person', 'place', 'organization', 'brand', 'proper-name', 'inflected-form', 'abbreviation', 'initialism', 'acronym', 'classification-conflict', 'number', 'bound-form', 'unresolved-reference']),
+  allowPlaces: true,
+  excludedLabels: Object.freeze(['person', 'fictional-character', 'organization', 'brand', 'proper-name', 'inflected-form', 'abbreviation', 'initialism', 'acronym', 'classification-conflict', 'number', 'bound-form', 'unresolved-reference']),
   definitionLanguage: 'ja',
 });
 
 export function evaluateSense(sense, options = {}) {
   const policy = {...DEFAULT_POLICY, ...options};
   const reasons = [];
+  const geographicName = policy.allowPlaces && sense.pos?.length === 1 &&
+    sense.pos[0] === 'proper-noun' && sense.labels?.includes('place');
   // All tags must be allowed: a mixed/unresolved noun+verb record needs review.
-  if (!sense.pos?.length || !sense.pos.every(pos => policy.allowedPos.includes(pos))) reasons.push('part-of-speech');
-  if (sense.labels?.some(label => policy.excludedLabels.includes(label))) reasons.push('excluded-label');
+  if (!geographicName && (!sense.pos?.length || !sense.pos.every(pos => policy.allowedPos.includes(pos)))) reasons.push('part-of-speech');
+  if (sense.labels?.some(label => policy.excludedLabels.includes(label) && !(geographicName && label === 'proper-name'))) reasons.push('excluded-label');
   if (!sense.definitions?.some(def => def.language === policy.definitionLanguage && def.text?.trim())) reasons.push('missing-definition');
   return {eligible: reasons.length === 0, reasons};
 }
@@ -85,6 +88,7 @@ export function createDictionary(dataset) {
       const candidates = matches.flatMap(entry => entry.senses.map(sense => ({
         entryId:entry.id, senseId:sense.id, spellings:entry.spellings, readings:entry.readings,
         definitions:sense.definitions, pos:sense.pos, labels:sense.labels,
+        readingEvidence:entry.readingEvidence, classificationEvidence:sense.classificationEvidence,
         source:sourceMap.get(entry.sourceId), sourceUrl:entry.sourceUrl,
         ...evaluateSense(sense, policy),
       })));
