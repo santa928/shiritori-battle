@@ -1,19 +1,10 @@
+import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning1';
 import {KANA,KANA_ROWS,TURN_SECONDS,baseKana,createGame} from './battle-rules.mjs';
 import {createBattleController} from './battle-controller.mjs';
 import {createDictionaryClient} from './dictionary-client.mjs';
 
 export function summarizeCandidates(candidates=[],reading){
- const words=new Map();
- for(const c of candidates.filter(c=>c.eligible)){
-  const matchReading=reading??c.readings?.[0];
-  const spelling=c.spellings?.find(x=>x!==matchReading)??c.spellings?.[0]??'ことば';
-  if(!words.has(spelling))words.set(spelling,{spelling,aliases:[],definitions:[],sources:[]});
-  const word=words.get(spelling);
-  for(const alias of c.spellings??[])if(alias!==spelling&&!word.aliases.includes(alias))word.aliases.push(alias);
-  for(const d of c.definitions??[])if(d.language==='ja'&&!word.definitions.includes(d.text))word.definitions.push(d.text);
-  if(c.sourceUrl&&!word.sources.includes(c.sourceUrl))word.sources.push(c.sourceUrl);
- }
- const all=[...words.values()];return {preview:all.slice(0,2),remaining:Math.max(0,all.length-2),all};
+ const all=groupCandidates(candidates.filter(c=>c.eligible),reading);return {preview:all.slice(0,2),remaining:Math.max(0,all.length-2),all};
 }
 export function transformLastKana(reading,kind){
  if(reading.length<2)return reading;
@@ -96,9 +87,10 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
  }
  function wordsBlock(words,animated=false){
   const list=el('div',undefined,'battle-words'+(animated?' celebrate':''));
-  words.forEach((word,i)=>{const row=el('article');row.style.animationDelay=animated?260+i*180+'ms':'0ms';row.append(el('h3',word.spelling));for(const text of word.definitions)row.append(el('p',text));
+  words.forEach((word,i)=>{const row=el('article');row.style.animationDelay=animated?260+i*180+'ms':'0ms';row.append(el('h3',word.spelling));for(const text of (!animated&&word.candidates?.length>1?word.definitions.slice(0,1):word.definitions))row.append(el('p',text));
    if(!animated&&word.aliases?.length)row.append(el('p','別表記：'+word.aliases.join('・'),'battle-hint'));
-   if(!animated)for(const source of word.sources){try{const url=new URL(source);if(!['https:','http:'].includes(url.protocol))continue;const a=el('a','出典：ウィクショナリー ↗');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';row.append(a);}catch{}}
+   if(!animated&&word.candidates?.length>1){const details=el('details');details.append(el('summary','出典ごとの説明'));for(const original of word.candidates){const section=el('section');section.append(el('p',original.spellings.join('・'),'battle-hint'));for(const definition of original.definitions.filter(d=>d.language==='ja'))section.append(el('p',definition.text));if(original.labels?.length)section.append(el('p','分類：'+original.labels.join('・'),'battle-hint'));try{const url=new URL(original.sourceUrl);if(['https:','http:'].includes(url.protocol)){const a=el('a','出典：ウィクショナリー ↗');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';section.append(a);}}catch{}details.append(section);}row.append(details);}
+   if(!animated&&word.candidates?.length<=1)for(const source of word.sources){try{const url=new URL(source);if(!['https:','http:'].includes(url.protocol))continue;const a=el('a','出典：ウィクショナリー ↗');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';row.append(a);}catch{}}
    list.append(row);});return list;
  }
  function render(){

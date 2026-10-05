@@ -1,6 +1,6 @@
 import {mkdir,readFile,writeFile,copyFile,rm,lstat} from 'node:fs/promises';import {createReadStream} from 'node:fs';import {createHash} from 'node:crypto';import {join,dirname} from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';import {buildWebDictionary} from './build-web-dictionary.mjs';
 const project=dirname(fileURLToPath(import.meta.url));
-export const releaseSources=['dictionary.mjs','reading-bucket.mjs','build-web-dictionary.mjs','build-web.mjs','import-jawiktionary.mjs','build.mjs','source.json','supplement.json','web/app.mjs','web/battle-rules.mjs','web/battle-controller.mjs','web/battle-app.mjs','web/dictionary-client.mjs','web/index.html','web/styles.css'];
+export const releaseSources=['dictionary.mjs','reading-bucket.mjs','build-web-dictionary.mjs','build-web.mjs','import-jawiktionary.mjs','build.mjs','source.json','supplement.json','web/app.mjs','web/battle-rules.mjs','web/battle-controller.mjs','web/battle-app.mjs','web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs','web/index.html','web/styles.css'];
 async function hashFile(path){const hash=createHash('sha256');for await(const chunk of createReadStream(path))hash.update(chunk);return hash.digest('hex');}
 export async function buildWeb(inputDir,outputDir){
  const dataPath=join(inputDir,'dictionary.json'),archivePath=join(inputDir,'archive.jsonl');const data=JSON.parse(await readFile(dataPath,'utf8'));
@@ -8,7 +8,7 @@ export async function buildWeb(inputDir,outputDir){
  await mkdir(outputDir);
  try{await mkdir(join(outputDir,'web'));await mkdir(join(outputDir,'data'));const manifest=await buildWebDictionary({dataset:data,archivePath,outputDir:join(outputDir,'data',version),version});
  for(const name of ['dictionary.mjs','reading-bucket.mjs'])await copyFile(join(project,name),join(outputDir,name));
- for(const name of ['app.mjs','battle-rules.mjs','battle-controller.mjs','battle-app.mjs','dictionary-client.mjs','styles.css'])await copyFile(join(project,'web',name),join(outputDir,'web',name));
+ for(const name of ['app.mjs','battle-rules.mjs','battle-controller.mjs','battle-app.mjs','candidate-groups.mjs','meaning-equivalences.mjs','dictionary-client.mjs','styles.css'])await copyFile(join(project,'web',name),join(outputDir,'web',name));
  const buildInfo={schemaVersion:1,version,dictionarySha256:await hashFile(dataPath),sources:{}};for(const file of releaseSources)buildInfo.sources[file]=await hashFile(join(project,file));await writeFile(join(outputDir,'build-info.json'),JSON.stringify(buildInfo));
  const html=(await readFile(join(project,'web/index.html'),'utf8')).replaceAll('__MANIFEST_URL__','./data/'+version+'/manifest.json');await writeFile(join(outputDir,'index.html'),html);await writeFile(join(outputDir,'.nojekyll'),'');
  await writeFile(join(outputDir,'ATTRIBUTION.txt'),['Dictionary definitions: Japanese Wiktionary contributors, via Kaikki.org/Wiktextract.','Source page links and attribution are retained in every candidate.','CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/','Changes: Japanese-language filtering, reading normalization, labels, sense mapping and static sharding.','Current article links are not exact historical revision links.','Adapted dictionary data retains CC BY-SA 4.0; application code is separate.',...data.sources.map(s=>s.id+' | '+s.version+' | '+s.url+' | '+s.license)].join('\n')+'\n');return {version,manifest};
@@ -30,7 +30,7 @@ export async function rebuildWebFromPublished({siteDir,releaseManifest:m,outputD
   await mkdir(join(outputDir,'web'));await mkdir(join(outputDir,'data',version),{recursive:true});
   for(const name of retained)await copyFile(join(siteDir,name),join(outputDir,name));
   for(const name of ['dictionary.mjs','reading-bucket.mjs'])await copyFile(join(project,name),join(outputDir,name));
-  for(const name of ['app.mjs','battle-rules.mjs','battle-controller.mjs','battle-app.mjs','dictionary-client.mjs','styles.css'])await copyFile(join(project,'web',name),join(outputDir,'web',name));
+  for(const name of ['app.mjs','battle-rules.mjs','battle-controller.mjs','battle-app.mjs','candidate-groups.mjs','meaning-equivalences.mjs','dictionary-client.mjs','styles.css'])await copyFile(join(project,'web',name),join(outputDir,'web',name));
   const info={schemaVersion:1,version,dictionarySha256:m.dictionarySha256,sources:{}};
   for(const file of releaseSources)info.sources[file]=await hashFile(join(project,file));
   await writeFile(join(outputDir,'build-info.json'),JSON.stringify(info));

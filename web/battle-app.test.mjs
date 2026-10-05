@@ -2,9 +2,9 @@ import {test} from 'node:test';import assert from 'node:assert/strict';
 
 import {summarizeCandidates,transformLastKana,mountBattleApp} from './battle-app.mjs';
 const candidate=(spelling,meaning,eligible=true)=>({eligible,spellings:[spelling],definitions:[{language:'ja',text:meaning}],sourceUrl:'https://ja.wiktionary.org/wiki/'+spelling});
-test('preview counts unique eligible words and preserves all senses',()=>{
+test('preview keeps distinct eligible senses separate even with the same spelling',()=>{
  const r=summarizeCandidates([candidate('橋','川を渡るもの'),candidate('橋','別の語義'),candidate('箸','食器'),candidate('端','はし'),candidate('走る','動詞',false)]);
- assert.equal(r.preview.length,2);assert.equal(r.remaining,1);assert.equal(r.all.length,3);assert.equal(r.all[0].definitions.length,2);
+ assert.equal(r.preview.length,2);assert.equal(r.remaining,2);assert.equal(r.all.length,4);assert.ok(r.all.every(w=>w.definitions.length===1));
 });
 test('kana modifiers affect only editable last char and preserve first',()=>{
  assert.equal(transformLastKana('か','voice'),'か');assert.equal(transformLastKana('かは','voice'),'かば');assert.equal(transformLastKana('かば','voice'),'かは');
@@ -32,7 +32,7 @@ test('dictionary mounting still finds its own form beside battle area',async()=>
 test('multi-spelling corpus-shaped candidates stay separate and retain aliases',()=>{
  const sense=(spellings,text)=>({...candidate(spellings[0],text),spellings,readings:['はし']});
  const r=summarizeCandidates([sense(['はし','橋'],'橋の意味'),sense(['はし','箸'],'箸の意味'),sense(['箸'],'箸の別語義'),sense(['はし','端'],'端の意味'),sense(['はし','梯'],'梯の意味')],'はし');
- assert.deepEqual(r.all.map(w=>w.spelling),['橋','箸','端','梯']);assert.equal(r.remaining,2);assert.equal(r.all[1].definitions.length,2);assert.ok(r.all[0].aliases.includes('はし'));
+ assert.deepEqual(r.all.map(w=>w.spelling).sort(),['橋','箸','箸','端','梯'].sort());assert.equal(r.remaining,3);assert.ok(r.all.every(w=>w.definitions.length===1));assert.ok(r.all.find(w=>w.spelling==='橋').aliases.includes('はし'));
 });
 test('editing restores board scroll, draft scroll and keyboard focus without resetting the clock',async()=>{
  const {parseHTML}=await import('linkedom');const {document}=parseHTML('<html><body><div id="r"></div></body></html>');let focused;
