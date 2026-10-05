@@ -23,3 +23,16 @@ test('build verifies bytes and preserves quarantined records; outputs are reusab
  const bad=join(dir,'bad');await assert.rejects(buildDictionary(input,bad,{...source,sha256:'0'.repeat(64)}),/checksum/);
  await assert.rejects(access(bad));
 });
+
+test('build pins, applies and archives supplements and rejects unused or foreign patches',async t=>{
+ const dir=await mkdtemp(join(tmpdir(),'shiritori-supp-'));t.after(()=>rm(dir,{recursive:true,force:true}));
+ const raw={word:'試験山',lang_code:'ja',pos:'name',senses:[{glosses:['テスト用の山の説明']}]};
+ const bytes=Buffer.from(JSON.stringify(raw)+'\n'), input=join(dir,'raw.jsonl');await writeFile(input,bytes);
+ const source={id:'fixture',version:'1',url:'https://example.invalid',license:'TEST-ONLY',sha256:createHash('sha256').update(bytes).digest('hex')};
+ const supplement={schemaVersion:1,sourceId:source.id,sourceSha256:source.sha256,records:[{line:1,word:raw.word,pos:raw.pos,rawSha256:createHash('sha256').update(JSON.stringify(raw)).digest('hex'),evidence:{url:'https://ja.wiktionary.org/wiki/試験山',accessedAt:'2026-10-05',license:'CC-BY-SA-4.0',section:'test',note:'test-only'},senses:[{id:'1',readings:['しけんざん'],place:true}]}]};
+ const out=join(dir,'ok');const report=await buildDictionary(input,out,source,supplement);
+ assert.equal(report.supplementedRecords,1);assert.equal(report.eligibleSenses,1);
+ assert.deepEqual(JSON.parse(await readFile(join(out,'supplement.json'),'utf8')),supplement);
+ for(const s of [{...supplement,sourceId:'wrong'},{...supplement,sourceSha256:'0'.repeat(64)},{...supplement,records:[{...supplement.records[0],line:2}]},{...supplement,records:[...supplement.records,...supplement.records]}])
+ await assert.rejects(buildDictionary(input,join(dir,'bad'),source,s),/supplement/);
+});

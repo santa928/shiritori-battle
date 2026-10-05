@@ -118,3 +118,32 @@ test('a conflicting child gloss reading cannot inherit the parent reading',()=>{
   const r=adaptRecord(raw({word:'客',forms:[{form:'きゃく',tags:['transliteration','go-on']},{form:'かく',tags:['transliteration','kan-on']}],senses:[{glosses:['（きゃく）上位の検証義']},{glosses:['（きゃく）上位の検証義','（かく）下位の検証義']}]}),'snapshot',1);
   assert.equal(r.entry,null);
 });
+
+test('multiple bare readings are mapped only by corroborated per-sense prefixes',()=>{
+ const record=raw({word:'検証',forms:[{form:'あ',tags:['transliteration']},{form:'い',tags:['transliteration']}],senses:[{glosses:['（あ、い）共通のテスト説明']},{glosses:['（い）専用のテスト説明']},{glosses:['対応不明のテスト説明']},{glosses:['（あ）親のテスト説明','（い）矛盾する子のテスト説明']},{glosses:['（あ）']}]});
+ const r=adaptRecord(record,'snapshot',1);
+ assert.deepEqual(r.entry?.readings,['あ','い']);
+ assert.deepEqual(r.entry?.senses.map(s=>s.readings),[['あ','い'],['い'],[],[],[]]);
+ assert.deepEqual(r.raw,record);
+ assert.equal(r.entry.senses[2].readingEvidence.method,'unresolved-sense-reading');
+});
+test('unrelated parenthetical tokens or uncorroborated readings remain quarantined',()=>{
+ for(const gloss of ['（あ、う）テスト','（俗語）テスト','（あ/い）テスト']) {
+ const r=adaptRecord(raw({word:'検証',forms:[{form:'あ',tags:['transliteration']},{form:'い',tags:['transliteration']}],senses:[{glosses:[gloss]}]}),'snapshot',1);
+ assert.equal(r.entry,null);
+ }
+});
+test('unsupported reading-like child prefixes do not inherit a broader parent scope',()=>{
+ const forms=['あ','い','う'].map(form=>({form,tags:['transliteration']}));
+ const r=adaptRecord(raw({word:'検証',forms,senses:[{glosses:['（あ、い）親の説明','（い／う）子の説明']}]}),'snapshot',1);
+ assert.equal(r.entry,null);
+ const narrowed=adaptRecord(raw({word:'検証',forms,senses:[{glosses:['（あ、い）親の説明','（い）子の説明']}]}),'snapshot',1);
+ assert.deepEqual(narrowed.entry.senses[0].readings,['い']);
+});
+
+test('half-width and decomposed reading-like child prefixes fail closed too',()=>{
+ for(const child of ['ｲ／ｳ','ガ／ギ']) {
+ const forms=['あ','い','う'].map(form=>({form,tags:['transliteration']}));
+ assert.equal(adaptRecord(raw({word:'検証',forms,senses:[{glosses:['（あ、い）親の説明',`（${child}）子の説明`]}]}),'snapshot',1).entry,null);
+ }
+});

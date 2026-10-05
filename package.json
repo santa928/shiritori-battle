@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check dictionary.mjs && node --check import-jawiktionary.mjs && node --check build.mjs && node --check verify-corpus.mjs"
+    "check": "node --check dictionary.mjs && node --check import-jawiktionary.mjs && node --check build.mjs && node --check verify-corpus.mjs && node --check check-regression-sample.mjs"
   },
   "engines": {
     "node": ">=22"

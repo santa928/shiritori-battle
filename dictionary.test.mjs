@@ -78,3 +78,12 @@ test('eligible noun and place survive ineligible homophones and retain extractio
   assert.deepEqual(r.candidates[1].classificationEvidence,evidence);
   assert.equal(r.candidates[1].readingEvidence.method,'kana-headword');
 });
+
+test('sense reading scopes prevent a Cartesian product and validate membership',()=>{
+ const e=entry('scope','あ',[sense('a',['noun'],{readings:['あ']}),sense('b',['noun'],{readings:['い']}),sense('held',['noun'],{readings:[]})],{readings:['あ','い']});
+ const db=dictionary([e]);
+ assert.deepEqual(db.lookup('あ').candidates.map(c=>c.senseId),['a']);
+ assert.deepEqual(db.lookup('い').candidates.map(c=>c.readings),[['い']]);
+ assert.throws(()=>dictionary([{...e,senses:[sense('bad',['noun'],{readings:['う']})]}]),/sense reading/);
+ assert.throws(()=>dictionary([{...e,senses:[sense('bad',['noun'],{readings:['漢字']})]}]),/sense reading/);
+});

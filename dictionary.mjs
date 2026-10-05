@@ -12,7 +12,7 @@ export function normalizeReading(value) {
 export const DEFAULT_POLICY = Object.freeze({
   allowedPos: Object.freeze(['noun']),
   allowPlaces: true,
-  excludedLabels: Object.freeze(['person', 'fictional-character', 'organization', 'brand', 'proper-name', 'inflected-form', 'abbreviation', 'initialism', 'acronym', 'classification-conflict', 'number', 'bound-form', 'unresolved-reference']),
+  excludedLabels: Object.freeze(['person', 'fictional-character', 'organization', 'brand', 'proper-name', 'inflected-form', 'abbreviation', 'initialism', 'acronym', 'classification-conflict', 'number', 'bound-form', 'unresolved-reference', 'unresolved-reading']),
   definitionLanguage: 'ja',
 });
 
@@ -65,6 +65,10 @@ export function createDictionary(dataset) {
     const senseIds = new Set();
     for (const sense of entry.senses) {
       unique(sense.id, senseIds, 'sense id');
+      if (sense.readings !== undefined) {
+        textList(sense.readings, 'sense readings', true);
+        if (sense.readings.some(r => !normalizeReading(r) || !entry.readings.map(normalizeReading).includes(normalizeReading(r)))) throw new TypeError('invalid sense reading');
+      }
       textList(sense.pos, 'POS');
       textList(sense.labels, 'labels', true);
       if (!Array.isArray(sense.definitions)) throw new TypeError('invalid definitions');
@@ -85,15 +89,15 @@ export function createDictionary(dataset) {
       const reading = normalizeReading(input);
       if (reading === null) return {status:'invalid-reading', reading:null, candidates:[]};
       const matches = index.get(reading) ?? [];
-      const candidates = matches.flatMap(entry => entry.senses.map(sense => ({
-        entryId:entry.id, senseId:sense.id, spellings:entry.spellings, readings:entry.readings,
+      const candidates = matches.flatMap(entry => entry.senses.filter(sense => !sense.readings || sense.readings.map(normalizeReading).includes(reading)).map(sense => ({
+        entryId:entry.id, senseId:sense.id, spellings:entry.spellings, readings:sense.readings ?? entry.readings,
         definitions:sense.definitions, pos:sense.pos, labels:sense.labels,
-        readingEvidence:entry.readingEvidence, classificationEvidence:sense.classificationEvidence,
+        readingEvidence:sense.readingEvidence ?? entry.readingEvidence, classificationEvidence:sense.classificationEvidence,
         source:sourceMap.get(entry.sourceId), sourceUrl:entry.sourceUrl,
         ...evaluateSense(sense, policy),
       })));
       // Candidates are evidence, never a final "valid move" verdict.
-      return structuredClone({status: matches.length ? 'candidates' : 'not-found', reading, candidates});
+      return structuredClone({status: candidates.length ? 'candidates' : 'not-found', reading, candidates});
     },
   });
 }

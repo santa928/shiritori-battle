@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+  "sourceSha256": "69748737ab9d35f717d0847f6246665a7c07f56128a0fe7036109d52967e50f2",
+  "attribution": "Japanese Wiktionary contributors; reviewed reading and sense classification metadata. Definitions remain in the pinned raw snapshot.",
+  "license": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "records": [
+    {
+      "line": 163,
+      "word": "日本",
+      "pos": "name",
+      "rawSha256": "4a7a65f7832d0a117b789f9322beacb2a262119378536835a49fa25fcb151757",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%97%A5%E6%9C%AC",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 固有名詞",
+        "note": "日本語の固有名詞1（下位語義を含む）と2は列島・国の語義。和文通話表の語義3は地名として採用しない。読みの対応はrawの語義先頭とformsで裏付ける。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "place": true
+        },
+        {
+          "id": "2",
+          "place": true
+        },
+        {
+          "id": "3",
+          "place": true
+        },
+        {
+          "id": "4",
+          "place": true
+        }
+      ]
+    },
+    {
+      "line": 509,
+      "word": "東京",
+      "pos": "name",
+      "rawSha256": "7dc83d8f75e9d679821f1f2e49c60423f65bc359f9e209382dd10465b4163ce7",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%9D%B1%E4%BA%AC",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 固有名詞",
+        "note": "日本語の首都・東京都・東京二十三区と、とうけい/とんきんの明示された都市・地域語義だけを地名として確認。東京駅・見出しのみ・和文通話表は補正しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "place": true
+        },
+        {
+          "id": "2",
+          "place": true
+        },
+        {
+          "id": "3",
+          "place": true
+        },
+        {
+          "id": "6",
+          "place": true
+        },
+        {
+          "id": "7",
+          "place": true
+        },
+        {
+          "id": "8",
+          "place": true
+        },
+        {
+          "id": "10",
+          "place": true
+        },
+        {
+          "id": "11",
+          "place": true
+        }
+      ]
+    },
+    {
+      "line": 7025,
+      "word": "天皇",
+      "pos": "noun",
+      "rawSha256": "25a71c55b4889b05c1713c3f6e25324fcd6bf8c642b5d636f9fd309942845a60",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%A4%A9%E7%9A%87",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第5・6義は特定の神・伝説上の人物で普通名詞か不確実なため要確認として除外。一般的な称号の語義は変更しない。"
+      },
+      "senses": [
+        {
+          "id": "5",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        },
+        {
+          "id": "6",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 13973,
+      "word": "富士山",
+      "pos": "name",
+      "rawSha256": "8d8d1e51edf2c9d84a4bf39b325eca0179efd2128fd4946de701e405f360af72",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%AF%8C%E5%A3%AB%E5%B1%B1",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 固有名詞",
+        "note": "日本語 固有名詞の見出しに富士 山（ふじさん）。第1義は山、第2義は和文通話表の符号で、地名例外を付けない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ふじさん"
+          ],
+          "place": true
+        },
+        {
+          "id": "2",
+          "readings": [
+            "ふじさん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 13975,
+      "word": "琵琶湖",
+      "pos": "name",
+      "rawSha256": "fb923d1d0a5ca21d3d2d4bd6207c1687ffb9328de539b9f3f2fedae7e834dffc",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%90%B5%E7%90%B6%E6%B9%96",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 固有名詞",
+        "note": "日本語 固有名詞の見出しに琵琶湖（びわこ）。第1義は滋賀県の湖。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "びわこ"
+          ],
+          "place": true
+        }
+      ]
+    },
+    {
+      "line": 61849,
+      "word": "神風",
+      "pos": "noun",
+      "rawSha256": "c0f52b79366b790eb0525f0ff076f10bc400a7387b4a3899a477261e6532075b",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%A5%9E%E9%A2%A8",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "3",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        },
+        {
+          "id": "4",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 82493,
+      "word": "地主",
+      "pos": "noun",
+      "rawSha256": "de205af07f8887e094409edc538a6ed9bda4d02ef9d202e23e5b7fa891d2dca6",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%9C%B0%E4%B8%BB",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "3",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 136724,
+      "word": "仏法",
+      "pos": "noun",
+      "rawSha256": "d86e8a8a761c5040a9190b9ce6521d05079f53108b006eda0bb03b741296e148",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%BB%8F%E6%B3%95",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第2義はフランスの法律の略語と明記されるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 150520,
+      "word": "見物",
+      "pos": "noun",
+      "rawSha256": "0fd450761c9e93686460242757f3431adf0699dabf7cf1abaf6cccc684f63fb5",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%A6%8B%E7%89%A9",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 150986,
+      "word": "薄雲",
+      "pos": "noun",
+      "rawSha256": "06d7378e596fd5e90b5f4fd3bfdd97a1ba25c24f4fb34540cc1c4e9262f6f20c",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%96%84%E9%9B%B2",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第3義は源氏物語の巻名で、普通名詞・実在地名の範囲外として除外。雲の普通名詞の語義は保持。"
+      },
+      "senses": [
+        {
+          "id": "3",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 213582,
+      "word": "栗鼠",
+      "pos": "noun",
+      "rawSha256": "0193e95191b366b66fa84f629439a439f367a52a1ec7dee9dd406e894bc31059",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%A0%97%E9%BC%A0",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 282852,
+      "word": "文部",
+      "pos": "noun",
+      "rawSha256": "4929bf029630ab588286f5c7b36fb92d0a381dff59c49838d089bf9c3d93598c",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%96%87%E9%83%A8",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第1義は文部省の略と明記されるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 309935,
+      "word": "寝台",
+      "pos": "noun",
+      "rawSha256": "2ea3534c1fdfb113cb15a1c83ea47638409b3f7afeab73bb3dae1449c4e6e9ef",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%AF%9D%E5%8F%B0",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "普通名詞と略称が同一語義内に混在するため、分離できるまで保留。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 316041,
+      "word": "天火",
+      "pos": "noun",
+      "rawSha256": "37216baf93e6b6a940f6a6c817ddcdd1b32b0ac8a39d6c4c165c9890c360baa1",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%A4%A9%E7%81%AB",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 400361,
+      "word": "門前",
+      "pos": "noun",
+      "rawSha256": "3745499680050bfcc9ba27a164ab7b6f1a0a12748fbbbc7e0fea2c7398eab34b",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%96%80%E5%89%8D",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 462905,
+      "word": "多聞",
+      "pos": "noun",
+      "rawSha256": "904bdfa2faed602f6a4dbbd302976941136b2d713d62d585c9a6129561f83623",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%A4%9A%E8%81%9E",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 490613,
+      "word": "薬師",
+      "pos": "noun",
+      "rawSha256": "a5f6dac09267fae84f454531b12b2afeb21d7bc07a724701e87771e3c399d183",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%96%AC%E5%B8%AB",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "対象語義に略語・略称の明記があるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 530118,
+      "word": "八索",
+      "pos": "noun",
+      "rawSha256": "6bafeeae28af5e4361e07da54dee15c2ced5555371f1484bd6ff7aec237a5cbd",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%85%AB%E7%B4%A2",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "古代の書名で普通名詞か不確実なため保留。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 559957,
+      "word": "清朝",
+      "pos": "noun",
+      "rawSha256": "4bbc08b43c2b9f18d8d62f0537d85f4723d3559412392604bceba53043c01074",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%B8%85%E6%9C%9D",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "王朝名で普通名詞・行政/自然地名か不確実なため保留。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 647952,
+      "word": "仏名",
+      "pos": "noun",
+      "rawSha256": "3e5cd1567d823bf895781a5462b856df98eb5d4ac4d20ebc69930b6b6c15b2ed",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%BB%8F%E5%90%8D",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第2義は仏名会の略と明記されるため既存略語除外方針を補強。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 650904,
+      "word": "玄圃",
+      "pos": "noun",
+      "rawSha256": "1ccb6943a3040fa380671eebc3027b26ef35599839fd3ea4cc7335858f0dd9e8",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%8E%84%E5%9C%83",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第1義は伝説上の庭園名で、実在の行政・自然地名として未確認のため除外。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 651830,
+      "word": "窮子",
+      "pos": "noun",
+      "rawSha256": "fe74be2cec90ffa148634f22bb88335cc93274651e9aa473db408f9e2cbf957a",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%AA%AE%E5%AD%90",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "basis": "pinned raw snapshot; sense indices refer to raw flattened senses",
+        "note": "第2義は伝説の特定の神を指すため、普通名詞としての扱いは要確認として除外。"
+      },
+      "senses": [
+        {
+          "id": "2",
+          "excludeLabels": [
+            "classification-conflict"
+          ]
+        }
+      ]
+    }
+  ]
+}

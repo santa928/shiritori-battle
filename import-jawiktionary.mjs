@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import {normalizeReading} from './dictionary.mjs';
 
 // Fallback only when every sense explicitly names the same reading and a source
@@ -19,6 +20,32 @@ function corroboratedSenseReading(raw) {
   }
   return (raw.forms ?? []).some(form => form.tags?.includes('transliteration') &&
     normalizeReading(form.form) === readings[0]) ? readings[0] : null;
+}
+
+// Multiple bare lexical readings require explicit sense-level correspondence.
+// Keep unmapped senses in the archive/entry with an empty scope, never guessed.
+function scopedReadings(sense, forms) {
+  const parse = text => {
+    const m = typeof text === 'string' && text.match(/^(?:（([^）]+)）|\(([^)]+)\))(.*)$/u);
+    if (!m) return null;
+    const values = (m[1] ?? m[2]).split('、').map(normalizeReading);
+    return values.every(Boolean) ? {values:[...new Set(values)],body:m[3].trim()} : null;
+  };
+  const first = parse(sense.glosses?.[0]);
+  if (!first || first.values.some(r => !forms.includes(r))) return [];
+  if (!(sense.glosses ?? []).some(g => { const p=parse(g); return p ? p.body : g?.trim(); })) return [];
+  let values=first.values;
+  for (const gloss of (sense.glosses ?? []).slice(1)) {
+    const child=parse(gloss);
+    if (!child) {
+      const prefix=typeof gloss==='string' && gloss.match(/^(?:（([^）]+)）|\(([^)]+)\))/u);
+      if (prefix && /^[ぁ-ゖァ-ヺー、,，/／・\s]+$/u.test((prefix[1] ?? prefix[2]).normalize('NFKC'))) return [];
+      continue;
+    }
+    if (child.values.some(r=>!values.includes(r))) return [];
+    values=child.values;
+  }
+  return values;
 }
 
 // Exact semantic labels only: topic, etymology and examples are not name evidence.
@@ -61,14 +88,37 @@ function classify(raw, sense) {
   return evidence;
 }
 
+function validateSupplement(raw, patch) {
+  if (!patch) return;
+  const fail=()=>{throw new Error('invalid or stale supplement');};
+  if (patch.word!==raw.word || patch.pos!==raw.pos ||
+      patch.rawSha256!==createHash('sha256').update(JSON.stringify(raw)).digest('hex')) fail();
+  const e=patch.evidence;
+  if (!e || !['url','accessedAt','license','section','note'].every(k=>typeof e[k]==='string' && e[k].trim()) ||
+      !e.url.startsWith('https://ja.wiktionary.org/') || e.license!=='CC-BY-SA-4.0') fail();
+  if (!Array.isArray(patch.senses) || !patch.senses.length) fail();
+  const seen=new Set();
+  for (const scope of patch.senses) {
+    if (typeof scope.id!=='string' || !/^[1-9][0-9]*$/u.test(scope.id) || Number(scope.id)>raw.senses.length || seen.has(scope.id)) fail();
+    seen.add(scope.id);
+    if (scope.readings!==undefined && (!Array.isArray(scope.readings) || !scope.readings.length || scope.readings.some(r=>!normalizeReading(r)))) fail();
+    if (scope.excludeLabels!==undefined && (!Array.isArray(scope.excludeLabels) || !scope.excludeLabels.length || scope.excludeLabels.some(label=>!['abbreviation','classification-conflict','unresolved-reference'].includes(label)))) fail();
+    if (scope.place!==undefined && (scope.place!==true || raw.pos!=='name')) fail();
+  }
+}
+
 /** Conservative adapter for Japanese-edition Wiktextract raw records.
  * Every Japanese record is retained verbatim in raw, even if not indexable.
  * A line-based ID is stable only inside the pinned source snapshot.
  */
-export function adaptRecord(raw, sourceId, lineNumber) {
+export function adaptRecord(raw, sourceId, lineNumber, supplement = null) {
   if (raw.lang_code !== 'ja') return null;
   const result = {raw, sourceId, lineNumber, entry:null};
-  if (typeof raw.word !== 'string' || !Array.isArray(raw.senses)) return {...result,reason:'invalid-record'};
+  if (typeof raw.word !== 'string' || !Array.isArray(raw.senses)) {
+    if (supplement) throw new Error('supplement requires a structurally valid record');
+    return {...result,reason:'invalid-record'};
+  }
+  validateSupplement(raw,supplement);
   const kanaWord = normalizeReading(raw.word);
   let readings = kanaWord ? [kanaWord] : [...new Set((raw.forms ?? [])
     .filter(form => form.tags?.length === 1 && form.tags[0] === 'transliteration')
@@ -78,8 +128,19 @@ export function adaptRecord(raw, sourceId, lineNumber) {
     const recovered = corroboratedSenseReading(raw);
     if (recovered) { readings = [recovered]; readingEvidence = {method:'sense-prefix-and-form'}; }
   }
-  if (!readings.length) return {...result,reason:'unresolved-reading'};
-  if (readings.length > 1) return {...result,reason:'ambiguous-reading'};
+  const unscopedEvidence=readingEvidence;
+  const multipleBareReadings=readings.length>1;
+  let scopes = readings.length > 1 ? raw.senses.map(s => scopedReadings(s,readings)) : null;
+  if (supplement?.senses.some(s=>s.readings)) {
+    scopes ??= raw.senses.map(()=>[...readings]);
+    for (const scope of supplement.senses) if (scope.readings) scopes[Number(scope.id)-1]=scope.readings.map(normalizeReading);
+  }
+  if (!readings.length && !scopes?.flat().length) return {...result,reason:'unresolved-reading'};
+  if (scopes) {
+    readings=[...new Set(scopes.flat())];
+    if (!readings.length) return {...result,reason:'ambiguous-reading'};
+    readingEvidence={method:'sense-scoped-readings'};
+  }
   const pos = raw.pos === 'name' ? 'proper-noun' : (raw.pos || 'unknown');
   const commonLabels = [...(raw.tags ?? [])];
   if (raw.pos === 'name') commonLabels.push('proper-name');
@@ -87,6 +148,10 @@ export function adaptRecord(raw, sourceId, lineNumber) {
   const senses = raw.senses.map((sense, i) => {
     const labels = [...commonLabels, ...(sense.tags ?? [])];
     const classificationEvidence = classify(raw,sense);
+    const reviewed = supplement?.senses.find(s=>s.id===String(i+1));
+    for (const label of reviewed?.excludeLabels ?? []) classificationEvidence.push({label,scope:'sense',field:'reviewed-supplement',sourceUrl:supplement.evidence.url,evidence:supplement.evidence});
+    if (reviewed?.place) classificationEvidence.push({label:'place',scope:'sense',field:'reviewed-supplement',sourceUrl:supplement.evidence.url,evidence:supplement.evidence});
+    if (scopes && !scopes[i].length) labels.push('unresolved-reading');
     labels.push(...classificationEvidence.map(evidence => evidence.label));
     // Preserve inherited tags but do not mistake entry-wide geography for a
     // classification of each unrelated meaning (e.g. country vs organization).
@@ -98,6 +163,7 @@ export function adaptRecord(raw, sourceId, lineNumber) {
     if (sense.form_of?.length || sense.alt_of?.length) labels.push('unresolved-reference');
     if (labels.includes('form-of')) labels.push('inflected-form');
     return {
+      ...(scopes ? {readings:scopes[i],readingEvidence:{method:reviewed?.readings ? 'reviewed-supplement' : scopes[i].length ? (multipleBareReadings ? 'sense-prefix-and-bare-forms' : unscopedEvidence.method) : 'unresolved-sense-reading',...(reviewed?.readings ? {evidence:supplement.evidence} : {})}} : {}),
       id:String(i + 1), pos:[pos], labels:[...new Set(labels)], classificationEvidence,
       definitions:(sense.glosses ?? []).filter(text => typeof text === 'string' && text.trim())
         .map(text => ({language:'ja',text})),
