@@ -1,0 +1,41 @@
+name: Publish dictionary to Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm test && npm run check
+      - name: Verify source and prepared archive agree
+        run: node verify-site.mjs
+      - name: Extract verified static site
+        run: python3 -m zipfile -e publish/site.zip _site
+      - name: Verify exact public artifact files
+        run: node verify-site.mjs _site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy verified site
+        id: deployment
+        uses: actions/deploy-pages@v4
