@@ -14,16 +14,16 @@
     "web/app.mjs": "343bbbe0468ecdfc6d80b3e3c7a84c8b665029e5870bf02a1f0b24944e43ef48",
     "web/battle-rules.mjs": "128dc1166b5fbcfc66fe176f7e2bb13fabbd88d3f19283303a0c16c71d3a32ef",
     "web/battle-controller.mjs": "2d986042464a688f1e39d0f0a27f685796efb41d408f0c41c82568bb305ced32",
-    "web/battle-app.mjs": "51c5474c6e91f5a506ae9013c6e7e6f4d21830d46e0b49f4bb3b2585235f53a4",
+    "web/battle-app.mjs": "d29d9865da2f1dc13f3fb19e61232d9058dbf94ae5c3d181eb52696765097734",
     "web/dictionary-client.mjs": "351fb21808a1c836c6728d04d136a57e07ada8730a322c47d7191429eea7da54",
-    "web/index.html": "4dc34e218bec9ebd692a2f6278d53c46b663b4231a977a4e9eb23754e98652fa",
-    "web/styles.css": "8e90925860d61c22716f8910b87023fc21c53d877b59c7dd3ae46fc16fe58957",
+    "web/index.html": "ae47cd8c6bbab680bd2331eeec23fba011fe02c135682566f94ff7b26c5be8a0",
+    "web/styles.css": "144a4897bf78760be44e248ee55a04ce9b2d517165d5cdb3be1b00543baf351a",
     "package-site.py": "5d52903e372893c8a257d9241cd62fae376bb97a331e94fd8e436f620284541c"
   },
   "artifacts": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "ATTRIBUTION.txt": "d115f4b99de26ca8d92635af5a4da50dda12e5ee3efdcd7e01b8fa86a5e7dd57",
-    "build-info.json": "c13ab70314ccc5ba310c24ff2ba9d7b5576c25cf71928734797d4a1ee7f3b610",
+    "build-info.json": "52c9027bd50483f457eae16d808718c8ccae007b4d857c9d513d2411f5977e35",
     "data/v1-74cbc1f057467d8b/00.json": "b91e1d31166ba08b7920d67ed1a719bb58a443ee047db9b6b0c98c8d0a8fa4ea",
     "data/v1-74cbc1f057467d8b/01.json": "3f1cdf5fdf31dd48d914c66c97fe26e0d58ae9def9704201ce2d80a3648d2cc4",
     "data/v1-74cbc1f057467d8b/02.json": "c5a961e9e544ac0ed7d632d81ee784b258b0ff76f56d121bff83f49cb9bf04ef",
@@ -282,15 +282,15 @@
     "data/v1-74cbc1f057467d8b/ff.json": "ef42db5902e124af6ec956283f0fabe469e7d5b2e6a61f73b0cb7b0496a25f00",
     "data/v1-74cbc1f057467d8b/manifest.json": "67cf8e397b108a984557c1650480104ebbf05f9c785441a4d6abfc8922d72120",
     "dictionary.mjs": "84081c11024a577589c5a452c15bcb43e57babd149825a7da91130523c77850a",
-    "index.html": "4155155631fe1afedaf087da1fde2a17423ae8263be2893c2e8faa7f60539a7b",
+    "index.html": "97c83f03d6626f9caed7a9144104971cc51ce74a510b38b9e6413f11520599c2",
     "reading-bucket.mjs": "84fb58f8242bfb1febb98c9d772844f4cc7b864ae341af2b260a5104952461ba",
     "web/app.mjs": "343bbbe0468ecdfc6d80b3e3c7a84c8b665029e5870bf02a1f0b24944e43ef48",
-    "web/battle-app.mjs": "51c5474c6e91f5a506ae9013c6e7e6f4d21830d46e0b49f4bb3b2585235f53a4",
+    "web/battle-app.mjs": "d29d9865da2f1dc13f3fb19e61232d9058dbf94ae5c3d181eb52696765097734",
     "web/battle-controller.mjs": "2d986042464a688f1e39d0f0a27f685796efb41d408f0c41c82568bb305ced32",
     "web/battle-rules.mjs": "128dc1166b5fbcfc66fe176f7e2bb13fabbd88d3f19283303a0c16c71d3a32ef",
     "web/dictionary-client.mjs": "351fb21808a1c836c6728d04d136a57e07ada8730a322c47d7191429eea7da54",
-    "web/styles.css": "8e90925860d61c22716f8910b87023fc21c53d877b59c7dd3ae46fc16fe58957"
+    "web/styles.css": "144a4897bf78760be44e248ee55a04ce9b2d517165d5cdb3be1b00543baf351a"
   },
   "dictionarySha256": "b0a121dcb13155cd8a74e53965cb652d5aeca3543b78fbd9c0be4c8aa6ed12f0",
-  "zipSha256": "c79e28be26e7df0b98b3dcea180abd44f653aed0e9001c3b64a874f119f3a9c6"
+  "zipSha256": "1b2ce3f44b089629df24a5898c93448d1605d14171a9bf0feb343ae5c9c8ce40"
 }

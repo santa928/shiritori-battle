@@ -35,12 +35,12 @@ const messages={
 };
 const terminalCopy={'timeout':'時間切れ','resigned':'降参','n-ending':'「ん」で終わりました'};
 export function mountBattleApp(root,{client,now=()=>performance.now(),random=Math.random,autoTick=true,onMatchState=()=>{}}){
- const doc=root.ownerDocument;let controller=null,state=null,lastKey='',opponentOpen=false,resignOpen=false,interval=null,settings={mode:'individual',seconds:30};
+ const doc=root.ownerDocument;let controller=null,state=null,lastKey='',opponentOpen=false,resignOpen=false,interval=null,settings={mode:'individual',seconds:30},inputOrigin=null;
  const el=(tag,text,cls)=>{const n=doc.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  const button=(text,action,cls='')=>{const n=el('button',text,cls);n.type='button';n.dataset.action=action;return n;};
  function heading(text,small){const box=el('div',undefined,'battle-heading');if(small)box.append(el('p',small,'eyebrow'));box.append(el('h1',text));return box;}
  function showSetup(){
-  controller?.destroy();controller=null;state=null;lastKey='';root.className='battle-root';root.replaceChildren();onMatchState(false);
+  controller?.destroy();controller=null;state=null;lastKey='';root.className='battle-root';delete root.dataset.player;inputOrigin=null;root.replaceChildren();onMatchState(false);
   root.append(heading('ことばで、勝負しよう。','ふたりで遊ぶ、しりとりバトル'));
   const tiles=el('div',undefined,'setup-tiles');for(const c of ['し','り','と','り'])tiles.append(el('span',c));root.append(tiles);
   root.append(el('p','ひとつのスマホを交互に。\n使える文字を残しながら、つなげよう。','battle-lead'));
@@ -57,11 +57,11 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
   root.append(rules);
  }
  function updateClock(){
-  const timer=root.querySelector('[data-timer]');if(timer&&state){const seconds=Math.ceil(state.remainingMs/1000);timer.textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');timer.classList.toggle('urgent',seconds<=10&&state.game.phase==='typing');}
+  const timer=root.querySelector('[data-timer]');if(timer&&state){const seconds=Math.ceil(state.remainingMs/1000);timer.textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');timer.classList.toggle('urgent',seconds<=10&&state.game.phase==='typing');timer.classList.toggle('critical',seconds<=5&&seconds>0&&state.game.phase==='typing');}
   const fill=root.querySelector('[data-clock-fill]');if(fill&&state)fill.style.width=100*state.remainingMs/(state.game.seconds*1000)+'%';
  }
  function receive(next){
-  state=next;const key=JSON.stringify([next.game.phase,next.game.turn,next.draft,next.feedback,next.game.history.length,resignOpen]);
+  const previous=state;state=next;const entered=previous?.game.phase==='typing'&&next.game.phase==='typing'&&next.draft.length>previous.draft.length&&next.draft.startsWith(previous.draft);const key=JSON.stringify([next.game.phase,next.game.turn,next.draft,next.feedback,next.game.history.length,resignOpen]);
   if(key!==lastKey){
    const oldBoard=root.querySelector('.battle-board'),oldDraft=root.querySelector('[data-draft]');
    const boardTop=oldBoard?.scrollTop??0,draftLeft=oldDraft?.scrollLeft??0;
@@ -77,7 +77,18 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
    const board=root.querySelector('.battle-board'),draftNode=root.querySelector('[data-draft]');
    if(board)board.scrollTop=boardTop;
    if(draftNode){const end=draftNode.scrollWidth-draftNode.clientWidth;draftNode.scrollLeft=Number.isFinite(end)?Math.max(0,end):draftLeft;}
-  }updateClock();
+   if(entered){const tile=root.querySelector('.draft-tile:last-child');tile?.classList.add('entering');animateInput(tile);}
+  }inputOrigin=null;updateClock();
+ }
+ // A visual copy flies independently: edits and the game clock never await it.
+ function animateInput(target){
+  if(!inputOrigin||!target?.getBoundingClientRect||doc.defaultView?.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;
+  const end=target.getBoundingClientRect(),from=inputOrigin;
+  if(!end.width||!from.width)return;
+  const ghost=el('span',target.textContent,'kana-flight');ghost.setAttribute('aria-hidden','true');
+  ghost.style.left=from.left+'px';ghost.style.top=from.top+'px';ghost.style.width=from.width+'px';ghost.style.height=from.height+'px';
+  ghost.style.setProperty('--fly-x',end.left+end.width/2-from.left-from.width/2+'px');ghost.style.setProperty('--fly-y',end.top+end.height/2-from.top-from.height/2+'px');
+  const remove=()=>ghost.remove();ghost.addEventListener('animationend',remove,{once:true});ghost.addEventListener('animationcancel',remove,{once:true});root.append(ghost);
  }
  function start(){
   const starts=KANA.filter(c=>!['ん','を','ぢ','づ'].includes(c));const choose=n=>Math.min(n-1,Math.max(0,Math.floor(random()*n)));
@@ -85,13 +96,13 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
  }
  function wordsBlock(words,animated=false){
   const list=el('div',undefined,'battle-words'+(animated?' celebrate':''));
-  words.forEach((word,i)=>{const row=el('article');row.style.animationDelay=i*120+'ms';row.append(el('h3',word.spelling));for(const text of word.definitions)row.append(el('p',text));
+  words.forEach((word,i)=>{const row=el('article');row.style.animationDelay=animated?260+i*180+'ms':'0ms';row.append(el('h3',word.spelling));for(const text of word.definitions)row.append(el('p',text));
    if(!animated&&word.aliases?.length)row.append(el('p','別表記：'+word.aliases.join('・'),'battle-hint'));
    if(!animated)for(const source of word.sources){try{const url=new URL(source);if(!['https:','http:'].includes(url.protocol))continue;const a=el('a','出典：ウィクショナリー ↗');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';row.append(a);}catch{}}
    list.append(row);});return list;
  }
  function render(){
-  const g=state.game;root.replaceChildren();root.className='battle-root battle-'+g.phase;
+  const g=state.game;root.replaceChildren();root.className='battle-root battle-'+g.phase;root.dataset.player=String((g.phase==='finished'?g.winner:g.turn)+1);
   if(g.phase==='ready'){
    root.append(heading(`プレイヤー${g.turn+1}に渡してね`,g.history.length?'次の番です':'プレイヤー1が先攻です'));
    root.append(el('p','次はこの文字から','battle-lead'),el('div',g.start,'starting-kana'),el('p',`${g.seconds}秒 · ${g.mode==='shared'?'ふたりで共有':'文字はひとりずつ'}`,'battle-lead'),button('準備OK、はじめる','ready','battle-primary'));
@@ -100,12 +111,12 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
   if(g.phase==='success'){
    const move=g.history.at(-1),summary=summarizeCandidates(move.candidates,move.reading);
    root.append(heading('つながった！',`プレイヤー${g.turn+1} · ${g.history.length}手目`));
-   const reading=el('div',move.reading,'success-reading');root.append(reading,wordsBlock(summary.preview.map(w=>({...w,definitions:w.definitions.slice(0,1)})),true));
+   const reading=el('div',undefined,'success-reading');reading.append(el('span',move.reading,'reading-accessible'));for(const [i,c] of [...move.reading].entries()){const letter=el('span',c,'success-letter');letter.setAttribute('aria-hidden','true');letter.style.animationDelay=Math.min(i,12)*45+'ms';reading.append(letter);}root.append(reading,wordsBlock(summary.preview.map(w=>({...w,definitions:w.definitions.slice(0,1)})),true));
    if(summary.remaining)root.append(el('p',`他${summary.remaining}件 · 全部の意味は勝負のあとで`,'battle-hint'));
-   root.append(el('p',`使った文字：${move.consumed.join('・')||'なし'}`,'battle-hint'),button(`プレイヤー${2-g.turn}へ渡す`,'next','battle-primary'));return;
+   const consumed=el('div',undefined,'consumed-tiles');consumed.setAttribute('aria-label',`使った文字：${move.consumed.join('・')||'なし'}`);consumed.append(el('span','使った文字','consumed-label'));for(const [i,c] of move.consumed.entries()){const tile=el('span',c,'consumed-tile');tile.style.animationDelay=180+Math.min(i,12)*45+'ms';consumed.append(tile);}if(!move.consumed.length)consumed.append(el('span','なし'));root.append(consumed,button(`プレイヤー${2-g.turn}へ渡す`,'next','battle-primary'));return;
   }
   if(g.phase==='finished'){
-   onMatchState(false);root.append(heading(`プレイヤー${g.winner+1}の勝ち！`,terminalCopy[g.reason]));root.append(el('p',`${g.history.filter(x=>x.outcome==='accepted').length}語、つながりました`,'battle-lead'),button('もう一度あそぶ','setup','battle-primary'));
+   onMatchState(false);const confetti=el('div',undefined,'battle-confetti');confetti.setAttribute('aria-hidden','true');for(let i=0;i<24;i++){const piece=el('i');piece.style.setProperty('--x',(i*37%100)+'%');piece.style.setProperty('--drift',((i%5)-2)*28+'px');piece.style.setProperty('--spin',(i%2?1:-1)*420+'deg');piece.style.animationDelay=(i%6)*65+'ms';confetti.append(piece);}root.append(confetti);root.append(heading(`プレイヤー${g.winner+1}の勝ち！`,terminalCopy[g.reason]));root.append(el('p',`${g.history.filter(x=>x.outcome==='accepted').length}語、つながりました`,'battle-lead'),button('もう一度あそぶ','setup','battle-primary'));
    const history=el('section',undefined,'battle-history');history.append(el('h2','この勝負のことば'));
    if(!g.history.length)history.append(el('p','まだことばは出ていません。次の勝負でつなげよう。'));
    g.history.forEach((move,i)=>{const details=el('details');const sum=el('summary',`${i+1}. ${move.reading}　プレイヤー${move.player+1}${move.outcome==='n-ending'?' · んで終了':''}`);details.append(sum,wordsBlock(summarizeCandidates(move.candidates,move.reading).all),el('p',`辞書版：${move.version}`,'battle-hint'));history.append(details);});
@@ -139,10 +150,10 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
   if(action==='start'){start();return;}if(action==='setup'){showSetup();return;}if(!controller)return;
   if(action==='ready')controller.ready();else if(action==='next')controller.next();else if(action==='submit')controller.submit();else if(action==='retry')controller.retry();
   else if(action==='resign'){resignOpen=true;lastKey='';receive(state);}else if(action==='cancel-resign'){resignOpen=false;lastKey='';receive(state);}else if(action==='confirm-resign'){resignOpen=false;controller.resign();}
-  else if(action==='kana')controller.edit(state.draft+b.dataset.kana);else if(action==='delete')controller.edit(state.draft.slice(0,-1));else if(action==='long')controller.edit(state.draft+'ー');else if(['voice','semi','small'].includes(action))controller.edit(transformLastKana(state.draft,action));
+  else if(action==='kana'){inputOrigin=b.getBoundingClientRect?.()??null;controller.edit(state.draft+b.dataset.kana);inputOrigin=null;}else if(action==='delete')controller.edit(state.draft.slice(0,-1));else if(action==='long')controller.edit(state.draft+'ー');else if(['voice','semi','small'].includes(action))controller.edit(transformLastKana(state.draft,action));
  }
  root.addEventListener('click',act);showSetup();if(autoTick)interval=setInterval(()=>controller?.tick(),100);
- return {tick(){controller?.tick();},destroy(){controller?.destroy();if(interval!==null)clearInterval(interval);root.removeEventListener('click',act);}};
+ return {tick(){controller?.tick();},destroy(){inputOrigin=null;root.querySelectorAll('.kana-flight,.battle-confetti').forEach(n=>n.remove());controller?.destroy();if(interval!==null)clearInterval(interval);root.removeEventListener('click',act);}};
 }
 if(typeof document!=='undefined'){
  const root=document.querySelector('[data-battle-app]');if(root){
