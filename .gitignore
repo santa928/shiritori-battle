@@ -4,3 +4,5 @@ archive.jsonl
 dictionary.json
 data/
 build-output/
+.superpowers/
+dist/
