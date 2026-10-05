@@ -6,18 +6,18 @@ dictionary = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else None
 if not site.is_dir():
     raise SystemExit('Usage: python3 package-site.py BUILT_SITE [DICTIONARY_JSON]')
 sha = lambda data: hashlib.sha256(data).hexdigest()
-sources = ['dictionary.mjs', 'reading-bucket.mjs', 'build-web-dictionary.mjs', 'build-web.mjs', 'import-jawiktionary.mjs', 'build.mjs', 'source.json', 'supplement.json', 'web/app.mjs', 'web/dictionary-client.mjs', 'web/index.html', 'web/styles.css', 'package-site.py']
+sources = ['dictionary.mjs', 'reading-bucket.mjs', 'build-web-dictionary.mjs', 'build-web.mjs', 'import-jawiktionary.mjs', 'build.mjs', 'source.json', 'supplement.json', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/dictionary-client.mjs', 'web/index.html', 'web/styles.css', 'package-site.py']
 info = json.loads((site / 'build-info.json').read_text())
 for name in sources[:-1]:
     if info['sources'].get(name) != sha((ROOT / name).read_bytes()):
         raise SystemExit('stale source: ' + name)
-for name in ['dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/dictionary-client.mjs', 'web/styles.css']:
+for name in ['dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/dictionary-client.mjs', 'web/styles.css']:
     if (site / name).read_bytes() != (ROOT / name).read_bytes():
         raise SystemExit('stale copied source: ' + name)
 expected_html = (ROOT / 'web/index.html').read_text().replace('__MANIFEST_URL__', './data/' + info['version'] + '/manifest.json')
 if (site / 'index.html').read_text() != expected_html:
     raise SystemExit('stale source: index.html')
-allowed = {'.nojekyll', 'ATTRIBUTION.txt', 'build-info.json', 'index.html', 'dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/dictionary-client.mjs', 'web/styles.css'}
+allowed = {'.nojekyll', 'ATTRIBUTION.txt', 'build-info.json', 'index.html', 'dictionary.mjs', 'reading-bucket.mjs', 'web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs', 'web/dictionary-client.mjs', 'web/styles.css'}
 allowed.add('data/' + info['version'] + '/manifest.json')
 allowed.update('data/' + info['version'] + '/' + format(i, '02x') + '.json' for i in range(256))
 actual = {p.relative_to(site).as_posix() for p in site.rglob('*') if p.is_file()}
@@ -30,8 +30,7 @@ versions = list((site / 'data').iterdir())
 if len(versions) != 1:
     raise SystemExit('Expected exactly one dictionary version')
 release = {'schemaVersion': 1, 'version': versions[0].name, 'foundationCommit': 'c16cf569b8d39922c1cc8ac6c19c626cbcd0175b', 'sources': {p: sha((ROOT / p).read_bytes()) for p in sources}, 'artifacts': artifacts}
-if dictionary:
-    release['dictionarySha256'] = sha(dictionary.read_bytes())
+release['dictionarySha256'] = info['dictionarySha256']
 output = pathlib.Path(sys.argv[3]) if len(sys.argv) > 3 else ROOT / 'publish'
 output.mkdir(exist_ok=True)
 with zipfile.ZipFile(output / 'site.zip', 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

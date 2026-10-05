@@ -6,21 +6,24 @@
     "dictionary.mjs": "84081c11024a577589c5a452c15bcb43e57babd149825a7da91130523c77850a",
     "reading-bucket.mjs": "84fb58f8242bfb1febb98c9d772844f4cc7b864ae341af2b260a5104952461ba",
     "build-web-dictionary.mjs": "b20d8dd2e8a8102e38dd2c79b0701d8d3d9e977bd9116af16032b0687aec4f2e",
-    "build-web.mjs": "4f2c9fe02aafee603a340046fb95edfffc261302d54f10ebfe6d818b2f92a411",
+    "build-web.mjs": "eb72112fade7e9b8d6d9fb721384d0082aafb6ba551a836e545ae34a3a04f3e0",
     "import-jawiktionary.mjs": "dc68e5c42645fde08a190227fb15fec8696a1a0bc3c176e015d2f45da0edeedd",
     "build.mjs": "0990d27e31ae9b558054f0f58acbcc7f84c509da427d6b9cd3ccbf89e72fa3bd",
     "source.json": "47575c69a358558ba070eecaed28f5d726145d0a652d7e4b6fbe97d288cfef4b",
     "supplement.json": "bd47836b2bff79495e44aa7ca20608bd44bc16cde3d467e5a42d21dd1bc58f64",
     "web/app.mjs": "343bbbe0468ecdfc6d80b3e3c7a84c8b665029e5870bf02a1f0b24944e43ef48",
+    "web/battle-rules.mjs": "128dc1166b5fbcfc66fe176f7e2bb13fabbd88d3f19283303a0c16c71d3a32ef",
+    "web/battle-controller.mjs": "2d986042464a688f1e39d0f0a27f685796efb41d408f0c41c82568bb305ced32",
+    "web/battle-app.mjs": "94d1c0182454ac62a6430f14ab9fe9b969c7dd192ea6cf63ed34291585a148de",
     "web/dictionary-client.mjs": "351fb21808a1c836c6728d04d136a57e07ada8730a322c47d7191429eea7da54",
-    "web/index.html": "42b1fadfc915ce76fcd9b35e9fcadb240f9b828117dc90e27c197b45eea796a3",
-    "web/styles.css": "97c2064cc1b5be6efdde0a5fbc1a5b62534f13646ce623bad0125d72593d7ba5",
-    "package-site.py": "fae500ac58489703c0bd0ad683fab79c6df10f35d024eec24e1cdb3620bfaf5f"
+    "web/index.html": "892559df2be0e14c5980cc3acd83b5e824874a03f5f3ff2266b47f73d405058f",
+    "web/styles.css": "8e90925860d61c22716f8910b87023fc21c53d877b59c7dd3ae46fc16fe58957",
+    "package-site.py": "5d52903e372893c8a257d9241cd62fae376bb97a331e94fd8e436f620284541c"
   },
   "artifacts": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "ATTRIBUTION.txt": "d115f4b99de26ca8d92635af5a4da50dda12e5ee3efdcd7e01b8fa86a5e7dd57",
-    "build-info.json": "cb86af13d6bef825fc7653d16659e15a838e717ed216ab5b54d3de2663c12888",
+    "build-info.json": "5ae33ee9a8ef5265686b3736c42efcf0a4f543517eb0bbc39a0d93ebd4ba7ad9",
     "data/v1-780e4a342f91b468/00.json": "f7f183911a6e166558d34e40071126e05725796e4c12c1b0c15fa957f8f6534d",
     "data/v1-780e4a342f91b468/01.json": "4cc3f08e958663b665db9479484424bf666b343cc45b980148b63fc419df86c7",
     "data/v1-780e4a342f91b468/02.json": "0053af23d564329310bacc2fa4fbbfb0eda62dcb17dcd9e439e8af5dea39d72d",
@@ -279,12 +282,15 @@
     "data/v1-780e4a342f91b468/ff.json": "e4d00a055a40c3094b8dec1eb6113bf82d2e934801016f31eea4b86f556ca000",
     "data/v1-780e4a342f91b468/manifest.json": "6fa1bf44f462a8adbfc2cd28c823cb5adefb632ca1c8c8232dc306248cf82aa6",
     "dictionary.mjs": "84081c11024a577589c5a452c15bcb43e57babd149825a7da91130523c77850a",
-    "index.html": "be514a9c8627aa91f0c7b624a4c1139052a7901cd782b974ee2a52058bc661b3",
+    "index.html": "0996533fcb73623bd264f4506b370d2221aa46cb1486cb046bf219182c06d7b9",
     "reading-bucket.mjs": "84fb58f8242bfb1febb98c9d772844f4cc7b864ae341af2b260a5104952461ba",
     "web/app.mjs": "343bbbe0468ecdfc6d80b3e3c7a84c8b665029e5870bf02a1f0b24944e43ef48",
+    "web/battle-app.mjs": "94d1c0182454ac62a6430f14ab9fe9b969c7dd192ea6cf63ed34291585a148de",
+    "web/battle-controller.mjs": "2d986042464a688f1e39d0f0a27f685796efb41d408f0c41c82568bb305ced32",
+    "web/battle-rules.mjs": "128dc1166b5fbcfc66fe176f7e2bb13fabbd88d3f19283303a0c16c71d3a32ef",
     "web/dictionary-client.mjs": "351fb21808a1c836c6728d04d136a57e07ada8730a322c47d7191429eea7da54",
-    "web/styles.css": "97c2064cc1b5be6efdde0a5fbc1a5b62534f13646ce623bad0125d72593d7ba5"
+    "web/styles.css": "8e90925860d61c22716f8910b87023fc21c53d877b59c7dd3ae46fc16fe58957"
   },
   "dictionarySha256": "3895cff13f9ecf23405113752bfc2c7ee8339f68793562b5751e98e26776cd71",
-  "zipSha256": "9a7e8d96d3c6f8a6e0f7308ec803e4c280c1785dc29b45022ca48deea6d9f73c"
+  "zipSha256": "1d2c1ce7877a1258b154011dcf79e217bf8c27df463855a51dba1c592a3aabaf"
 }
