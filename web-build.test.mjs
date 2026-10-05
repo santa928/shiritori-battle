@@ -19,6 +19,13 @@ test('new battle page versions stylesheet URL to avoid prior dictionary CSS cach
 });
 test('meaning release versions both changed entrypoints and grouping dependencies',async()=>{
  const token='20261005-meaning2';const html=await readFile(new URL('./web/index.html',import.meta.url),'utf8');
- for(const file of ['app.mjs','battle-app.mjs']){assert.ok(html.includes(`src="./web/${file}?v=${token}"`),file+' entrypoint must bypass prior cache');const source=await readFile(new URL('./web/'+file,import.meta.url),'utf8');assert.ok(source.includes(`'./candidate-groups.mjs?v=${token}'`));}
+ for(const file of ['app.mjs','battle-app.mjs']){assert.ok(html.includes(`src="./web/${file}?v=20261005-retry1"`),file+' entrypoint must bypass prior cache');const source=await readFile(new URL('./web/'+file,import.meta.url),'utf8');assert.ok(source.includes(`'./candidate-groups.mjs?v=${token}'`));}
  const groups=await readFile(new URL('./web/candidate-groups.mjs',import.meta.url),'utf8');assert.ok(groups.includes(`'./meaning-equivalences.mjs?v=${token}'`));
+});
+
+test('recovery release bypasses cached runtime while preserving long-mark rule version',async()=>{
+ const read=file=>readFile(new URL('./web/'+file,import.meta.url),'utf8');
+ for(const file of ['app.mjs','battle-app.mjs'])assert.ok((await read(file)).includes("'./dictionary-client.mjs?v=20261005-retry1'"));
+ assert.ok((await read('battle-app.mjs')).includes("'./battle-controller.mjs?v=20261005-retry1'"));
+ for(const file of ['battle-app.mjs','battle-controller.mjs'])assert.ok((await read(file)).includes("'./battle-rules.mjs?v=20261005-longmark1'"));
 });

@@ -1,1 +1,3 @@
-Prepared static site archive. Dictionary data is CC BY-SA 4.0; attribution is included in site.zip. Rebuild and package from reviewed source, then run node verify-site.mjs before publishing.
+Prepared static site archive, split into site.zip.part001, site.zip.part002, etc. Each part is at most 8 MiB. site-manifest.json records ordered part sizes/hashes and the complete ZIP SHA-256. Dictionary data is CC BY-SA 4.0; attribution is included inside the archive.
+
+Rebuild and package from reviewed source. Run node verify-site.mjs, then node verify-site.mjs --assemble /tmp/shiritori-site.zip with a new output path. Extract with python3 -m zipfile -e /tmp/shiritori-site.zip _site and verify with node verify-site.mjs _site. Do not concatenate unverified glob matches or publish the transport parts as site assets.

@@ -1,5 +1,5 @@
 import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning2';
-import {createDictionaryClient} from './dictionary-client.mjs';
+import {createDictionaryClient} from './dictionary-client.mjs?v=20261005-retry1';
 export function createSearchController(client,onState){let sequence=0,active=true;return {async submit(input,{isComposing=false}={}){if(isComposing||!active)return;const token=++sequence;onState({phase:'loading'});try{const result=await client.search(input);if(active&&token===sequence)onState({phase:'result',result});}catch(error){if(active&&token===sequence)onState({phase:'error',error});}},destroy(){active=false;sequence++;}};}
 export function safeSourceUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
 export function reasonText(code){return {'part-of-speech':'対象外の品詞です','excluded-label':'対象外の分類・語形です','missing-definition':'日本語の意味を確認できません','ambiguous-reading':'読みと意味の対応を確認中','classification-conflict':'分類の対応を確認中','unresolved-reference':'参照先の意味を確認中'}[code]??'要確認';}
@@ -28,5 +28,5 @@ export function mountDictionaryApp(root,{client}){
  return {destroy(){controller.destroy();form.removeEventListener('submit',onSubmit);input.removeEventListener('compositionstart',start);input.removeEventListener('compositionend',end);input.removeEventListener('keydown',key);}};
 }
 if(typeof document!=='undefined'){
- const root=document.querySelector('[data-dictionary-app]');if(root){const manifestUrl=new URL(root.dataset.manifest,document.baseURI).href;mountDictionaryApp(root,{client:createDictionaryClient({manifestUrl})});}
+ const root=document.querySelector('[data-dictionary-app]');if(root){const manifestUrl=new URL(root.dataset.manifest,document.baseURI).href;mountDictionaryApp(root,{client:createDictionaryClient({manifestUrl,releaseInfoUrl:new URL('./build-info.json',document.baseURI).href})});}
 }

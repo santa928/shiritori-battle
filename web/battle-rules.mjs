@@ -12,10 +12,8 @@ export function nextStart(reading){
  const chars=[...reading];let last=chars.at(-1);
  if(last==='ー'){
   last=chars.findLast(c=>c!=='ー');
-  const base=baseKana(last);
-  const vowels=['あかさたなはまやらわ','いきしちにひみり','うくすつぬふむゆるゔ','えけせてねへめれ','おこそとのほもよろを'];
-  const i=vowels.findIndex(row=>row.includes(base));
-  return i<0?null:'あいうえお'[i];
+  // Keep the existing rejection of an n-ending hidden by long marks.
+  if(last==='ん')return null;
  }
  return small[last]??last??null;
 }

@@ -16,8 +16,8 @@ test('voiced and small kana share resource, long mark is free',()=>{
  assert.deepEqual(inspectDraft('こーひー',ctx('こ')).consumed,['ひ']);
  assert.equal(inspectDraft('こー',ctx('こ')).ok,true);
 });
-test('chain preserves voicing, expands small kana, resolves vowel including contracted sounds',()=>{
- for(const [r,c] of [['が','が'],['きゃ','や'],['こーひー','い'],['きゃー','あ'],['しゅー','う'],['ぴゅーー','う'],['んー',null]])assert.equal(nextStart(r),c);
+test('chain ignores trailing long marks, preserving voicing and expanding small kana',()=>{
+ for(const [r,c] of [['が','が'],['きゃ','や'],['こーひー','ひ'],['たくしー','し'],['きゃー','や'],['しゅー','ゆ'],['ぴゅーー','ゆ'],['ばぎー','ぎ'],['すーぱー','ぱ'],['んー',null],['かんーー',null],['ーー',null],['',null]])assert.equal(nextStart(r),c);
 });
 test('exhausted first is allowed, later occurrence is not; reading remains distinct',()=>{
  const c={...ctx('も'),pool:KANA.filter(x=>x!=='も')};
@@ -44,4 +44,11 @@ test('dictionary-eligible n ending loses without consuming, ineligible move cann
  const n=applyAccepted(g,{reading:'かん',candidates:[{eligible:true}],version:'v1',sources:[]});
  assert.equal(n.phase,'finished');assert.equal(n.winner,1);assert.deepEqual(n.pools,g.pools);assert.equal(n.usedReadings.length,0);assert.equal(n.history.at(-1).outcome,'n-ending');
  assert.throws(()=>applyAccepted(g,{reading:'かえる',candidates:[]}));
+});
+
+test('n followed by long marks remains invalid and long marks never consume a resource',()=>{
+ assert.equal(inspectDraft('かんー',ctx('か')).reason,'invalid-ending');
+ assert.equal(inspectDraft('かんーー',ctx('か')).reason,'invalid-ending');
+ assert.deepEqual(inspectDraft('こーひーー',ctx('こ')).consumed,['ひ']);
+ assert.equal(inspectDraft('こーひひー',ctx('こ')).reason,'duplicate-kana');
 });

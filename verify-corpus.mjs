@@ -103,3 +103,14 @@ for(const mode of ['individual','shared']) {
  controller.destroy();
 }
 console.log('Real corpus battle: こうら succeeds and consumes only う・ら in both modes.');
+
+// Trailing long marks connect to the preceding kana, using actual dictionary eligibility.
+for(const mode of ['individual','shared'])for(const [reading,next,consumed] of [['こーひー','ひ',['ひ']],['たくしー','し',['く','し']]]) {
+ let state;
+ const controller=createBattleController({game:createGame({mode,start:reading[0]}),now:()=>0,onState:s=>{state=s;},client:{search:async r=>({...db.lookup(r),reading:r,version:'pinned-corpus',sources:data.sources})}});
+ controller.ready();controller.edit(reading);await controller.submit();
+ assert.equal(state.game.phase,'success',`${reading} must be accepted in ${mode} battle`);
+ assert.equal(state.game.start,next);assert.deepEqual(state.game.history.at(-1).consumed,consumed);
+ controller.next();assert.equal(state.draft,next);controller.destroy();
+}
+console.log('Real corpus battle: コーヒー → ひ and タクシー → し succeed in both modes.');

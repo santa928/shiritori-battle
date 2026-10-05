@@ -30,3 +30,23 @@ test('editing is provisional, rejects duplicate resource, supports delete and va
 test('used reading may be an intermediate draft prefix but cannot be submitted again',async()=>{
  let state;const c=createBattleController({game:{...createGame({start:'か'}),usedReadings:['かえ']},client:{search:async r=>good(r)},now:()=>0,onState:s=>state=s});c.ready();c.edit('かえ');assert.equal(state.draft,'かえ');await c.submit();assert.equal(state.feedback,'used-reading');c.edit('かえる');await c.submit();assert.equal(state.game.phase,'success');
 });
+test('editing after an error restores input with the same time and no resource consumption',async()=>{
+ const f=fixture(async()=>{throw Error('offline')});f.c.ready();f.advance(2000);f.c.edit('かえる');await f.c.submit();f.advance(9000);f.c.edit('かえ');assert.equal(f.state.game.phase,'typing');assert.equal(f.state.draft,'かえ');assert.equal(f.state.remainingMs,28000);assert.equal(f.state.game.history.length,0);assert.equal(f.state.game.pools[0].length,46);f.advance(1000);assert.equal(f.state.remainingMs,27000);
+});
+test('cancel pending retry resumes preserved time and ignores a late acceptance',async()=>{
+ let resolve,calls=0;const f=fixture(()=>{if(!calls++)throw Error('offline');return new Promise(r=>resolve=r);});f.c.ready();f.advance(3000);f.c.edit('かえる');await f.c.submit();const p=f.c.retry();f.advance(8000);f.c.cancelCheck();assert.equal(f.state.game.phase,'typing');assert.equal(f.state.remainingMs,27000);f.c.edit('かえ');resolve(good('かえる'));await p;assert.equal(f.state.draft,'かえ');assert.equal(f.state.game.history.length,0);f.advance(1000);assert.equal(f.state.remainingMs,26000);
+});
+
+test('long-mark words hand over the preceding kana in both modes without changing consumption',async()=>{
+ for(const mode of ['individual','shared'])for(const [reading,start,next,consumed] of [
+  ['こーひー','こ','ひ',['ひ']],['たくしー','た','し',['く','し']],
+  ['きゃー','き','や',['や']],['やぎーー','や','ぎ',['き']]
+ ]){
+  const f=fixture(undefined,{mode,start});
+  f.c.ready();f.c.edit(reading);await f.c.submit();
+  assert.equal(f.state.game.phase,'success');assert.equal(f.state.game.start,next);
+  assert.deepEqual(f.state.game.history[0].consumed,consumed);
+  for(const kana of consumed){assert.equal(f.state.game.pools[0].includes(kana),false);assert.equal(f.state.game.pools[1].includes(kana),mode==='individual');}
+  f.c.next();assert.equal(f.state.draft,next);assert.equal(f.state.game.turn,1);
+ }
+});

@@ -1,4 +1,4 @@
-import {inspectDraft,applyAccepted} from './battle-rules.mjs';
+import {inspectDraft,applyAccepted} from './battle-rules.mjs?v=20261005-longmark1';
 
 export function createBattleController({game:initial,client,now=()=>performance.now(),onState}){
  let game=structuredClone(initial),draft=game.start,remainingMs=game.seconds*1000,feedback='',lastTime=null,active=true,sequence=0;
@@ -8,7 +8,7 @@ export function createBattleController({game:initial,client,now=()=>performance.
  function finish(reason){sequence++;game={...game,phase:'finished',winner:1-game.turn,reason};lastTime=null;feedback='';}
  function sync(){if(!active||game.phase!=='typing')return;const t=now();remainingMs=Math.max(0,remainingMs-Math.max(0,t-lastTime));lastTime=t;if(remainingMs===0)finish('timeout');}
  function ready(){if(!active||game.phase!=='ready')return;game.phase='typing';remainingMs=game.seconds*1000;lastTime=now();feedback='';emit();}
- function edit(reading){if(!active||game.phase!=='typing')return;sync();if(game.phase!=='typing'){emit();return;}const check=inspectDraft(reading,context(true));if(check.ok){draft=reading;feedback='';}else feedback=check.reason;emit();}
+ function edit(reading){if(!active)return;if(game.phase==='error')cancelCheck();if(game.phase!=='typing')return;sync();if(game.phase!=='typing'){emit();return;}const check=inspectDraft(reading,context(true));if(check.ok){draft=reading;feedback='';}else feedback=check.reason;emit();}
  async function check(){
   const token=++sequence,reading=draft;game.phase='checking';lastTime=null;feedback='';emit();
   try{
@@ -27,9 +27,10 @@ export function createBattleController({game:initial,client,now=()=>performance.
   return check();
  }
  function next(){if(!active||game.phase!=='success')return;game={...game,phase:'ready',turn:1-game.turn};draft=game.start;remainingMs=game.seconds*1000;feedback='';lastTime=null;emit();}
+ function cancelCheck(){if(!active||!['checking','error'].includes(game.phase))return;sequence++;game.phase='typing';lastTime=now();feedback='';emit();}
  function retry(){if(!active||game.phase!=='error')return;return check();}
  function resign(){if(!active||!['typing','checking','error'].includes(game.phase))return;finish('resigned');emit();}
  function tick(){if(!active)return;sync();emit();}
  function destroy(){active=false;sequence++;lastTime=null;}
- emit();return {ready,edit,submit,next,retry,resign,tick,destroy};
+ emit();return {ready,edit,submit,next,retry,cancelCheck,resign,tick,destroy};
 }

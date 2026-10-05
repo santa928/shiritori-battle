@@ -1,7 +1,7 @@
 import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning2';
-import {KANA,KANA_ROWS,TURN_SECONDS,baseKana,createGame} from './battle-rules.mjs';
-import {createBattleController} from './battle-controller.mjs';
-import {createDictionaryClient} from './dictionary-client.mjs';
+import {KANA,KANA_ROWS,TURN_SECONDS,baseKana,createGame} from './battle-rules.mjs?v=20261005-longmark1';
+import {createBattleController} from './battle-controller.mjs?v=20261005-retry1';
+import {createDictionaryClient} from './dictionary-client.mjs?v=20261005-retry1';
 
 export function summarizeCandidates(candidates=[],reading){
  const all=groupCandidates(candidates.filter(c=>c.eligible),reading);return {preview:all.slice(0,2),remaining:Math.max(0,all.length-2),all};
@@ -22,7 +22,7 @@ export function transformLastKana(reading,kind){
 const messages={
  'duplicate-kana':'同じ文字は1回だけ。入力を直してください。','used-kana':'その文字はもう使っています。','used-reading':'その読みは、この勝負ですでに出ています。',
  'too-short':'2文字以上のことばにしてください。','wrong-start':'最初の文字は変えられません。','invalid-reading':'使えるかなで、64文字以内で入力してください。','invalid-ending':'最後の音を確認してください。',
- ineligible:'この読みは対象外です。別のことばをどうぞ。',pending:'辞書で確認中の読みです。別のことばをどうぞ。',unconfirmed:'辞書に見つかりません。文字を直して、もう一度。','network-error':'辞書を読み込めませんでした。残り時間は止めています。'
+ ineligible:'この読みは対象外です。別のことばをどうぞ。',pending:'辞書で確認中の読みです。別のことばをどうぞ。',unconfirmed:'辞書に見つかりません。文字を直して、もう一度。','network-error':'辞書を読み込めませんでした。残り時間は止めています。再読み込みか、文字を直して続けられます。編集すると時間が再開します。'
 };
 const terminalCopy={'timeout':'時間切れ','resigned':'降参','n-ending':'「ん」で終わりました'};
 export function mountBattleApp(root,{client,now=()=>performance.now(),random=Math.random,autoTick=true,onMatchState=()=>{}}){
@@ -44,7 +44,7 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
   for(const [i,seconds] of TURN_SECONDS.entries()){const option=el('option',['30秒','1分','2分','3分'][i]);option.value=String(seconds);if(seconds===settings.seconds)option.setAttribute('selected','');select.append(option);}
   select.addEventListener('change',()=>{settings.seconds=Number(select.value);});form.append(timeLabel,select);root.append(form,button('ふたりで対戦する','start','battle-primary'));
   const rules=el('details',undefined,'battle-rules-help');rules.append(el('summary','あそび方・文字のルール'));
-  for(const s of ['先頭の1文字は無料。2文字目から、同じ文字は1回だけ。','「もも」はOK。「たまたま」は「ま」が2回なので使えません。','が・ぱ・ゃ・っは、か・は・や・つの文字を使います。「ー」は無料。','同じ読みはもう使えません。辞書にある一般名詞・地名でつなぎます。','1文字だけの語は使えません。「ん」で終わる・時間切れ・降参で負け。','画面の文字を押して入力。相手の残り文字も確認できます。'])rules.append(el('p',s));
+  for(const s of ['先頭の1文字は無料。2文字目から、同じ文字は1回だけ。','「もも」はOK。「たまたま」は「ま」が2回なので使えません。','が・ぱ・ゃ・っは、か・は・や・つの文字を使います。「ー」は無料。','末尾の「ー」は飛ばして、その前の文字でつなぎます。コーヒー→ひ、タクシー→し。','同じ読みはもう使えません。辞書にある一般名詞・地名でつなぎます。','1文字だけの語は使えません。「ん」で終わる・時間切れ・降参で負け。','画面の文字を押して入力。相手の残り文字も確認できます。'])rules.append(el('p',s));
   root.append(rules);
  }
  function updateClock(){
@@ -125,14 +125,14 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
   const board=el('div',undefined,'battle-board');board.setAttribute('aria-label','かな入力盤');
   for(const row of KANA_ROWS)for(const c of row){
    if(c===' '){const blank=el('span',undefined,'kana-blank');blank.setAttribute('aria-hidden','true');board.append(blank);continue;}
-   const pending=state.consumed.includes(c),spent=!g.pools[g.turn].includes(c);const b=button(c,'kana','battle-kana'+(pending?' pending':'')+(spent?' spent':''));b.dataset.kana=c;b.disabled=pending||spent||g.phase!=='typing';b.setAttribute('aria-label',c+(pending?' 入力中':spent?' 使用済み':' 入力'));if(pending||spent)b.append(el('small',pending?'✓':'／'));board.append(b);
+   const pending=state.consumed.includes(c),spent=!g.pools[g.turn].includes(c);const b=button(c,'kana','battle-kana'+(pending?' pending':'')+(spent?' spent':''));b.dataset.kana=c;b.disabled=pending||spent||!['typing','error'].includes(g.phase);b.setAttribute('aria-label',c+(pending?' 入力中':spent?' 使用済み':' 入力'));if(pending||spent)b.append(el('small',pending?'✓':'／'));board.append(b);
   }
   play.append(board);
   const entry=el('div',undefined,'battle-entry');const status=el('p',messages[state.feedback]??(g.phase==='checking'?'辞書で確認中… 時間は止めています':`次は「${g.start}」から`),'battle-feedback');status.setAttribute('role','status');entry.append(status);
   const line=el('div',undefined,'draft-line');const draft=el('div',undefined,'battle-draft');draft.dataset.draft='';draft.setAttribute('aria-label','入力中のことば：'+state.draft);
-  [...state.draft].forEach((c,i)=>{const tile=el('span',c,i?'draft-tile':'draft-tile first');if(i===0)tile.setAttribute('aria-label',c+' 先頭は消費なし');draft.append(tile);});line.append(draft);const del=button('⌫','delete','battle-delete');del.setAttribute('aria-label','1文字消す');del.disabled=state.draft.length<=1||g.phase!=='typing';line.append(del);entry.append(line,el('p','先頭の1文字は消費なし','first-free'));
-  const utils=el('div',undefined,'battle-utils');for(const [text,action] of [['゛','voice'],['゜','semi'],['小文字','small'],['ー','long']]){const b=button(text,action);b.disabled=g.phase!=='typing'||(action!=='long'&&state.draft.length<=1);utils.append(b);}entry.append(utils);
-  const confirm=button(g.phase==='checking'?'辞書で確認中…':g.phase==='error'?'辞書をもう一度読み込む':'これで決定',g.phase==='error'?'retry':'submit','battle-primary');confirm.disabled=g.phase==='checking'||(g.phase==='typing'&&state.draft.length<2);entry.append(confirm);
+  [...state.draft].forEach((c,i)=>{const tile=el('span',c,i?'draft-tile':'draft-tile first');if(i===0)tile.setAttribute('aria-label',c+' 先頭は消費なし');draft.append(tile);});line.append(draft);const del=button('⌫','delete','battle-delete');del.setAttribute('aria-label','1文字消す');del.disabled=state.draft.length<=1||!['typing','error'].includes(g.phase);line.append(del);entry.append(line,el('p','先頭の1文字は消費なし','first-free'));
+  const utils=el('div',undefined,'battle-utils');for(const [text,action] of [['゛','voice'],['゜','semi'],['小文字','small'],['ー','long']]){const b=button(text,action);b.disabled=!['typing','error'].includes(g.phase)||(action!=='long'&&state.draft.length<=1);utils.append(b);}entry.append(utils);
+  const confirm=button(g.phase==='checking'?'辞書で確認中…':g.phase==='error'?'辞書をもう一度読み込む':'これで決定',g.phase==='error'?'retry':'submit','battle-primary');confirm.disabled=g.phase==='checking'||(g.phase==='typing'&&state.draft.length<2);entry.append(confirm);if(['checking','error'].includes(g.phase))entry.append(button('入力に戻る（残り時間を再開）','cancel-check','battle-text-button'));
   const resign=button('降参する','resign','battle-text-button');entry.append(resign);
   if(resignOpen){const confirmation=el('div',undefined,'resign-confirm');confirmation.append(el('p','この勝負を降参しますか？'),button('降参して終わる','confirm-resign'),button('続ける','cancel-resign'));entry.append(confirmation);}
   play.append(entry);root.append(play);updateClock();
@@ -140,7 +140,7 @@ export function mountBattleApp(root,{client,now=()=>performance.now(),random=Mat
  function act(e){const b=e.target.closest('button[data-action]');if(!b||!root.contains(b)||b.disabled)return;const action=b.dataset.action;
   if(action.startsWith('mode-')){settings.mode=action.slice(5);showSetup();return;}
   if(action==='start'){start();return;}if(action==='setup'){showSetup();return;}if(!controller)return;
-  if(action==='ready')controller.ready();else if(action==='next')controller.next();else if(action==='submit')controller.submit();else if(action==='retry')controller.retry();
+  if(action==='ready')controller.ready();else if(action==='next')controller.next();else if(action==='submit')controller.submit();else if(action==='retry')controller.retry();else if(action==='cancel-check')controller.cancelCheck();
   else if(action==='resign'){resignOpen=true;lastKey='';receive(state);}else if(action==='cancel-resign'){resignOpen=false;lastKey='';receive(state);}else if(action==='confirm-resign'){resignOpen=false;controller.resign();}
   else if(action==='kana'){inputOrigin=b.getBoundingClientRect?.()??null;controller.edit(state.draft+b.dataset.kana);inputOrigin=null;}else if(action==='delete')controller.edit(state.draft.slice(0,-1));else if(action==='long')controller.edit(state.draft+'ー');else if(['voice','semi','small'].includes(action))controller.edit(transformLastKana(state.draft,action));
  }
@@ -152,6 +152,6 @@ if(typeof document!=='undefined'){
   const dictionary=document.querySelector('[data-dictionary-app]');const battleTab=document.querySelector('[data-mode=battle]');const dictTab=document.querySelector('[data-mode=dictionary]');let locked=false;
   const show=mode=>{if(mode==='dictionary'&&locked)return;root.hidden=mode!=='battle';dictionary.hidden=mode!=='dictionary';for(const tab of [battleTab,dictTab]){const active=tab.dataset.mode===mode;tab.classList.toggle('mode-active',active);tab.setAttribute('aria-pressed',String(active));}document.body.classList.toggle('is-battle',mode==='battle');};
   battleTab.addEventListener('click',()=>show('battle'));dictTab.addEventListener('click',()=>show('dictionary'));
-  mountBattleApp(root,{client:createDictionaryClient({manifestUrl:new URL(root.dataset.manifest,document.baseURI).href}),onMatchState:active=>{locked=active;document.body.classList.toggle('match-active',active);dictTab.disabled=active;dictTab.title=active?'対戦が終わると辞書を開けます':'';}});show('battle');
+  mountBattleApp(root,{client:createDictionaryClient({releaseInfoUrl:new URL('../build-info.json',import.meta.url).href,manifestUrl:new URL(root.dataset.manifest,document.baseURI).href}),onMatchState:active=>{locked=active;document.body.classList.toggle('match-active',active);dictTab.disabled=active;dictTab.title=active?'対戦が終わると辞書を開けます':'';}});show('battle');
  }
 }

@@ -21,7 +21,9 @@ jobs:
       - name: Verify source and prepared archive agree
         run: node verify-site.mjs
       - name: Extract verified static site
-        run: python3 -m zipfile -e publish/site.zip _site
+        run: |
+          node verify-site.mjs --assemble "$RUNNER_TEMP/site.zip"
+          python3 -m zipfile -e "$RUNNER_TEMP/site.zip" _site
       - name: Verify exact public artifact files
         run: node verify-site.mjs _site
       - uses: actions/upload-pages-artifact@v4

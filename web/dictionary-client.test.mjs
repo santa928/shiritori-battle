@@ -5,3 +5,42 @@ test('all states retain candidates and scoped readings',async()=>{const data=dat
 test('classification conflict is pending rather than ordinary excluded word',async()=>{const {client}=await setup(dataset([entry('分類',['かな'],[sense('1',{labels:['classification-conflict']})])]));assert.equal((await client.search('かな')).status,'pending');});
 test('integrity, version, HTTP and parse errors reject and failed downloads can retry',async()=>{for(const kind of ['hash','version','json']){const x=await setup(dataset());if(kind==='hash')x.responses.shard+=' ';if(kind==='json')x.responses.manifest='oops';if(kind==='version'){let shard=JSON.parse(x.responses.shard);shard.version='v2';x.responses.shard=JSON.stringify(shard);for(const d of Object.values(x.manifest.shards)){d.sha256=createHash('sha256').update(x.responses.shard).digest('hex');d.bytes=Buffer.byteLength(x.responses.shard);}x.responses.manifest=JSON.stringify(x.manifest);}await assert.rejects(x.client.search('かな'));}let fail=true;const client=createDictionaryClient({manifestUrl:'https://example.invalid/manifest.json',fetchImpl:async()=>{if(fail)return new Response('',{status:503});throw Error('retry reached')}});await assert.rejects(client.search('かな'),/503/);fail=false;await assert.rejects(client.search('かな'),/retry reached/);});
 test('policy-excluded reference spellings do not turn an excluded verb into pending',async()=>{const {client}=await setup(dataset([entry('食べる',['たべる'],[sense('1',{pos:['verb']}),sense('2',{pos:['character'],labels:['unresolved-reference','inflected-form']})])]));const result=await client.search('たべる');assert.equal(result.status,'ineligible');assert.equal(result.candidates.length,2);assert.deepEqual(result.candidates.map(c=>c.eligible),[false,false]);});
+test('failed shard invalidates cached manifest and reloads HTTP cache on retry',async()=>{
+ const x=await setup(dataset([entry('名詞')]));const oldManifest=structuredClone(x.manifest);oldManifest.version='old';for(const d of Object.values(oldManifest.shards))d.url='removed.json';let calls=[];
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/data/manifest.json',fetchImpl:async(url,options)=>{calls.push({url,options});if(url.endsWith('manifest.json'))return new Response(JSON.stringify(calls.length===1?oldManifest:x.manifest));if(url.endsWith('removed.json'))return new Response('',{status:404});return new Response(x.responses.shard);}});
+ await assert.rejects(client.search('かな'),/404/);assert.equal((await client.search('かな')).status,'eligible');assert.equal(calls[2].options.cache,'reload');assert.equal(calls[3].options.cache,'reload');
+});
+test('stalled requests reject in bounded time and can be retried',async()=>{
+ const x=await setup(dataset([entry('名詞')]));let stalled=true;
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/manifest.json',timeoutMs:20,fetchImpl:async url=>{if(stalled)return new Promise(()=>{});return new Response(url.endsWith('manifest.json')?x.responses.manifest:x.responses.shard);}});
+ await assert.rejects(client.search('かな'),/時間/);stalled=false;assert.equal((await client.search('かな')).status,'eligible');
+});
+test('retry discovers latest release after pinned version was removed, including later releases',async()=>{
+ let version='v1-1111111111111111',requests=[];const versions=new Map();
+ for(const v of ['v1-1111111111111111','v1-2222222222222222','v1-3333333333333333']){const shard=JSON.stringify({schemaVersion:1,version:v,dataset:dataset([entry('名詞')]),review:[]});const descriptor={url:'shard.json',sha256:createHash('sha256').update(shard).digest('hex'),bytes:Buffer.byteLength(shard)};versions.set(v,{shard,manifest:JSON.stringify({schemaVersion:1,version:v,shards:Object.fromEntries(Array.from({length:256},(_,i)=>[i.toString(16).padStart(2,'0'),descriptor]))})});}
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/base/data/'+version+'/manifest.json',releaseInfoUrl:'https://example.invalid/base/build-info.json',fetchImpl:async(url,options)=>{requests.push({url,options});if(url.endsWith('build-info.json'))return new Response(JSON.stringify({schemaVersion:1,version}));if(!url.includes(version))return new Response('',{status:404});return new Response(versions.get(version)[url.endsWith('manifest.json')?'manifest':'shard']);}});
+ assert.equal((await client.search('かな')).version,version);
+ version='v1-2222222222222222';await assert.rejects(client.search('かに'),/404/);assert.equal((await client.search('かに')).version,version);
+ version='v1-3333333333333333';await assert.rejects(client.search('かえる'),/404/);assert.equal((await client.search('かな')).version,version);assert.ok(requests.filter(r=>r.url.endsWith('build-info.json')).every(r=>r.options.cache==='reload'));
+});
+test('release discovery rejects traversal versions and foreign origins',async()=>{
+ assert.throws(()=>createDictionaryClient({manifestUrl:'https://example.invalid/data/v1/manifest.json',releaseInfoUrl:'https://foreign.invalid/build-info.json'}),/参照先/);
+ let calls=0;const client=createDictionaryClient({manifestUrl:'https://example.invalid/data/v1/manifest.json',releaseInfoUrl:'https://example.invalid/build-info.json',fetchImpl:async url=>{calls++;return url.endsWith('build-info.json')?new Response(JSON.stringify({schemaVersion:1,version:'../../outside'})):new Response('',{status:404});}});
+ await assert.rejects(client.search('かな'));await assert.rejects(client.search('かな'),/版/);assert.equal(calls,2);
+});
+test('release pointer must match manifest version even when shard hashes are valid',async()=>{
+ const x=await setup(dataset([entry('名詞')]));let initial=true;
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/data/old/manifest.json',releaseInfoUrl:'https://example.invalid/build-info.json',fetchImpl:async url=>{if(initial){initial=false;return new Response('',{status:404});}if(url.endsWith('build-info.json'))return new Response(JSON.stringify({schemaVersion:1,version:'v1-2222222222222222'}));return new Response(url.endsWith('manifest.json')?x.responses.manifest:x.responses.shard);}});
+ await assert.rejects(client.search('かな'));await assert.rejects(client.search('かな'),/版/);
+});
+test('stalled body transfer times out and retry loads a verified shard',async()=>{
+ const x=await setup(dataset([entry('名詞')]));let stall=true;
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/manifest.json',timeoutMs:20,fetchImpl:async url=>url.endsWith('manifest.json')?new Response(x.responses.manifest):stall?{ok:true,arrayBuffer:()=>new Promise(()=>{})}:new Response(x.responses.shard)});
+ await assert.rejects(client.search('かな'),/時間/);stall=false;assert.equal((await client.search('かな')).status,'eligible');
+});
+test('late failure from an older manifest cannot invalidate a successful newer request',async()=>{
+ const x=await setup(dataset([entry('名詞')]));let latest=false,releaseLate,lateStarted;const started=new Promise(r=>lateStarted=r);let manifests=0;
+ const old=structuredClone(x.manifest);for(const d of Object.values(old.shards))d.url='old.json';
+ const client=createDictionaryClient({manifestUrl:'https://example.invalid/manifest.json',fetchImpl:async url=>{if(url.endsWith('manifest.json')){manifests++;return new Response(latest?x.responses.manifest:JSON.stringify(old));}if(url.endsWith('old.json')){if(!releaseLate){lateStarted();return new Promise(r=>releaseLate=r);}return new Response('',{status:404});}return new Response(x.responses.shard);}});
+ const late=client.search('かな');await started;await assert.rejects(client.search('かに'),/404/);latest=true;assert.equal((await client.search('かに')).status,'unconfirmed');releaseLate(new Response('',{status:404}));await assert.rejects(late,/404/);assert.equal((await client.search('かな')).status,'eligible');assert.equal(manifests,2);
+});
