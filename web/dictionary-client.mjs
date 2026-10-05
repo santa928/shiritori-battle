@@ -1,5 +1,5 @@
 import {normalizeReading,createDictionary} from '../dictionary.mjs';import {bucketForReading} from '../reading-bucket.mjs';
-const pendingLabels=new Set(['classification-conflict','unresolved-reference']);
+const pendingLabels=new Set(['classification-conflict']);
 export function createDictionaryClient({manifestUrl,fetchImpl=fetch}){
   const base=new URL(manifestUrl,globalThis.location?.href);let manifestPromise;
   const cache=new Map();
