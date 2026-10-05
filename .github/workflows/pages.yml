@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci
-      - run: npm test && npm run check
+      - run: npm run verify
       - name: Verify source and prepared archive agree
         run: node verify-site.mjs
       - name: Extract verified static site

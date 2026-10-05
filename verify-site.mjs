@@ -1,6 +1,89 @@
-import {readFile,readdir,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import {join,dirname,resolve} from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';import {releaseSources,dictionaryVersions,dictionaryArtifacts,verifyDictionaryArtifacts,readPublishedArchive} from './build-web.mjs';
-const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
-async function files(root,prefix=''){const result=[];for(const entry of await readdir(join(root,prefix),{withFileTypes:true})){const p=prefix?prefix+'/'+entry.name:entry.name;if(entry.isSymbolicLink())throw Error('unexpected symlink');if(entry.isDirectory())result.push(...await files(root,p));else result.push(p);}return result;}
-function allowed(versions){return ['.nojekyll','ATTRIBUTION.txt','build-info.json','index.html','dictionary.mjs','reading-bucket.mjs','web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs','web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs','web/styles.css',...versions.flatMap(dictionaryArtifacts)].sort();}
-export async function verifyRelease(root,extractedDir,{assembledArchivePath}={}){const m=JSON.parse(await readFile(join(root,'publish/site-manifest.json'),'utf8'));const versions=dictionaryVersions(m);const required=[...releaseSources,'package-site.py'].sort();if(JSON.stringify(Object.keys(m.sources).sort())!==JSON.stringify(required))throw Error('unexpected source list');for(const file of required){if(hash(await readFile(join(root,file)))!==m.sources[file])throw Error('source mismatch: '+file);}const archive=await readPublishedArchive(join(root,'publish'),m);const expected=allowed(versions);if(JSON.stringify(Object.keys(m.artifacts).sort())!==JSON.stringify(expected))throw Error('unexpected public artifact allowlist');if(extractedDir){const actual=(await files(extractedDir)).sort();if(JSON.stringify(actual)!==JSON.stringify(expected))throw Error('unexpected artifact file list');for(const file of expected)if(hash(await readFile(join(extractedDir,file)))!==m.artifacts[file])throw Error('artifact mismatch: '+file);const info=JSON.parse(await readFile(join(extractedDir,'build-info.json'),'utf8'));if(JSON.stringify(dictionaryVersions(info))!==JSON.stringify(versions)||info.dictionarySha256!==m.dictionarySha256)throw Error('dictionary build mismatch');for(const file of releaseSources)if(info.sources[file]!==m.sources[file])throw Error('stale build source: '+file);for(const file of ['dictionary.mjs','reading-bucket.mjs','web/app.mjs', 'web/battle-rules.mjs', 'web/battle-controller.mjs', 'web/battle-app.mjs','web/candidate-groups.mjs','web/meaning-equivalences.mjs','web/dictionary-client.mjs','web/styles.css'])if(m.artifacts[file]!==m.sources[file])throw Error('stale copied source: '+file);const html=(await readFile(join(root,'web/index.html'),'utf8')).replaceAll('__MANIFEST_URL__','./data/'+m.version+'/manifest.json');if(hash(Buffer.from(html))!==m.artifacts['index.html'])throw Error('stale HTML source');for(const version of versions)await verifyDictionaryArtifacts(extractedDir,version,m.artifacts);}if(assembledArchivePath)await writeFile(assembledArchivePath,archive,{flag:'wx'});return m.version;}
-if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){try{const assemble=process.argv[2]==='--assemble';if(assemble&&(!process.argv[3]||process.argv.length!==4))throw Error('Usage: node verify-site.mjs --assemble NEW_ARCHIVE_PATH');const version=await verifyRelease(dirname(fileURLToPath(import.meta.url)),!assemble&&process.argv[2]?resolve(process.argv[2]):undefined,assemble?{assembledArchivePath:resolve(process.argv[3])}:{});console.log('Verified source/archive'+(assemble?'/assembled archive':process.argv[2]?'/extracted files':'')+' '+version);}catch(error){console.error(error.message);process.exitCode=1;}}
+import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { join, dirname, resolve } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import {
+  releaseSources,
+  dictionaryVersions,
+  dictionaryArtifacts,
+  verifyDictionaryArtifacts,
+  readPublishedArchive,
+} from './build-web.mjs';
+import { copiedSources, staticArtifacts } from './scripts/release-assets.mjs';
+const hash = (bytes) => createHash('sha256').update(bytes).digest('hex');
+async function files(root, prefix = '') {
+  const result = [];
+  for (const entry of await readdir(join(root, prefix), { withFileTypes: true })) {
+    const p = prefix ? prefix + '/' + entry.name : entry.name;
+    if (entry.isSymbolicLink()) throw Error('unexpected symlink');
+    if (entry.isDirectory()) result.push(...(await files(root, p)));
+    else result.push(p);
+  }
+  return result;
+}
+function allowed(versions) {
+  return [...staticArtifacts, ...copiedSources, ...versions.flatMap(dictionaryArtifacts)].sort();
+}
+export async function verifyRelease(root, extractedDir, { assembledArchivePath } = {}) {
+  const m = JSON.parse(await readFile(join(root, 'publish/site-manifest.json'), 'utf8'));
+  const versions = dictionaryVersions(m);
+  const required = [...releaseSources, 'package-site.py'].sort();
+  if (JSON.stringify(Object.keys(m.sources).sort()) !== JSON.stringify(required))
+    throw Error('unexpected source list');
+  for (const file of required) {
+    if (hash(await readFile(join(root, file))) !== m.sources[file])
+      throw Error('source mismatch: ' + file);
+  }
+  const archive = await readPublishedArchive(join(root, 'publish'), m);
+  const expected = allowed(versions);
+  if (JSON.stringify(Object.keys(m.artifacts).sort()) !== JSON.stringify(expected))
+    throw Error('unexpected public artifact allowlist');
+  if (extractedDir) {
+    const actual = (await files(extractedDir)).sort();
+    if (JSON.stringify(actual) !== JSON.stringify(expected))
+      throw Error('unexpected artifact file list');
+    for (const file of expected)
+      if (hash(await readFile(join(extractedDir, file))) !== m.artifacts[file])
+        throw Error('artifact mismatch: ' + file);
+    const info = JSON.parse(await readFile(join(extractedDir, 'build-info.json'), 'utf8'));
+    if (
+      JSON.stringify(dictionaryVersions(info)) !== JSON.stringify(versions) ||
+      info.dictionarySha256 !== m.dictionarySha256
+    )
+      throw Error('dictionary build mismatch');
+    for (const file of releaseSources)
+      if (info.sources[file] !== m.sources[file]) throw Error('stale build source: ' + file);
+    for (const file of copiedSources)
+      if (m.artifacts[file] !== m.sources[file]) throw Error('stale copied source: ' + file);
+    const html = (await readFile(join(root, 'web/index.html'), 'utf8')).replaceAll(
+      '__MANIFEST_URL__',
+      './data/' + m.version + '/manifest.json',
+    );
+    if (hash(Buffer.from(html)) !== m.artifacts['index.html']) throw Error('stale HTML source');
+    for (const version of versions)
+      await verifyDictionaryArtifacts(extractedDir, version, m.artifacts);
+  }
+  if (assembledArchivePath) await writeFile(assembledArchivePath, archive, { flag: 'wx' });
+  return m.version;
+}
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  try {
+    const assemble = process.argv[2] === '--assemble';
+    if (assemble && (!process.argv[3] || process.argv.length !== 4))
+      throw Error('Usage: node verify-site.mjs --assemble NEW_ARCHIVE_PATH');
+    const version = await verifyRelease(
+      dirname(fileURLToPath(import.meta.url)),
+      !assemble && process.argv[2] ? resolve(process.argv[2]) : undefined,
+      assemble ? { assembledArchivePath: resolve(process.argv[3]) } : {},
+    );
+    console.log(
+      'Verified source/archive' +
+        (assemble ? '/assembled archive' : process.argv[2] ? '/extracted files' : '') +
+        ' ' +
+        version,
+    );
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  }
+}

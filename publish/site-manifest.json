@@ -6,26 +6,34 @@
     "dictionary.mjs": "84081c11024a577589c5a452c15bcb43e57babd149825a7da91130523c77850a",
     "reading-bucket.mjs": "84fb58f8242bfb1febb98c9d772844f4cc7b864ae341af2b260a5104952461ba",
     "build-web-dictionary.mjs": "b20d8dd2e8a8102e38dd2c79b0701d8d3d9e977bd9116af16032b0687aec4f2e",
-    "build-web.mjs": "ebd155591b70a9692d332a90e055ea1453a01e25ad9d9c14b08d1d5f28ab7f2f",
-    "import-jawiktionary.mjs": "dc68e5c42645fde08a190227fb15fec8696a1a0bc3c176e015d2f45da0edeedd",
-    "build.mjs": "0990d27e31ae9b558054f0f58acbcc7f84c509da427d6b9cd3ccbf89e72fa3bd",
+    "build-web.mjs": "52e984eb361583a37ebb103b125fcc525364a13c3aa0cc702eedeac7dac12670",
+    "import-jawiktionary.mjs": "dabdddfc9f068c97327ddcc605dcfbcf48f7cc432c5232cde4c1919435e2a922",
+    "build.mjs": "4ddb735e3b3ed079e449bc72433421f7f3f25b1df288fdec935d6a5c674883e5",
     "source.json": "47575c69a358558ba070eecaed28f5d726145d0a652d7e4b6fbe97d288cfef4b",
     "supplement.json": "c55d57501cbf4d6feaf2aec28195a8c689cd1274ff64a9054f003d9f3902e07b",
-    "web/app.mjs": "ae0ef5b4d2cfb82a58f7be4f14c05515bac717f1a30bbf6094a484484d8f9c29",
-    "web/battle-rules.mjs": "5b52ac726af517ef679fa81f2593597e81a08fc7095d7c85ceaaa9748afe266c",
-    "web/battle-controller.mjs": "47c1c90e0b4269bdd96f14e535a8030412674570abd85282840b63a9d57a158d",
-    "web/battle-app.mjs": "09bc545f736ce8c1c887718ba0d7d4410247783c55fd96ba1d154d779717239b",
-    "web/candidate-groups.mjs": "67e907ba116e2d7f5f1aa2138c09b26ad3bc7263fd5c172baf6142292fc76b5b",
+    "scripts/release-assets.json": "3ac9c8d2646238d74cf07915070131b64e7fc493ce36e483e2a75c5d3ad720ba",
+    "scripts/release-assets.mjs": "54e4c05701d4d67ba5433102225960496e205904776c75c1e77a88e99f89c5bc",
+    "web/index.html": "4e87e76d1fccea0024a9d54d253269e08d04e5f1bdeecc8988e36e7a116506f3",
+    "web/bootstrap.mjs": "d04315ff01a653b798567ddd715cafe31566242b83693f6fc174be8d9b091ce8",
+    "web/app.mjs": "11d2185d22ce58877a16411e7cca873a9a397dde4cfabe0804e3c5ed4973e1d3",
+    "web/search-controller.mjs": "48caa6b6c7d0375dbfc9297a366ea24cb9efcc8a7b4a517d691beb414a4d1e7c",
+    "web/battle-rules.mjs": "260f8c3c47506c224c41df209ff4680f772a9fb00372478d3bc636fa1e897955",
+    "web/battle-controller.mjs": "633d727d09350a3e40a48579da29d77a710553665b2439b6b9773f35016a6563",
+    "web/battle-app.mjs": "e968012a9730df52c15266cdc9846b7ea95c9cb076600d1f69a48c8b81e973a4",
+    "web/input/transform-kana.mjs": "1c579a438d1bf20b12f904034ed1ff316d3c4ccb9ebae2e5271bfd18d7cfd34c",
+    "web/ui/battle-view.mjs": "a175144149e6f25c0a25c8b44a254639f37b9fb3fcd4f7b20eec1760c14b1d0c",
+    "web/ui/battle-feedback.mjs": "f6bd959fe66d700320f026ad4fc8e74243f0fd262ae9284ecff9512547b0737c",
+    "web/ui/candidate-summary.mjs": "7ae377ed7001709f595b74808bf3ae0f061f64831c748c9b9df480474544e43c",
+    "web/candidate-groups.mjs": "75a6a1f68bed9be66e89f15d212da326eca113a0c0e4bb09e80829cecb13368e",
     "web/meaning-equivalences.mjs": "c61da263799b244ae2491d0b2485c6ad40dd8f98309ea6a9e09a8bb0a2fc113e",
-    "web/dictionary-client.mjs": "6f21d3739f058b298281709483175a703e65c8fae92544d83ab2f3a73c955f20",
-    "web/index.html": "2efc56517f63935e05c573697b9c28a5f975ae104d64fd08a70eb398c0a53124",
-    "web/styles.css": "144a4897bf78760be44e248ee55a04ce9b2d517165d5cdb3be1b00543baf351a",
-    "package-site.py": "c806b42f982a4b3389eadff791b74813027eccc6c6f68c4225c591e42c7a1220"
+    "web/dictionary-client.mjs": "3196c46ae0bc0fc9a007fd117bea473ce455008588a766218840a4ef0683eed4",
+    "web/styles.css": "ce1811555d9bba862911d7d9065630635609bfedafa0e0bae3aabe04d8931ad1",
+    "package-site.py": "f81f9fd01ac2bb60cabe24ed17e17092b554b593ab2c86ea24052c852f81d55d"
   },
   "artifacts": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "ATTRIBUTION.txt": "d115f4b99de26ca8d92635af5a4da50dda12e5ee3efdcd7e01b8fa86a5e7dd57",
-    "build-info.json": "d996937fa800c4c2faf20b3291b7bb13ec975e2e2a0a2bb4ed2d59c58bf6fb01",
+    "build-info.json": "938599ef2635564e0283fc211c3eec82866b228941d939a3392516edc0cb1bb4",
     "data/v1-74cbc1f057467d8b/00.json": "b91e1d31166ba08b7920d67ed1a719bb58a443ee047db9b6b0c98c8d0a8fa4ea",
     "data/v1-74cbc1f057467d8b/01.json": "3f1cdf5fdf31dd48d914c66c97fe26e0d58ae9def9704201ce2d80a3648d2cc4",
     "data/v1-74cbc1f057467d8b/02.json": "c5a961e9e544ac0ed7d632d81ee784b258b0ff76f56d121bff83f49cb9bf04ef",
@@ -798,44 +806,50 @@
     "data/v1-f667664edefe998d/ff.json": "911f16d5be3101232a9cb3c5ec42104cc50109eb32afb48e232ee47fc46ea382",
     "data/v1-f667664edefe998d/manifest.json": "8cfaef012ca2899ae2cc573d6bb60300a341c2cc71723bbb8de2b54dfbcd6124",
     "dictionary.mjs": "84081c11024a577589c5a452c15bcb43e57babd149825a7da91130523c77850a",
-    "index.html": "f65777485e8603aa027c38aec091f01d3cd1cbade4665c2ef79b0def53f788d0",
+    "index.html": "e78f58288847468d03e140f13182330052864160b00e61e5df52c927ddb6d46e",
     "reading-bucket.mjs": "84fb58f8242bfb1febb98c9d772844f4cc7b864ae341af2b260a5104952461ba",
-    "web/app.mjs": "ae0ef5b4d2cfb82a58f7be4f14c05515bac717f1a30bbf6094a484484d8f9c29",
-    "web/battle-app.mjs": "09bc545f736ce8c1c887718ba0d7d4410247783c55fd96ba1d154d779717239b",
-    "web/battle-controller.mjs": "47c1c90e0b4269bdd96f14e535a8030412674570abd85282840b63a9d57a158d",
-    "web/battle-rules.mjs": "5b52ac726af517ef679fa81f2593597e81a08fc7095d7c85ceaaa9748afe266c",
-    "web/candidate-groups.mjs": "67e907ba116e2d7f5f1aa2138c09b26ad3bc7263fd5c172baf6142292fc76b5b",
-    "web/dictionary-client.mjs": "6f21d3739f058b298281709483175a703e65c8fae92544d83ab2f3a73c955f20",
+    "web/app.mjs": "11d2185d22ce58877a16411e7cca873a9a397dde4cfabe0804e3c5ed4973e1d3",
+    "web/battle-app.mjs": "e968012a9730df52c15266cdc9846b7ea95c9cb076600d1f69a48c8b81e973a4",
+    "web/battle-controller.mjs": "633d727d09350a3e40a48579da29d77a710553665b2439b6b9773f35016a6563",
+    "web/battle-rules.mjs": "260f8c3c47506c224c41df209ff4680f772a9fb00372478d3bc636fa1e897955",
+    "web/bootstrap.mjs": "d04315ff01a653b798567ddd715cafe31566242b83693f6fc174be8d9b091ce8",
+    "web/candidate-groups.mjs": "75a6a1f68bed9be66e89f15d212da326eca113a0c0e4bb09e80829cecb13368e",
+    "web/dictionary-client.mjs": "3196c46ae0bc0fc9a007fd117bea473ce455008588a766218840a4ef0683eed4",
+    "web/input/transform-kana.mjs": "1c579a438d1bf20b12f904034ed1ff316d3c4ccb9ebae2e5271bfd18d7cfd34c",
     "web/meaning-equivalences.mjs": "c61da263799b244ae2491d0b2485c6ad40dd8f98309ea6a9e09a8bb0a2fc113e",
-    "web/styles.css": "144a4897bf78760be44e248ee55a04ce9b2d517165d5cdb3be1b00543baf351a"
+    "web/search-controller.mjs": "48caa6b6c7d0375dbfc9297a366ea24cb9efcc8a7b4a517d691beb414a4d1e7c",
+    "web/styles.css": "ce1811555d9bba862911d7d9065630635609bfedafa0e0bae3aabe04d8931ad1",
+    "web/ui/battle-feedback.mjs": "f6bd959fe66d700320f026ad4fc8e74243f0fd262ae9284ecff9512547b0737c",
+    "web/ui/battle-view.mjs": "a175144149e6f25c0a25c8b44a254639f37b9fb3fcd4f7b20eec1760c14b1d0c",
+    "web/ui/candidate-summary.mjs": "7ae377ed7001709f595b74808bf3ae0f061f64831c748c9b9df480474544e43c"
   },
   "dictionarySha256": "71c8e96a7d3a8d09d213280e71d24b2afa963fd8a5b72df97a524cc30ec89120",
   "retainedVersions": [
     "v1-74cbc1f057467d8b",
     "v1-f667664edefe998d"
   ],
-  "zipSha256": "cac3fe9b222f5e7a035f31954e4bfc16cdee3907a8db5b4531b6a183efbe9a06",
-  "zipBytes": 26691219,
+  "zipSha256": "f4804deab0e5ffeaa7f62cc4e67759f24bb5c09a0c255b1dd66c29c5ab5967b6",
+  "zipBytes": 26700129,
   "zipParts": [
     {
       "path": "site.zip.part001",
       "bytes": 8388608,
-      "sha256": "92e42f63f4d942f9cd35926344d379caf8a869dc8221a402e3bf7b3882648f13"
+      "sha256": "bc10d7b29ec9af045bd5bd82ab4922f550ab5bd02abb307b676260927e844bcf"
     },
     {
       "path": "site.zip.part002",
       "bytes": 8388608,
-      "sha256": "3cd00cac9d6aa2e7973d65f298ab132621229dbf3ad8d04a95d51c1f7f7675be"
+      "sha256": "dbe03c583359f140f8fa96edb2438045ff7d9665169283c3122a74c92074306e"
     },
     {
       "path": "site.zip.part003",
       "bytes": 8388608,
-      "sha256": "27cfc868aeebff9cb786cad29202436d239b70f39fc2ebd77412ebf35191e350"
+      "sha256": "03bde13fbd700c585a12f660846c1701ccdbd1351cd0349cf9e15b3a5c9bca41"
     },
     {
       "path": "site.zip.part004",
-      "bytes": 1525395,
-      "sha256": "e483f9f8d2e71e68374313d86bc3955e2b3b9f80813f6e250120b0bbf468315e"
+      "bytes": 1534305,
+      "sha256": "d8601dc6a76d5ca3751f31a4854d8f3906966ef49a4bd0c0c4d670f785da3607"
     }
   ]
 }

@@ -1,0 +1,34 @@
+{
+  "buildSources": [
+    "dictionary.mjs",
+    "reading-bucket.mjs",
+    "build-web-dictionary.mjs",
+    "build-web.mjs",
+    "import-jawiktionary.mjs",
+    "build.mjs",
+    "source.json",
+    "supplement.json",
+    "scripts/release-assets.json",
+    "scripts/release-assets.mjs",
+    "web/index.html"
+  ],
+  "copiedSources": [
+    "dictionary.mjs",
+    "reading-bucket.mjs",
+    "web/bootstrap.mjs",
+    "web/app.mjs",
+    "web/search-controller.mjs",
+    "web/battle-rules.mjs",
+    "web/battle-controller.mjs",
+    "web/battle-app.mjs",
+    "web/input/transform-kana.mjs",
+    "web/ui/battle-view.mjs",
+    "web/ui/battle-feedback.mjs",
+    "web/ui/candidate-summary.mjs",
+    "web/candidate-groups.mjs",
+    "web/meaning-equivalences.mjs",
+    "web/dictionary-client.mjs",
+    "web/styles.css"
+  ],
+  "staticArtifacts": [".nojekyll", "ATTRIBUTION.txt", "build-info.json", "index.html"]
+}
