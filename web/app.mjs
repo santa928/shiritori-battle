@@ -1,32 +1,296 @@
-import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning3';
-import {createDictionaryClient} from './dictionary-client.mjs?v=20261005-retry1';
-export function createSearchController(client,onState){let sequence=0,active=true;return {async submit(input,{isComposing=false}={}){if(isComposing||!active)return;const token=++sequence;onState({phase:'loading'});try{const result=await client.search(input);if(active&&token===sequence)onState({phase:'result',result});}catch(error){if(active&&token===sequence)onState({phase:'error',error});}},destroy(){active=false;sequence++;}};}
-export function safeSourceUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}
-export function reasonText(code){return {'part-of-speech':'対象外の品詞です','excluded-label':'対象外の分類・語形です','missing-definition':'日本語の意味を確認できません','ambiguous-reading':'読みと意味の対応を確認中','classification-conflict':'分類の対応を確認中','unresolved-reference':'参照先の意味を確認中'}[code]??'要確認';}
-const posNames={noun:'名詞','proper-noun':'固有名詞',verb:'動詞',adjective:'形容詞',adverb:'副詞',character:'文字',suffix:'接尾辞',prefix:'接頭辞',interjection:'感動詞',phrase:'句',unknown:'品詞未確認'};
-const labelNames={person:'人名','fictional-character':'作品キャラクター名',organization:'組織名',brand:'商品・ブランド名','proper-name':'固有名','inflected-form':'活用形・表記参照',abbreviation:'略語',initialism:'頭字語',acronym:'略称','classification-conflict':'分類未確定',number:'数','bound-form':'造語成分','unresolved-reference':'参照先未確認'};
-const labels={eligible:['✓','辞書では採用可','使える語義が見つかりました。'],ineligible:['!','辞書ルールでは対象外','候補はありますが、対象外です。'],pending:['…','確認を保留しています','読みや分類に、未確定の候補があります。'],unconfirmed:['?','この辞書では確認できません','読みを変えて、もう一度しらべてみてください。']};
-export function mountDictionaryApp(root,{client}){
- const document=root.ownerDocument;const form=root.querySelector('form');const input=root.querySelector('input');const resultArea=root.querySelector('#results');const feedback=root.querySelector('#feedback');const submit=root.querySelector('button[type=submit]');let composing=false,lastInput='';
- const element=(tag,text,className)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;};
- const link=(text,url)=>{const a=element('a',text);const safe=safeSourceUrl(url);if(safe){a.href=safe;a.target='_blank';a.rel='noopener noreferrer';}return a;};
- function render(result){resultArea.replaceChildren();if(result.status==='invalid-reading'){feedback.textContent='読みをひらがな・カタカナで入力してください';input.setAttribute('aria-invalid','true');return;}input.removeAttribute('aria-invalid');feedback.textContent='';
- const tiles=element('div',undefined,'kana-tiles');tiles.setAttribute('aria-label','読み：'+result.reading);for(const char of result.reading){const tile=element('span',char,'kana-tile');tile.setAttribute('aria-hidden','true');tiles.append(tile);}resultArea.append(tiles);
- const [symbol,title,description]=labels[result.status];const verdict=element('section',undefined,'verdict '+result.status);const icon=element('span',symbol,'verdict-icon');icon.setAttribute('aria-hidden','true');const copy=element('div');const heading=element('h2',title);heading.tabIndex=-1;copy.append(heading,element('p',description),element('p','対戦中の条件は別に判定します。','caveat'));verdict.append(icon,copy);resultArea.append(verdict);feedback.textContent=title;
- const groups=groupCandidates(result.candidates,result.reading);
- if(groups.length){const head=element('div',undefined,'results-heading');head.append(element('h2','同じ読みの候補'),element('span',groups.length+'件','count'));resultArea.append(head);const list=element('div',undefined,'candidates');
- for(const group of groups){const c=group.candidates[0];const article=element('article',undefined,'candidate');const row=element('div',undefined,'candidate-top');const primary=group.spelling;const noun=element('h3',primary);const pending=c.labels.some(x=>['classification-conflict'].includes(x));row.append(noun,element('span',c.eligible?'✓ 採用可':pending?'… 保留':'! 対象外','badge '+(c.eligible?'yes':pending?'pending':'no')));article.append(row,element('p',result.reading+' ・ '+c.pos.map(p=>posNames[p]??p).join('・'),'candidate-meta'));
- const others=group.aliases.filter(x=>x!==result.reading);if(others.length)article.append(element('p','別表記：'+others.join('・'),'other-spellings'));
- for(const definition of (group.candidates.length>1?group.definitions.slice(0,1):group.definitions))article.append(element('p',definition,'definition'));
- if(!c.eligible){const reasons=c.reasons.map(reasonText);const tagged=c.labels.filter(x=>labelNames[x]).map(x=>labelNames[x]);if(tagged.length)reasons.push('分類：'+tagged.join('・'));article.append(element('p',[...new Set(reasons)].join(' / '),'reasons'));}
- if(group.candidates.length>1){const details=element('details',undefined,'source-explanations');details.append(element('summary','出典ごとの説明'));for(const original of group.candidates){const section=element('section');section.append(element('p',original.spellings.join('・'),'candidate-meta'));for(const definition of original.definitions.filter(d=>d.language==='ja'))section.append(element('p',definition.text,'definition'));if(original.labels.length)section.append(element('p','分類：'+original.labels.map(x=>labelNames[x]??x).join('・'),'candidate-meta'));section.append(link('出典：ウィクショナリー ↗',original.sourceUrl));details.append(section);}article.append(details);}else for(const url of group.sources)article.append(link('出典：ウィクショナリー ↗',url));list.append(article);}resultArea.append(list);}
- if(result.review.length){const section=element('section',undefined,'review-notice');section.append(element('h2','確認中の読み候補'));for(const item of result.review){const p=element('p');p.append(element('strong',item.spelling+' '),element('span',reasonText(item.reason)+' '),link('出典 ↗',item.sourceUrl));section.append(p);}section.append(element('p','候補の読みと意味の対応は、まだ確定していません。','caveat'));resultArea.append(section);}
- const attribution=element('details',undefined,'attribution');attribution.append(element('summary','辞書の出典と版について'));attribution.append(element('p','ウィクショナリー日本語版の投稿者による語義を、Kaikki / Wiktextract経由で抽出し、整形・選別しています。'),link('CC BY-SA 4.0','https://creativecommons.org/licenses/by-sa/4.0/'),element('p','元記事のリンクは現在版です。'),element('p','辞書版：'+result.version));for(const source of result.sources??[])attribution.append(element('p',source.version));resultArea.append(attribution);
- }
- const controller=createSearchController(client,state=>{resultArea.setAttribute('aria-busy',String(state.phase==='loading'));submit.textContent=state.phase==='loading'?'検索中…':'しらべる';if(state.phase==='loading'){feedback.textContent='しらべています';return;}if(state.phase==='error'){resultArea.replaceChildren();feedback.textContent='辞書を読み込めませんでした';const box=element('section',undefined,'error-state');box.append(element('h2','辞書を読み込めませんでした'),element('p','通信状況を確認して、もう一度お試しください。'));const retry=element('button','もう一度しらべる','retry');retry.type='button';retry.addEventListener('click',()=>controller.submit(lastInput));box.append(retry);resultArea.append(box);return;}render(state.result);});
- const onSubmit=e=>{e.preventDefault();if(composing)return;lastInput=input.value;controller.submit(lastInput);};const start=()=>{composing=true;};const end=()=>{composing=false;};const key=e=>{if(e.key==='Enter'&&(e.isComposing||composing||e.keyCode===229))e.preventDefault();};form.addEventListener('submit',onSubmit);input.addEventListener('compositionstart',start);input.addEventListener('compositionend',end);input.addEventListener('keydown',key);
- return {destroy(){controller.destroy();form.removeEventListener('submit',onSubmit);input.removeEventListener('compositionstart',start);input.removeEventListener('compositionend',end);input.removeEventListener('keydown',key);}};
+import { groupCandidates } from './candidate-groups.mjs?v=20261005-meaning3';
+import { createDictionaryClient } from './dictionary-client.mjs?v=20261005-retry1';
+export function createSearchController(client, onState) {
+  let sequence = 0,
+    active = true;
+  return {
+    async submit(input, { isComposing = false } = {}) {
+      if (isComposing || !active) return;
+      const token = ++sequence;
+      onState({ phase: 'loading' });
+      try {
+        const result = await client.search(input);
+        if (active && token === sequence) onState({ phase: 'result', result });
+      } catch (error) {
+        if (active && token === sequence) onState({ phase: 'error', error });
+      }
+    },
+    destroy() {
+      active = false;
+      sequence++;
+    },
+  };
 }
-if(typeof document!=='undefined'){
- const root=document.querySelector('[data-dictionary-app]');if(root){const manifestUrl=new URL(root.dataset.manifest,document.baseURI).href;mountDictionaryApp(root,{client:createDictionaryClient({manifestUrl,releaseInfoUrl:new URL('./build-info.json',document.baseURI).href})});}
+export function safeSourceUrl(value) {
+  try {
+    const u = new URL(value);
+    return ['https:', 'http:'].includes(u.protocol) ? u.href : null;
+  } catch {
+    return null;
+  }
+}
+export function reasonText(code) {
+  return (
+    {
+      'part-of-speech': '対象外の品詞です',
+      'excluded-label': '対象外の分類・語形です',
+      'missing-definition': '日本語の意味を確認できません',
+      'ambiguous-reading': '読みと意味の対応を確認中',
+      'classification-conflict': '分類の対応を確認中',
+      'unresolved-reference': '参照先の意味を確認中',
+    }[code] ?? '要確認'
+  );
+}
+const posNames = {
+  noun: '名詞',
+  'proper-noun': '固有名詞',
+  verb: '動詞',
+  adjective: '形容詞',
+  adverb: '副詞',
+  character: '文字',
+  suffix: '接尾辞',
+  prefix: '接頭辞',
+  interjection: '感動詞',
+  phrase: '句',
+  unknown: '品詞未確認',
+};
+const labelNames = {
+  person: '人名',
+  'fictional-character': '作品キャラクター名',
+  organization: '組織名',
+  brand: '商品・ブランド名',
+  'proper-name': '固有名',
+  'inflected-form': '活用形・表記参照',
+  abbreviation: '略語',
+  initialism: '頭字語',
+  acronym: '略称',
+  'classification-conflict': '分類未確定',
+  number: '数',
+  'bound-form': '造語成分',
+  'unresolved-reference': '参照先未確認',
+};
+const labels = {
+  eligible: ['✓', '辞書では採用可', '使える語義が見つかりました。'],
+  ineligible: ['!', '辞書ルールでは対象外', '候補はありますが、対象外です。'],
+  pending: ['…', '確認を保留しています', '読みや分類に、未確定の候補があります。'],
+  unconfirmed: ['?', 'この辞書では確認できません', '読みを変えて、もう一度しらべてみてください。'],
+};
+export function mountDictionaryApp(root, { client }) {
+  const document = root.ownerDocument;
+  const form = root.querySelector('form');
+  const input = root.querySelector('input');
+  const resultArea = root.querySelector('#results');
+  const feedback = root.querySelector('#feedback');
+  const submit = root.querySelector('button[type=submit]');
+  let composing = false,
+    lastInput = '';
+  const element = (tag, text, className) => {
+    const e = document.createElement(tag);
+    if (text !== undefined) e.textContent = text;
+    if (className) e.className = className;
+    return e;
+  };
+  const link = (text, url) => {
+    const a = element('a', text);
+    const safe = safeSourceUrl(url);
+    if (safe) {
+      a.href = safe;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+    return a;
+  };
+  function render(result) {
+    resultArea.replaceChildren();
+    if (result.status === 'invalid-reading') {
+      feedback.textContent = '読みをひらがな・カタカナで入力してください';
+      input.setAttribute('aria-invalid', 'true');
+      return;
+    }
+    input.removeAttribute('aria-invalid');
+    feedback.textContent = '';
+    const tiles = element('div', undefined, 'kana-tiles');
+    tiles.setAttribute('aria-label', '読み：' + result.reading);
+    for (const char of result.reading) {
+      const tile = element('span', char, 'kana-tile');
+      tile.setAttribute('aria-hidden', 'true');
+      tiles.append(tile);
+    }
+    resultArea.append(tiles);
+    const [symbol, title, description] = labels[result.status];
+    const verdict = element('section', undefined, 'verdict ' + result.status);
+    const icon = element('span', symbol, 'verdict-icon');
+    icon.setAttribute('aria-hidden', 'true');
+    const copy = element('div');
+    const heading = element('h2', title);
+    heading.tabIndex = -1;
+    copy.append(
+      heading,
+      element('p', description),
+      element('p', '対戦中の条件は別に判定します。', 'caveat'),
+    );
+    verdict.append(icon, copy);
+    resultArea.append(verdict);
+    feedback.textContent = title;
+    const groups = groupCandidates(result.candidates, result.reading);
+    if (groups.length) {
+      const head = element('div', undefined, 'results-heading');
+      head.append(element('h2', '同じ読みの候補'), element('span', groups.length + '件', 'count'));
+      resultArea.append(head);
+      const list = element('div', undefined, 'candidates');
+      for (const group of groups) {
+        const c = group.candidates[0];
+        const article = element('article', undefined, 'candidate');
+        const row = element('div', undefined, 'candidate-top');
+        const primary = group.spelling;
+        const noun = element('h3', primary);
+        const pending = c.labels.some((x) => ['classification-conflict'].includes(x));
+        row.append(
+          noun,
+          element(
+            'span',
+            c.eligible ? '✓ 採用可' : pending ? '… 保留' : '! 対象外',
+            'badge ' + (c.eligible ? 'yes' : pending ? 'pending' : 'no'),
+          ),
+        );
+        article.append(
+          row,
+          element(
+            'p',
+            result.reading + ' ・ ' + c.pos.map((p) => posNames[p] ?? p).join('・'),
+            'candidate-meta',
+          ),
+        );
+        const others = group.aliases.filter((x) => x !== result.reading);
+        if (others.length)
+          article.append(element('p', '別表記：' + others.join('・'), 'other-spellings'));
+        for (const definition of group.candidates.length > 1
+          ? group.definitions.slice(0, 1)
+          : group.definitions)
+          article.append(element('p', definition, 'definition'));
+        if (!c.eligible) {
+          const reasons = c.reasons.map(reasonText);
+          const tagged = c.labels.filter((x) => labelNames[x]).map((x) => labelNames[x]);
+          if (tagged.length) reasons.push('分類：' + tagged.join('・'));
+          article.append(element('p', [...new Set(reasons)].join(' / '), 'reasons'));
+        }
+        if (group.candidates.length > 1) {
+          const details = element('details', undefined, 'source-explanations');
+          details.append(element('summary', '出典ごとの説明'));
+          for (const original of group.candidates) {
+            const section = element('section');
+            section.append(element('p', original.spellings.join('・'), 'candidate-meta'));
+            for (const definition of original.definitions.filter((d) => d.language === 'ja'))
+              section.append(element('p', definition.text, 'definition'));
+            if (original.labels.length)
+              section.append(
+                element(
+                  'p',
+                  '分類：' + original.labels.map((x) => labelNames[x] ?? x).join('・'),
+                  'candidate-meta',
+                ),
+              );
+            section.append(link('出典：ウィクショナリー ↗', original.sourceUrl));
+            details.append(section);
+          }
+          article.append(details);
+        } else
+          for (const url of group.sources) article.append(link('出典：ウィクショナリー ↗', url));
+        list.append(article);
+      }
+      resultArea.append(list);
+    }
+    if (result.review.length) {
+      const section = element('section', undefined, 'review-notice');
+      section.append(element('h2', '確認中の読み候補'));
+      for (const item of result.review) {
+        const p = element('p');
+        p.append(
+          element('strong', item.spelling + ' '),
+          element('span', reasonText(item.reason) + ' '),
+          link('出典 ↗', item.sourceUrl),
+        );
+        section.append(p);
+      }
+      section.append(element('p', '候補の読みと意味の対応は、まだ確定していません。', 'caveat'));
+      resultArea.append(section);
+    }
+    const attribution = element('details', undefined, 'attribution');
+    attribution.append(element('summary', '辞書の出典と版について'));
+    attribution.append(
+      element(
+        'p',
+        'ウィクショナリー日本語版の投稿者による語義を、Kaikki / Wiktextract経由で抽出し、整形・選別しています。',
+      ),
+      link('CC BY-SA 4.0', 'https://creativecommons.org/licenses/by-sa/4.0/'),
+      element('p', '元記事のリンクは現在版です。'),
+      element('p', '辞書版：' + result.version),
+    );
+    for (const source of result.sources ?? []) attribution.append(element('p', source.version));
+    resultArea.append(attribution);
+  }
+  const controller = createSearchController(client, (state) => {
+    resultArea.setAttribute('aria-busy', String(state.phase === 'loading'));
+    submit.textContent = state.phase === 'loading' ? '検索中…' : 'しらべる';
+    if (state.phase === 'loading') {
+      feedback.textContent = 'しらべています';
+      return;
+    }
+    if (state.phase === 'error') {
+      resultArea.replaceChildren();
+      feedback.textContent = '辞書を読み込めませんでした';
+      const box = element('section', undefined, 'error-state');
+      box.append(
+        element('h2', '辞書を読み込めませんでした'),
+        element('p', '通信状況を確認して、もう一度お試しください。'),
+      );
+      const retry = element('button', 'もう一度しらべる', 'retry');
+      retry.type = 'button';
+      retry.addEventListener('click', () => controller.submit(lastInput));
+      box.append(retry);
+      resultArea.append(box);
+      return;
+    }
+    render(state.result);
+  });
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (composing) return;
+    lastInput = input.value;
+    controller.submit(lastInput);
+  };
+  const start = () => {
+    composing = true;
+  };
+  const end = () => {
+    composing = false;
+  };
+  const key = (e) => {
+    if (e.key === 'Enter' && (e.isComposing || composing || e.keyCode === 229)) e.preventDefault();
+  };
+  form.addEventListener('submit', onSubmit);
+  input.addEventListener('compositionstart', start);
+  input.addEventListener('compositionend', end);
+  input.addEventListener('keydown', key);
+  return {
+    destroy() {
+      controller.destroy();
+      form.removeEventListener('submit', onSubmit);
+      input.removeEventListener('compositionstart', start);
+      input.removeEventListener('compositionend', end);
+      input.removeEventListener('keydown', key);
+    },
+  };
+}
+if (typeof document !== 'undefined') {
+  const root = document.querySelector('[data-dictionary-app]');
+  if (root) {
+    const manifestUrl = new URL(root.dataset.manifest, document.baseURI).href;
+    mountDictionaryApp(root, {
+      client: createDictionaryClient({
+        manifestUrl,
+        releaseInfoUrl: new URL('./build-info.json', document.baseURI).href,
+      }),
+    });
+  }
 }
