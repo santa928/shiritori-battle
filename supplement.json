@@ -163,6 +163,90 @@
       ]
     },
     {
+      "line": 18947,
+      "word": "鸚鵡",
+      "pos": "noun",
+      "rawSha256": "c09e64c0f562d9d330388ab61b9e25b0643471cf7ba2f305f6f7e317c65acea4",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%B8%9A%E9%B5%A1",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しの明示読み「おうむ」を対応。鳥の語義1は普通名詞、語義2はオウムガイの略称なので abbreviation として除外。確認ページの表示oldid=2131626。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "おうむ"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "おうむ"
+          ],
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 56714,
+      "word": "蜜柑",
+      "pos": "noun",
+      "rawSha256": "44f2d2e9fa1d38c9bd7a734098f20a0d11956f289a609897d069c7a60381edd0",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%9C%9C%E6%9F%91",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しの明示読み「みかん」を植物・果実の語義1へ対応。確認ページの表示oldid=2319915。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "みかん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 61010,
+      "word": "切符",
+      "pos": "noun",
+      "rawSha256": "f81d40e6c89b7986295dbc6371676c7ef9aa9b8bf017c9f1e11156d69961e21f",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%88%87%E7%AC%A6",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出し「きっぷ、キップ」を正規化し、紙券・資格の比喩・違反書類の語義1〜3へ対応。rawの無タグformsだけを読みと推測したものではない。確認ページの表示oldid=1885671。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "きっぷ"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "きっぷ"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "きっぷ"
+          ]
+        }
+      ]
+    },
+    {
       "line": 61849,
       "word": "神風",
       "pos": "noun",
@@ -191,6 +275,33 @@
       ]
     },
     {
+      "line": 74163,
+      "word": "茶碗",
+      "pos": "noun",
+      "rawSha256": "6fc114114aea92f4a2739f4a4a39c4b82265b4fd8b9f283cab91cd34449363ff",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%8C%B6%E7%A2%97",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しの明示読み「ちゃわん」を喫茶用の器・飯の器の語義1・2へ対応。末尾んであっても辞書適格性とは分ける。確認ページの表示oldid=1697890。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ちゃわん"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "ちゃわん"
+          ]
+        }
+      ]
+    },
+    {
       "line": 82493,
       "word": "地主",
       "pos": "noun",
@@ -208,6 +319,33 @@
           "id": "3",
           "excludeLabels": [
             "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 107843,
+      "word": "饅頭",
+      "pos": "noun",
+      "rawSha256": "93a0efd6bc6ced7f199e9954e82c282be384d4e77c6afe55c7f27d4705903e2d",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%A5%85%E9%A0%AD",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語の「まんじゅう」の名詞節にある和菓子・同形状の菓子の語義1・2へ対応。別名詞節「マントウ、マントー」の参照レコード107844には読みを追加しない。確認ページの表示oldid=2136079。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "まんじゅう"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "まんじゅう"
           ]
         }
       ]
@@ -274,6 +412,156 @@
           "id": "3",
           "excludeLabels": [
             "classification-conflict"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 167722,
+      "word": "餃子",
+      "pos": "noun",
+      "rawSha256": "63ca97c6a73d965e9f5b0274bb5cf487c5be37ce854623fd66537f51745ed79a",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%A4%83%E5%AD%90",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語の名詞見出しの明示読み「ぎょうざ」を料理の語義1へ対応。別言語節の中国語音は転用しない。確認ページの表示oldid=2146021。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ぎょうざ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 170595,
+      "word": "昆布",
+      "pos": "noun",
+      "rawSha256": "91799e85506a16cb5d032fa1012865b38ff24ff642c54a721a5c159605c64097",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%98%86%E5%B8%83",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語 / 名詞の見出し「昆布（こんぶ）」に明記。海藻の一般名という語義1に対応。同音の部首分類「丨部」とは別レコード。確認ページの表示oldid=2064997。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "こんぶ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 179810,
+      "word": "包丁",
+      "pos": "noun",
+      "rawSha256": "36062dc53deb2302e47f0922b29fe26aedfead58023f8ff97833b88bfa361407",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%8C%85%E4%B8%81",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語の名詞見出しに明記された「ほうちょう」を料理人（一般名詞）・料理・刃物・切ること・鋸鍛治の符牒の語義1〜5へ対応。語源に登場する人物や別の動詞節へは広げず、音声表記ほーちょーを読みとして追加しない。確認ページの表示oldid=2176105。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ほうちょう"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "ほうちょう"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "ほうちょう"
+          ]
+        },
+        {
+          "id": "4",
+          "readings": [
+            "ほうちょう"
+          ]
+        },
+        {
+          "id": "5",
+          "readings": [
+            "ほうちょう"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 200572,
+      "word": "蒟蒻",
+      "pos": "noun",
+      "rawSha256": "ba14e5398423f4a8aab20d2d729d1ab770b61ce6890ea1c21b90f609f6ffc048",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%92%9F%E8%92%BB",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語 / 名詞の見出しに「蒟 蒻（コンニャク、稀:クジャク）」が明記。一般読み「こんにゃく」を植物・食品の語義1・2へ対応。稀な別読みはこの補足の対象外として推測で広げない。確認ページの表示oldid=1635086。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "こんにゃく"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "こんにゃく"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 207997,
+      "word": "胡麻",
+      "pos": "noun",
+      "rawSha256": "e5385c495c8fe64f4e9307be0c5b42045749ba2993cc4675d1d3614daf6f5c27",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%83%A1%E9%BA%BB",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語 / 名詞の見出しに「胡 麻 (ごま)」が明記。語義1（植物）・2（黒い点や粒）に対応。語義3は胡麻点の略称なので読みを保持しつつ abbreviation で除外。確認ページの表示oldid=1487236。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ごま"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "ごま"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "ごま"
+          ],
+          "excludeLabels": [
+            "abbreviation"
           ]
         }
       ]

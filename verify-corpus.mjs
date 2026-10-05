@@ -16,6 +16,17 @@ function check(line,reading,expected) {
   assert.deepEqual(candidates.map(c=>c.eligible),expected,`line ${line}: ${reading}`);
   assert.ok(candidates.every(c=>c.source.sha256===source.sha256 && c.definitions.every(d=>d.language==='ja')));
 }
+check(207997,'ごま',[true,true,false]);
+check(200572,'こんにゃく',[true,true]);
+check(170595,'こんぶ',[true]);
+check(56714,'みかん',[true]);
+check(167722,'ぎょうざ',[true]);
+check(107843,'まんじゅう',[true,true]);
+check(18947,'おうむ',[true,false]);
+check(61010,'きっぷ',[true,true,true]);
+check(74163,'ちゃわん',[true,true]);
+check(179810,'ほうちょう',[true,true,true,true,true]);
+assert.ok(!db.lookup('まんじゅう').candidates.some(c=>c.entryId===`${source.id}:107844`),'separate mantou reference must not inherit Japanese confection reading');
 check(40423,'きゃく',[true,true,true,true]);
 check(225,'て',[true,true,true,true]);
 check(698,'つくえ',[true]);
@@ -63,3 +74,18 @@ for (const patch of supplement.records) for (const scope of patch.senses) {
   }
 }
 console.log('Pinned corpus: original records, all reviewed supplements, scoped readings, unresolved senses, and unused character readings verified.');
+
+// Real dictionary and real game/controller: a valid bridge into voiced ご.
+const {createGame}=await import('./web/battle-rules.mjs');
+const {createBattleController}=await import('./web/battle-controller.mjs');
+for(const mode of ['individual','shared']) {
+ let state;
+ const controller=createBattleController({game:createGame({mode,start:'り'}),now:()=>0,onState:s=>{state=s;},client:{search:async reading=>({...db.lookup(reading),reading,version:'pinned-corpus',sources:data.sources})}});
+ controller.ready();controller.edit('りんご');await controller.submit();assert.equal(state.game.phase,'success');
+ controller.next();controller.ready();controller.edit('ごま');await controller.submit();
+ assert.equal(state.game.phase,'success',`ごま must be accepted in ${mode} battle`);
+ assert.equal(state.game.start,'ま');assert.deepEqual(state.game.history.at(-1).consumed,['ま']);
+ assert.deepEqual(state.game.history.at(-1).candidates.filter(c=>c.entryId===`${source.id}:207997`).map(c=>c.eligible),[true,true,false]);
+ controller.destroy();
+}
+console.log('Real corpus battle: りんご → ごま succeeds in individual and shared modes.');
