@@ -1,4 +1,4 @@
-import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning1';
+import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning2';
 import {createDictionaryClient} from './dictionary-client.mjs';
 export function createSearchController(client,onState){let sequence=0,active=true;return {async submit(input,{isComposing=false}={}){if(isComposing||!active)return;const token=++sequence;onState({phase:'loading'});try{const result=await client.search(input);if(active&&token===sequence)onState({phase:'result',result});}catch(error){if(active&&token===sequence)onState({phase:'error',error});}},destroy(){active=false;sequence++;}};}
 export function safeSourceUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch{return null;}}

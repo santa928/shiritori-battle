@@ -10754,5 +10754,4230 @@ export const meaningEquivalences = [
         ]
       }
     ]
+  },
+  {
+    "id": "equivalent-prefix-af66d2827fed7c01",
+    "reading": "は",
+    "representative": "歯",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:47",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40324",
+        "senseId": "1",
+        "spellings": [
+          "歯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%AD%AF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（は）動物の口腔内にある咀嚼するための硬い器官。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47",
+        "senseId": "1",
+        "spellings": [
+          "は",
+          "歯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "動物の口腔内にある咀嚼するための硬い器官。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-0912720bf936a62a",
+    "reading": "あい",
+    "representative": "藍",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:80",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:60",
+        "senseId": "1",
+        "spellings": [
+          "藍"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%97%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（あい）タデ科の一年草。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:80",
+        "senseId": "1",
+        "spellings": [
+          "あい",
+          "藍"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%82%E3%81%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "タデ科の一年草。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-6528ac2578eef96c",
+    "reading": "め",
+    "representative": "芽",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:299",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:299",
+        "senseId": "1",
+        "spellings": [
+          "め",
+          "芽"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%81",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "植物の種子・根・枝から出て、将来、枝・葉・花などに生育する幼組織。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:41174",
+        "senseId": "1",
+        "spellings": [
+          "芽"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8A%BD",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（め）植物の種子・根・枝から出て、将来、枝・葉・花などに生育する幼組織。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-bbd979e4655ac62c",
+    "reading": "め",
+    "representative": "芽",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:299",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:299",
+        "senseId": "3",
+        "spellings": [
+          "め",
+          "芽"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%81",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "新しく現れて、これから発展を遂げようとするもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:41174",
+        "senseId": "3",
+        "spellings": [
+          "芽"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8A%BD",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（め）新しく現れて、これから発展を遂げようとするもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-b1842f44ccaad260",
+    "reading": "ちち",
+    "representative": "父",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:6628",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:26788",
+        "senseId": "1",
+        "spellings": [
+          "父"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%88%B6",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ちち）おとこおや。男性である親。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:6628",
+        "senseId": "1",
+        "spellings": [
+          "ちち",
+          "父"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A1%E3%81%A1",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "おとこおや。男性である親。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-4c30dea5d78729dd",
+    "reading": "や",
+    "representative": "矢",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:8338",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:35223",
+        "senseId": "1",
+        "spellings": [
+          "矢"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%9F%A2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（や）古代から近世以前に用いられた武器で、直線の棒の端に重りをつけ、その反対側に羽等をつけたもの。重りとして鋭く重い金属（鏃）などをつけ、弓によってとばすことにより貫通力を得、遠方の相手に対しての攻撃も可能となる。また、鏃に代えて発火物をつける場合もある。現代においては、スポーツや娯楽のほか、お守などとして残る。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:8338",
+        "senseId": "1",
+        "spellings": [
+          "や",
+          "矢",
+          "箭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "古代から近世以前に用いられた武器で、直線の棒の端に重りをつけ、その反対側に羽等をつけたもの。重りとして鋭く重い金属（鏃）などをつけ、弓によってとばすことにより貫通力を得、遠方の相手に対しての攻撃も可能となる。また、鏃に代えて発火物をつける場合もある。現代においては、スポーツや娯楽のほか、お守などとして残る。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-0ec0b259dc46c37f",
+    "reading": "や",
+    "representative": "矢",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:8338",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:35223",
+        "senseId": "2",
+        "spellings": [
+          "矢"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%9F%A2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（や）（速く一直線に飛ぶ性質や、攻撃は一斉に襲うことが多かったことから）速いものや、次から次へと連続するものの例え。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:8338",
+        "senseId": "2",
+        "spellings": [
+          "や",
+          "矢",
+          "箭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（速く一直線に飛ぶ性質や、攻撃は一斉に襲うことが多かったことから）速いものや、次から次へと連続するものの例え。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-908973afc5ffebde",
+    "reading": "や",
+    "representative": "輻",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:8340",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50836",
+        "senseId": "1",
+        "spellings": [
+          "輻"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%BC%BB",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（や）車輪の車軸と輪環部分をつなぐ骨組み。スポーク。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:8340",
+        "senseId": "1",
+        "spellings": [
+          "や",
+          "輻"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "車輪の車軸と輪環部分をつなぐ骨組み。スポーク。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-3ba3cacc7dcfa8b5",
+    "reading": "きた",
+    "representative": "北",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:30349",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:30349",
+        "senseId": "2",
+        "spellings": [
+          "きた",
+          "北"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8D%E3%81%9F",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "北方の地。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:8551",
+        "senseId": "2",
+        "spellings": [
+          "北"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%8C%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（きた）北方の地。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-d7875b4b56d61316",
+    "reading": "くちびる",
+    "representative": "唇",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:11753",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:11753",
+        "senseId": "1",
+        "spellings": [
+          "くちびる",
+          "唇"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8F%E3%81%A1%E3%81%B3%E3%82%8B",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "口腔の前の境をなす上下2個の弁膜であって口を囲むもの。上唇、下唇の二つに分けられ、主として筋肉及び皮膚粘膜より構成される。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44429",
+        "senseId": "1",
+        "spellings": [
+          "唇"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%94%87",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（くちびる）口腔の前の境をなす上下2個の弁膜であって口を囲むもの。上唇、下唇の二つに分けられ、主として筋肉及び皮膚粘膜より構成される。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-18b3abe5d997783d",
+    "reading": "おに",
+    "representative": "鬼",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:13163",
+      "senseId": "13"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:13163",
+        "senseId": "13",
+        "spellings": [
+          "おに",
+          "鬼"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%AB",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "遊戯において、（一時的に）他の遊戯者と別の不名誉な役をつとめる人。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:30531",
+        "senseId": "4",
+        "spellings": [
+          "鬼"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%AC%BC",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おに）遊戯において、（一時的に）他の遊戯者と別の不名誉な役をつとめる人。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-e5595a2601de14eb",
+    "reading": "ゆび",
+    "representative": "指",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:14281",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:14281",
+        "senseId": "1",
+        "spellings": [
+          "ゆび",
+          "指"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%86%E3%81%B3",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "手、または足の先に付いている、枝分かれした部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:32706",
+        "senseId": "1",
+        "spellings": [
+          "指"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%8C%87",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ゆび）手、または足の先に付いている、枝分かれした部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ba38ac32e94f160c",
+    "reading": "おい",
+    "representative": "甥",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:55433",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:28236",
+        "senseId": "1",
+        "spellings": [
+          "甥"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%94%A5",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おい）兄弟姉妹の息子。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:55433",
+        "senseId": "1",
+        "spellings": [
+          "おい",
+          "甥"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "兄弟姉妹の息子。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a0a7303792ea7e51",
+    "reading": "こと",
+    "representative": "琴",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:29474",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:29474",
+        "senseId": "1",
+        "spellings": [
+          "こと",
+          "琴",
+          "筝"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%93%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "弦が並べられている楽器。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:45596",
+        "senseId": "1",
+        "spellings": [
+          "琴"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%90%B4",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（こと）弦が並べられている楽器。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-5ba25c89e45cd057",
+    "reading": "むね",
+    "representative": "棟",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:31393",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:31393",
+        "senseId": "1",
+        "spellings": [
+          "むね",
+          "棟"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%80%E3%81%AD",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "屋根の傾斜の上の端。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44907",
+        "senseId": "1",
+        "spellings": [
+          "棟"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A3%9F",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（むね）屋根の傾斜の上の端。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-af5f46dfd83323cf",
+    "reading": "むね",
+    "representative": "棟",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:31393",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:31393",
+        "senseId": "3",
+        "spellings": [
+          "むね",
+          "棟"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%80%E3%81%AD",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "櫛の歯のない側。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44907",
+        "senseId": "3",
+        "spellings": [
+          "棟"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A3%9F",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（むね）櫛の歯のない側。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-cc91e33c37862059",
+    "reading": "むすこ",
+    "representative": "息子",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:32773",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:32689",
+        "senseId": "2",
+        "spellings": [
+          "息子"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%81%AF%E5%AD%90",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（むすこ）陰茎。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:32773",
+        "senseId": "2",
+        "spellings": [
+          "むすこ",
+          "息子"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%80%E3%81%99%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "陰茎。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-b8069d393cc5ffd9",
+    "reading": "ところ",
+    "representative": "所",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:82924",
+      "senseId": "14"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:35955",
+        "senseId": "3",
+        "spellings": [
+          "所"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%89%80",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ところ）ある行為の対象。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:82924",
+        "senseId": "14",
+        "spellings": [
+          "ところ",
+          "所",
+          "処"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A8%E3%81%93%E3%82%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "ある行為の対象。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-33c5073191b84a55",
+    "reading": "とみ",
+    "representative": "富",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:196091",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:196091",
+        "senseId": "1",
+        "spellings": [
+          "とみ",
+          "富"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A8%E3%81%BF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "財産。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:36732",
+        "senseId": "1",
+        "spellings": [
+          "富"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%AF%8C",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（とみ）財産。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-64be469a63eb02f0",
+    "reading": "はし",
+    "representative": "箸",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:37696",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:37696",
+        "senseId": "1",
+        "spellings": [
+          "はし",
+          "箸"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AF%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "東アジア地域を起源とし、現在もその地域を中心に広く用いられる食物を移動させるのに用いる食器の一種で、二本一組で用いられる棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48630",
+        "senseId": "1",
+        "spellings": [
+          "箸"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%AE%B8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（はし）東アジア地域を起源とし、現在もその地域を中心に広く用いられる食物を移動させるのに用いる食器の一種で、二本一組で用いられる棒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-865c246042620692",
+    "reading": "しお",
+    "representative": "潮",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+        "senseId": "1",
+        "spellings": [
+          "しお",
+          "潮",
+          "汐"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "海の水、 潮汐、 うしお。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43748",
+        "senseId": "1",
+        "spellings": [
+          "潮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%BD%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しお）海の水、 潮汐、 うしお。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-09f6d506b0304c5c",
+    "reading": "しお",
+    "representative": "潮",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+        "senseId": "2",
+        "spellings": [
+          "しお",
+          "潮",
+          "汐"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "海面の満ち引き。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43748",
+        "senseId": "2",
+        "spellings": [
+          "潮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%BD%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しお）海面の満ち引き。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-03b9e61d89ee75fb",
+    "reading": "しお",
+    "representative": "潮",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:39549",
+        "senseId": "3",
+        "spellings": [
+          "しお",
+          "潮",
+          "汐"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "物事をする、やめるのに丁度良いとき。しおどき。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43748",
+        "senseId": "3",
+        "spellings": [
+          "潮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%BD%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しお）物事をする、やめるのに丁度良いとき。しおどき。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ef88d3421e3e0876",
+    "reading": "いけ",
+    "representative": "池",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:79257",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:39842",
+        "senseId": "1",
+        "spellings": [
+          "池"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%B1%A0",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（いけ）陸地に囲まれた水域のうち、規模の小さいもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:79257",
+        "senseId": "1",
+        "spellings": [
+          "いけ",
+          "池"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%84%E3%81%91",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "陸地に囲まれた水域のうち、規模の小さいもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-95bd8fca509f02bd",
+    "reading": "みなもと",
+    "representative": "源",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:133241",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:133241",
+        "senseId": "1",
+        "spellings": [
+          "みなもと",
+          "源"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%AA%E3%82%82%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "川の水の流れ出る所。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40095",
+        "senseId": "1",
+        "spellings": [
+          "源"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%BA%90",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みなもと）川の水の流れ出る所。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-6b699a799d0c4889",
+    "reading": "よこ",
+    "representative": "横",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+        "senseId": "1",
+        "spellings": [
+          "よこ",
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%88%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "左右の方向。水平の方向。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40453",
+        "senseId": "1",
+        "spellings": [
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A8%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（よこ）左右の方向。水平の方向。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-3e782beb047d6f4f",
+    "reading": "よこ",
+    "representative": "横",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+        "senseId": "2",
+        "spellings": [
+          "よこ",
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%88%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "東西の方向。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40453",
+        "senseId": "2",
+        "spellings": [
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A8%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（よこ）東西の方向。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ce40de64f14184a1",
+    "reading": "よこ",
+    "representative": "横",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+      "senseId": "4"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+        "senseId": "4",
+        "spellings": [
+          "よこ",
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%88%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "傍ら。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40453",
+        "senseId": "4",
+        "spellings": [
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A8%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（よこ）傍ら。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-4cbced3067c7f7b4",
+    "reading": "よこ",
+    "representative": "横",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+      "senseId": "5"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:139348",
+        "senseId": "5",
+        "spellings": [
+          "よこ",
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%88%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "同列の関係。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40453",
+        "senseId": "5",
+        "spellings": [
+          "横"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A8%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（よこ）同列の関係。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-86165a2a998d8829",
+    "reading": "とばり",
+    "representative": "帳",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:452507",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40628",
+        "senseId": "1",
+        "spellings": [
+          "帳"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B8%B3",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（とばり）室内に吊り下げ、仕切りとする布。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:452507",
+        "senseId": "1",
+        "spellings": [
+          "とばり",
+          "帳",
+          "帷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A8%E3%81%B0%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "室内に吊り下げ、仕切りとする布。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-05783fc276f2be5f",
+    "reading": "おび",
+    "representative": "帯",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:247535",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:247535",
+        "senseId": "1",
+        "spellings": [
+          "おび",
+          "帯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%B3",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "着物の上から腰に巻いて結ぶ細長い布。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40715",
+        "senseId": "1",
+        "spellings": [
+          "帯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B8%AF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おび）着物の上から腰に巻いて結ぶ細長い布。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-9bad1a75843585af",
+    "reading": "めし",
+    "representative": "飯",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:194315",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:194315",
+        "senseId": "2",
+        "spellings": [
+          "めし",
+          "飯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%81%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "食事。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:40910",
+        "senseId": "2",
+        "spellings": [
+          "飯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%A3%AF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（めし）食事。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-38d0140a2c7d6f72",
+    "reading": "みき",
+    "representative": "幹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:311331",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:311331",
+        "senseId": "1",
+        "spellings": [
+          "みき",
+          "幹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "木本植物の土から伸びて枝などにつながる太い部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:42394",
+        "senseId": "1",
+        "spellings": [
+          "幹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B9%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みき）木本植物の土から伸びて枝などにつながる太い部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-e845528874660656",
+    "reading": "みき",
+    "representative": "幹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:311331",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:311331",
+        "senseId": "2",
+        "spellings": [
+          "みき",
+          "幹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "物事の中心となる部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:42394",
+        "senseId": "2",
+        "spellings": [
+          "幹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B9%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みき）物事の中心となる部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-f7bd5533d8033ef5",
+    "reading": "あな",
+    "representative": "穴",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:94458",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:42954",
+        "senseId": "1",
+        "spellings": [
+          "穴"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%A9%B4",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（あな）欠けたり抜けたりしているものや所。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:94458",
+        "senseId": "1",
+        "spellings": [
+          "あな",
+          "穴",
+          "孔"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%82%E3%81%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "欠けたり抜けたりしているものや所。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a3db9d8cbd04072f",
+    "reading": "みさお",
+    "representative": "操",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+        "senseId": "1",
+        "spellings": [
+          "みさお",
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%95%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "志や主義・主張を変えずに貫くこと。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43783",
+        "senseId": "1",
+        "spellings": [
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%93%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みさお）志や主義・主張を変えずに貫くこと。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-971dd6f5e4fb0065",
+    "reading": "みさお",
+    "representative": "操",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+        "senseId": "2",
+        "spellings": [
+          "みさお",
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%95%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "女性の貞操。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43783",
+        "senseId": "2",
+        "spellings": [
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%93%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みさお）女性の貞操。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-3798ac96c0daf8c7",
+    "reading": "みさお",
+    "representative": "操",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+        "senseId": "3",
+        "spellings": [
+          "みさお",
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%95%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "上品で高雅なこと。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43783",
+        "senseId": "3",
+        "spellings": [
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%93%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みさお）上品で高雅なこと。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-8f95bf31b9d6d4b4",
+    "reading": "みさお",
+    "representative": "操",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+      "senseId": "4"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:319773",
+        "senseId": "4",
+        "spellings": [
+          "みさお",
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BF%E3%81%95%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "常に変わらないこと。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43783",
+        "senseId": "4",
+        "spellings": [
+          "操"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%93%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（みさお）常に変わらないこと。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ec1183070fd8ce6c",
+    "reading": "ひじり",
+    "representative": "聖",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:252810",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:252810",
+        "senseId": "2",
+        "spellings": [
+          "ひじり",
+          "聖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B2%E3%81%98%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "ある技能に極めて長けている人。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43809",
+        "senseId": "2",
+        "spellings": [
+          "聖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%81%96",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ひじり）ある技能に極めて長けている人。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-0df9b42b0cd49d50",
+    "reading": "ひじり",
+    "representative": "聖",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:252810",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:252810",
+        "senseId": "3",
+        "spellings": [
+          "ひじり",
+          "聖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B2%E3%81%98%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "布教、勧進又は仏具販売のために諸国を遊行する下級の僧侶。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:43809",
+        "senseId": "3",
+        "spellings": [
+          "聖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%81%96",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ひじり）布教、勧進又は仏具販売のために諸国を遊行する下級の僧侶。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-4a85454e957b6f71",
+    "reading": "あせ",
+    "representative": "汗",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:199779",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:199779",
+        "senseId": "1",
+        "spellings": [
+          "あせ",
+          "汗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%82%E3%81%9B",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "哺乳類が汗腺から分泌する液体で、体温調節の役割を果たすもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44009",
+        "senseId": "1",
+        "spellings": [
+          "汗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%B1%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（あせ）哺乳類が汗腺から分泌する液体で、体温調節の役割を果たすもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-285994032cc76565",
+    "reading": "こも",
+    "representative": "薦",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:342556",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:342556",
+        "senseId": "1",
+        "spellings": [
+          "こも",
+          "薦",
+          "菰"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%93%E3%82%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "マコモや藁で粗く織った筵。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44515",
+        "senseId": "1",
+        "spellings": [
+          "薦"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%96%A6",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（こも）マコモや藁で粗く織った筵。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c6df475781ec356f",
+    "reading": "たき",
+    "representative": "滝",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:105845",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:105845",
+        "senseId": "1",
+        "spellings": [
+          "たき",
+          "滝",
+          "瀧",
+          "瀑"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "河川の途中が崖になっていて、水が落ちているところ。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44644",
+        "senseId": "1",
+        "spellings": [
+          "滝"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%BB%9D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たき）河川の途中が崖になっていて、水が落ちているところ。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ca7dedbbf33362db",
+    "reading": "たな",
+    "representative": "棚",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:497309",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44736",
+        "senseId": "1",
+        "spellings": [
+          "棚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A3%9A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たな）壁などに板を横に渡し、物を置けるようにした場所。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:497309",
+        "senseId": "1",
+        "spellings": [
+          "たな",
+          "棚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "壁などに板を横に渡し、物を置けるようにした場所。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-af933bd31b35c4a5",
+    "reading": "たな",
+    "representative": "棚",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:497309",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44736",
+        "senseId": "2",
+        "spellings": [
+          "棚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A3%9A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たな）棚のような形状のもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:497309",
+        "senseId": "2",
+        "spellings": [
+          "たな",
+          "棚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "棚のような形状のもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a507415e38a004c7",
+    "reading": "なえ",
+    "representative": "苗",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:309457",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:309457",
+        "senseId": "1",
+        "spellings": [
+          "なえ",
+          "苗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AA%E3%81%88",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "芽が出て間もない移植用の草木。特に、稲の苗。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:45173",
+        "senseId": "1",
+        "spellings": [
+          "苗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8B%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（なえ）芽が出て間もない移植用の草木。特に、稲の苗。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-1091117ae2705d88",
+    "reading": "なぎさ",
+    "representative": "渚",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:198290",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:198290",
+        "senseId": "2",
+        "spellings": [
+          "なぎさ",
+          "渚",
+          "汀",
+          "沚",
+          "瀲"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AA%E3%81%8E%E3%81%95",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "波打ち際から陸地へ向かって広がる砂地。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:45619",
+        "senseId": "2",
+        "spellings": [
+          "渚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%B8%9A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（なぎさ）波打ち際から陸地へ向かって広がる砂地。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50105",
+        "senseId": "2",
+        "spellings": [
+          "沚"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%B2%9A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（なぎさ）波打ち際から陸地へ向かって広がる砂地。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50528",
+        "senseId": "2",
+        "spellings": [
+          "瀲"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%80%B2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（なぎさ）波打ち際から陸地へ向かって広がる砂地。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a0f60e8a3ac3ab73",
+    "reading": "くし",
+    "representative": "串",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+        "senseId": "1",
+        "spellings": [
+          "くし",
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8F%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "魚介や肉、野菜、団子などに刺し、焼いたり干したりあぶったりする先端がとがった細長い竹、鉄、木などの棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:46593",
+        "senseId": "1",
+        "spellings": [
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%B8%B2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（くし）魚介や肉、野菜、団子などに刺し、焼いたり干したりあぶったりする先端がとがった細長い竹、鉄、木などの棒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-8841428c7665a64b",
+    "reading": "くし",
+    "representative": "串",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+        "senseId": "2",
+        "spellings": [
+          "くし",
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8F%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "蝋燭の芯。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:46593",
+        "senseId": "2",
+        "spellings": [
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%B8%B2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（くし）蝋燭の芯。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-cf7d7ba8da55eb7b",
+    "reading": "くし",
+    "representative": "串",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:198295",
+        "senseId": "3",
+        "spellings": [
+          "くし",
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8F%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "玉串。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:46593",
+        "senseId": "3",
+        "spellings": [
+          "串"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%B8%B2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（くし）玉串。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-fdb26fc601334da0",
+    "reading": "かぶと",
+    "representative": "兜",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:111069",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:111069",
+        "senseId": "1",
+        "spellings": [
+          "かぶと",
+          "兜",
+          "冑",
+          "甲"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%B6%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "頭を保護するための武具。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47680",
+        "senseId": "1",
+        "spellings": [
+          "兜"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%85%9C",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かぶと）頭を保護するための武具。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-5701bbdd52bb0f20",
+    "reading": "いおり",
+    "representative": "庵",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:199757",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:199757",
+        "senseId": "1",
+        "spellings": [
+          "いおり",
+          "庵"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%84%E3%81%8A%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "隠居・隠棲した者などが居住に用いる質素な建築物。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47755",
+        "senseId": "1",
+        "spellings": [
+          "庵"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%BA%B5",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（いおり）隠居・隠棲した者などが居住に用いる質素な建築物。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c95d2647d13d5555",
+    "reading": "ふすま",
+    "representative": "襖",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62537",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47810",
+        "senseId": "1",
+        "spellings": [
+          "襖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%96",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ふすま）和室の仕切りに使う建具のひとつで、木製の枠組みの両面に紙または布を張ったもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62537",
+        "senseId": "1",
+        "spellings": [
+          "ふすま",
+          "襖"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B5%E3%81%99%E3%81%BE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "和室の仕切りに使う建具のひとつで、木製の枠組みの両面に紙または布を張ったもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a574861c48fc4073",
+    "reading": "かま",
+    "representative": "鎌",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:54949",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47987",
+        "senseId": "1",
+        "spellings": [
+          "鎌"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%8E%8C",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かま）草や稲などを刈るのに使う農具で、内側に湾曲する刃を有して、刈る際に引いて用いるもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:54949",
+        "senseId": "1",
+        "spellings": [
+          "かま",
+          "鎌"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%BE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "草や稲などを刈るのに使う農具で、内側に湾曲する刃を有して、刈る際に引いて用いるもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-114f10ed0b11d08c",
+    "reading": "くず",
+    "representative": "屑",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:137250",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:137250",
+        "senseId": "3",
+        "spellings": [
+          "くず",
+          "屑"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8F%E3%81%9A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "こわれて、つかわなくなったもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48031",
+        "senseId": "1",
+        "spellings": [
+          "屑"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B1%91",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（くず）こわれて、つかわなくなったもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-4f445e1c44a85515",
+    "reading": "すずり",
+    "representative": "硯",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:297123",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:297123",
+        "senseId": "1",
+        "spellings": [
+          "すずり",
+          "硯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%99%E3%81%9A%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "墨を水ですりおろすための道具。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48064",
+        "senseId": "1",
+        "spellings": [
+          "硯"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%A1%AF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（すずり）墨を水ですりおろすための道具。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-273fa18b7c194dab",
+    "reading": "ぬか",
+    "representative": "糠",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:329045",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:329045",
+        "senseId": "1",
+        "spellings": [
+          "ぬか",
+          "糠"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AC%E3%81%8B",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "穀物を精白する際に分離した果皮・種皮・胚芽など。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48094",
+        "senseId": "1",
+        "spellings": [
+          "糠"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%B3%A0",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ぬか）穀物を精白する際に分離した果皮・種皮・胚芽など。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-e86c99694ec9719c",
+    "reading": "わら",
+    "representative": "藁",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:64690",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48146",
+        "senseId": "1",
+        "spellings": [
+          "藁"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%97%81",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（わら）稲や麦の茎を刈り取り、乾燥させたもの。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:64690",
+        "senseId": "1",
+        "spellings": [
+          "わら",
+          "藁",
+          "稿"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%8F%E3%82%89",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "稲や麦の茎を刈り取り、乾燥させたもの。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a3c3e442f820e1f8",
+    "reading": "わら",
+    "representative": "藁",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:64690",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48146",
+        "senseId": "2",
+        "spellings": [
+          "藁"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%97%81",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（わら）1で、特に産褥に敷くもの。また転じて、産褥、赤ん坊をもいう。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:64690",
+        "senseId": "2",
+        "spellings": [
+          "わら",
+          "藁",
+          "稿"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%8F%E3%82%89",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "1で、特に産褥に敷くもの。また転じて、産褥、赤ん坊をもいう。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-f0ad254559e12a0e",
+    "reading": "とろ",
+    "representative": "瀞",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:293485",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:293485",
+        "senseId": "1",
+        "spellings": [
+          "とろ",
+          "瀞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A8%E3%82%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "河川の流れの中で深くて水の流れが穏やかな部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48514",
+        "senseId": "1",
+        "spellings": [
+          "瀞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%80%9E",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（とろ）河川の流れの中で深くて水の流れが穏やかな部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-4e91db8c074fd3b3",
+    "reading": "ほろ",
+    "representative": "幌",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:505082",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48731",
+        "senseId": "1",
+        "spellings": [
+          "幌"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%B9%8C",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ほろ）風雨や日光を防ぐため主に車の荷台などに付けられる布製の覆い。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:505082",
+        "senseId": "1",
+        "spellings": [
+          "ほろ",
+          "幌"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BB%E3%82%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "風雨や日光を防ぐため主に車の荷台などに付けられる布製の覆い。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-af9534c5563ea1bb",
+    "reading": "しおり",
+    "representative": "栞",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:461551",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:461551",
+        "senseId": "3",
+        "spellings": [
+          "しおり",
+          "栞",
+          "枝折り"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%8A%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "読みかけの書物や何かの目印とするために挟む紙片。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:49075",
+        "senseId": "1",
+        "spellings": [
+          "栞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A0%9E",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しおり）読みかけの書物や何かの目印とするために挟む紙片。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ce18fbd2ed1d5b33",
+    "reading": "しおり",
+    "representative": "栞",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:461551",
+      "senseId": "4"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:461551",
+        "senseId": "4",
+        "spellings": [
+          "しおり",
+          "栞",
+          "枝折り"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%8A%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "手引き。案内。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:49075",
+        "senseId": "2",
+        "spellings": [
+          "栞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A0%9E",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しおり）手引き。案内。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ab2b4f8778b74555",
+    "reading": "おとり",
+    "representative": "囮",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:123190",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:123190",
+        "senseId": "1",
+        "spellings": [
+          "おとり",
+          "囮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%A8%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "鳥や獣を誘い寄せるために使う同類の鳥・獣。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:49927",
+        "senseId": "1",
+        "spellings": [
+          "囮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%9B%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おとり）鳥や獣を誘い寄せるために使う同類の鳥・獣。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-59a9aa6ecc6f9a1d",
+    "reading": "おとり",
+    "representative": "囮",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:123190",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:123190",
+        "senseId": "2",
+        "spellings": [
+          "おとり",
+          "囮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%A8%E3%82%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "人を誘い寄せるために使う人・物。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:49927",
+        "senseId": "2",
+        "spellings": [
+          "囮"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E5%9B%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おとり）人を誘い寄せるために使う人・物。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-78329c3e6fc5e81e",
+    "reading": "ばち",
+    "representative": "枹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:497275",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:497275",
+        "senseId": "1",
+        "spellings": [
+          "ばち",
+          "枹",
+          "桴"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B0%E3%81%A1",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "太鼓や銅鑼などを打ち鳴らすための棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50068",
+        "senseId": "1",
+        "spellings": [
+          "枹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%9E%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ばち）太鼓や銅鑼などを打ち鳴らすための棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50070",
+        "senseId": "1",
+        "spellings": [
+          "桴"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A1%B4",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ばち）太鼓や銅鑼などを打ち鳴らすための棒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-7590e1aa9cba4018",
+    "reading": "さお",
+    "representative": "棹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:199156",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:199156",
+        "senseId": "2",
+        "spellings": [
+          "さお",
+          "竿",
+          "棹",
+          "篙"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%95%E3%81%8A",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "舟をこぐ道具で岸辺や水底に突っ張って舟を進ませる長い棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50076",
+        "senseId": "2",
+        "spellings": [
+          "棹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%A3%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（さお）舟をこぐ道具で岸辺や水底に突っ張って舟を進ませる長い棒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-7ed65b6cd4a46759",
+    "reading": "たらい",
+    "representative": "盥",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:200650",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:200650",
+        "senseId": "1",
+        "spellings": [
+          "たらい",
+          "盥"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%82%89%E3%81%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "水や湯を入れて物を洗うための丸くて平たい容器。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50174",
+        "senseId": "1",
+        "spellings": [
+          "盥"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%9B%A5",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たらい）水や湯を入れて物を洗うための丸くて平たい容器。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c7e5c13bc3fc9eff",
+    "reading": "やな",
+    "representative": "簗",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:311728",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:311728",
+        "senseId": "1",
+        "spellings": [
+          "やな",
+          "梁",
+          "簗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%84%E3%81%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "杭や石で川の水流を堰き止めて一箇所を開け、そこに張った簀で魚を捕獲する仕掛け。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50226",
+        "senseId": "1",
+        "spellings": [
+          "簗"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%B0%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（やな）杭や石で川の水流を堰き止めて一箇所を開け、そこに張った簀で魚を捕獲する仕掛け。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-a164cdd3ddf922da",
+    "reading": "かんざし",
+    "representative": "簪",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:459282",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459282",
+        "senseId": "1",
+        "spellings": [
+          "かんざし",
+          "簪"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%82%93%E3%81%96%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "頭髪に刺して使用する髪飾りの一種。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50227",
+        "senseId": "1",
+        "spellings": [
+          "簪"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%B0%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かんざし）頭髪に刺して使用する髪飾りの一種。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-1fc3768705bb2d79",
+    "reading": "かんざし",
+    "representative": "簪",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:459282",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459282",
+        "senseId": "2",
+        "spellings": [
+          "かんざし",
+          "簪"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%82%93%E3%81%96%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "冠が落ちないように髻にとめる棒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50227",
+        "senseId": "2",
+        "spellings": [
+          "簪"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%B0%AA",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かんざし）冠が落ちないように髻にとめる棒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-71aa6a06f187a358",
+    "reading": "さなぎ",
+    "representative": "蛹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:204817",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:204817",
+        "senseId": "1",
+        "spellings": [
+          "さなぎ",
+          "蛹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%95%E3%81%AA%E3%81%8E",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "完全変態を行う昆虫が幼虫から成虫になる直前に形を変えて食物をとらないで静止している状態。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50314",
+        "senseId": "1",
+        "spellings": [
+          "蛹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9B%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（さなぎ）完全変態を行う昆虫が幼虫から成虫になる直前に形を変えて食物をとらないで静止している状態。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-6b7178693095a4ee",
+    "reading": "たもと",
+    "representative": "袂",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+        "senseId": "1",
+        "spellings": [
+          "たもと",
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%82%82%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "和服の袖の下部の袋状に垂れ下がった部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50335",
+        "senseId": "1",
+        "spellings": [
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A2%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たもと）和服の袖の下部の袋状に垂れ下がった部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-18de3b9f5558b26e",
+    "reading": "たもと",
+    "representative": "袂",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+        "senseId": "2",
+        "spellings": [
+          "たもと",
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%82%82%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（山などの）麓。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50335",
+        "senseId": "2",
+        "spellings": [
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A2%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たもと）（山などの）麓。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-ad874ef64b3c3c07",
+    "reading": "たもと",
+    "representative": "袂",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:447741",
+        "senseId": "3",
+        "spellings": [
+          "たもと",
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%82%82%E3%81%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（橋などの）両端、際。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50335",
+        "senseId": "3",
+        "spellings": [
+          "袂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A2%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たもと）（橋などの）両端、際。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-45ade189c0522bd7",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "1",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "和服の袖や袂が邪魔にならないようからげる紐や布。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "1",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）和服の袖や袂が邪魔にならないようからげる紐や布。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-aaa05c410a1a59d4",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "2",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "一方の肩から他方の腰まで斜めにかける輪状の紐や布。駅伝ではバトン代わりに使われる。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "2",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）一方の肩から他方の腰まで斜めにかける輪状の紐や布。駅伝ではバトン代わりに使われる。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c21d0fb30f455b1c",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "3",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "紐や線、細長い物を斜めに交差すること。その形や模様。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "3",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）紐や線、細長い物を斜めに交差すること。その形や模様。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-183cf067befb48d5",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "4"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "4",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "神事で物忌みのしるしで肩にかける紐。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "4",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）神事で物忌みのしるしで肩にかける紐。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-590a571238707af9",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "5"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "5",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "斜めに十字状に交差して取り付ける建材。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "5",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）斜めに十字状に交差して取り付ける建材。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-aba6e8fb1b79b8f8",
+    "reading": "たすき",
+    "representative": "襷",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+      "senseId": "6"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:292363",
+        "senseId": "6",
+        "spellings": [
+          "たすき",
+          "襷",
+          "手繦",
+          "絭"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%99%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "漢字の画の「ノ」の部分。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50348",
+        "senseId": "6",
+        "spellings": [
+          "襷"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%A5%B7",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たすき）漢字の画の「ノ」の部分。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-3850198c023abf27",
+    "reading": "ひょう",
+    "representative": "雹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:93106",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50404",
+        "senseId": "1",
+        "spellings": [
+          "雹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%9B%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ひょう）積乱雲から降る直径5mm以上の氷の粒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:93106",
+        "senseId": "1",
+        "spellings": [
+          "ひょう",
+          "雹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B2%E3%82%87%E3%81%86",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "積乱雲から降る直径5mm以上の氷の粒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-0a1b59ce6eb9ae27",
+    "reading": "かさ",
+    "representative": "暈",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62866",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50473",
+        "senseId": "1",
+        "spellings": [
+          "暈"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%9A%88",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かさ）月や太陽の周りにできる淡い光の輪。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62866",
+        "senseId": "1",
+        "spellings": [
+          "かさ",
+          "暈"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%95",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "月や太陽の周りにできる淡い光の輪。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-af5b3fb7aef8c554",
+    "reading": "ひつ",
+    "representative": "櫃",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:530511",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50495",
+        "senseId": "1",
+        "spellings": [
+          "櫃"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%AB%83",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（ひつ）蓋付きの大型の箱。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:530511",
+        "senseId": "1",
+        "spellings": [
+          "ひつ",
+          "櫃"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%B2%E3%81%A4",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "蓋付きの大型の箱。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-f4b6365eaf1a79e3",
+    "reading": "はなむけ",
+    "representative": "贐",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:290830",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:290830",
+        "senseId": "1",
+        "spellings": [
+          "はなむけ",
+          "餞",
+          "贐"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AF%E3%81%AA%E3%82%80%E3%81%91",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "旅立つ人に激励や祝いの気持ちを込めて金品や言葉を贈ること。また、その金品・言葉。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50757",
+        "senseId": "1",
+        "spellings": [
+          "贐"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%B4%90",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（はなむけ）旅立つ人に激励や祝いの気持ちを込めて金品や言葉を贈ること。また、その金品・言葉。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c5fd70513824d7a7",
+    "reading": "のみ",
+    "representative": "鑿",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:172126",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:172126",
+        "senseId": "1",
+        "spellings": [
+          "のみ",
+          "鑿"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AE%E3%81%BF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "木材、石材、金属などに穴を開けたり溝を彫ったりする工具。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50785",
+        "senseId": "1",
+        "spellings": [
+          "鑿"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%91%BF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（のみ）木材、石材、金属などに穴を開けたり溝を彫ったりする工具。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-62c7fb7e98b2fec1",
+    "reading": "かんぬき",
+    "representative": "閂",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:458554",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:458554",
+        "senseId": "1",
+        "spellings": [
+          "かんぬき",
+          "閂",
+          "貫木"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%82%93%E3%81%AC%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "門戸や扉を閉ざすための横木。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50787",
+        "senseId": "1",
+        "spellings": [
+          "閂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%96%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かんぬき）門戸や扉を閉ざすための横木。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-dde12b96301c949d",
+    "reading": "こしき",
+    "representative": "轂",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:470083",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:470083",
+        "senseId": "1",
+        "spellings": [
+          "こしき",
+          "轂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%93%E3%81%97%E3%81%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "牛車などの車輪のハブ。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50839",
+        "senseId": "1",
+        "spellings": [
+          "轂"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%BD%82",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（こしき）牛車などの車輪のハブ。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-cf131474d3e97fd5",
+    "reading": "たがね",
+    "representative": "鏨",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:559223",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51046",
+        "senseId": "1",
+        "spellings": [
+          "鏨"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%8F%A8",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（たがね）金工で使用する鋼鉄製の鑿。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:559223",
+        "senseId": "1",
+        "spellings": [
+          "たがね",
+          "鏨"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%81%8C%E3%81%AD",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "金工で使用する鋼鉄製の鑿。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-7425f5371b471371",
+    "reading": "しじみ",
+    "representative": "蜆",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:152363",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:152363",
+        "senseId": "1",
+        "spellings": [
+          "しじみ",
+          "蜆"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%98%E3%81%BF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "シジミ科上科シジミ科に分類される二枚貝の総称。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51084",
+        "senseId": "1",
+        "spellings": [
+          "蜆"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9C%86",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しじみ）シジミ科上科シジミ科に分類される二枚貝の総称。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-10ac7153bfdfdae7",
+    "reading": "かさ",
+    "representative": "瘡",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62868",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51101",
+        "senseId": "1",
+        "spellings": [
+          "瘡"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%98%A1",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かさ）皮膚のできもの、はれもの。また、かさぶた。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62868",
+        "senseId": "1",
+        "spellings": [
+          "かさ",
+          "瘡"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%95",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "皮膚のできもの、はれもの。また、かさぶた。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-1e8653d233bc646c",
+    "reading": "かさ",
+    "representative": "瘡",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62868",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51101",
+        "senseId": "2",
+        "spellings": [
+          "瘡"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%98%A1",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かさ）梅毒。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62868",
+        "senseId": "2",
+        "spellings": [
+          "かさ",
+          "瘡"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%95",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "梅毒。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-027805535f0dbe69",
+    "reading": "あつもの",
+    "representative": "羹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:536046",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51128",
+        "senseId": "1",
+        "spellings": [
+          "羹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%BE%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（あつもの）肉や野菜を入れた吸い物。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:536046",
+        "senseId": "1",
+        "spellings": [
+          "あつもの",
+          "羹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%82%E3%81%A4%E3%82%82%E3%81%AE",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "肉や野菜を入れた吸い物。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-220e4414d45d99b9",
+    "reading": "とりこ",
+    "representative": "俘虜",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:95845",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:95845",
+        "senseId": "2",
+        "spellings": [
+          "とりこ",
+          "虜",
+          "俘虜",
+          "擒"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%A8%E3%82%8A%E3%81%93",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "特定の物事に夢中になること。また、その人。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:95848",
+        "senseId": "2",
+        "spellings": [
+          "俘虜"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%BF%98%E8%99%9C",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（とりこ）特定の物事に夢中になること。また、その人。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-528ec0bd9505fcea",
+    "reading": "はららご",
+    "representative": "鮞",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:346179",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:346179",
+        "senseId": "1",
+        "spellings": [
+          "はららご",
+          "鮞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AF%E3%82%89%E3%82%89%E3%81%94",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "魚類の産卵前の卵。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:608061",
+        "senseId": "1",
+        "spellings": [
+          "鮞"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%AE%9E",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（はららご）魚類の産卵前の卵。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-51d8cc903f58cc71",
+    "reading": "かんぬし",
+    "representative": "神主",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:398530",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:398530",
+        "senseId": "3",
+        "spellings": [
+          "かんぬし",
+          "神主"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%82%93%E3%81%AC%E3%81%97",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "神官。神職。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:398531",
+        "senseId": "3",
+        "spellings": [
+          "神主"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%A5%9E%E4%B8%BB",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（かんぬし）神官。神職。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-fd59227875b59680",
+    "reading": "おしがみ",
+    "representative": "押紙",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:459078",
+      "senseId": "3"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459076",
+        "senseId": "3",
+        "spellings": [
+          "押紙"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E6%8A%BC%E7%B4%99",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（おしがみ）新聞社が販売店に、委託部数を超えて新聞を売りつけ、販売部数を実態より多く見せかけること。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459078",
+        "senseId": "3",
+        "spellings": [
+          "おしがみ",
+          "押し紙",
+          "押紙"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8A%E3%81%97%E3%81%8C%E3%81%BF",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "新聞社が販売店に、委託部数を超えて新聞を売りつけ、販売部数を実態より多く見せかけること。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c9700a360126af74",
+    "reading": "しずや",
+    "representative": "賤家",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:459654",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459653",
+        "senseId": "2",
+        "spellings": [
+          "賤家"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%B3%A4%E5%AE%B6",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（しずや）粗末な家屋。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:459654",
+        "senseId": "1",
+        "spellings": [
+          "しずや",
+          "賤家"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%97%E3%81%9A%E3%82%84",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "粗末な家屋。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-c5b1f0ee7f1cc4c3",
+    "reading": "にがたけ",
+    "representative": "苦竹",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:461488",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:461488",
+        "senseId": "1",
+        "spellings": [
+          "にがたけ",
+          "苦竹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AB%E3%81%8C%E3%81%9F%E3%81%91",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "真竹、女竹の別名。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:461489",
+        "senseId": "2",
+        "spellings": [
+          "苦竹"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8B%A6%E7%AB%B9",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（にがたけ）真竹、女竹の別名。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-prefix-495e71bef52b1a3a",
+    "reading": "えびいろ",
+    "representative": "葡萄色",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:587058",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:587056",
+        "senseId": "1",
+        "spellings": [
+          "葡萄色"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%91%A1%E8%90%84%E8%89%B2",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "（えびいろ）エビカズラの熟した実またはイセエビのような赤みを帯びた紫色。"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:587058",
+        "senseId": "1",
+        "spellings": [
+          "えびいろ",
+          "葡萄色"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%88%E3%81%B3%E3%81%84%E3%82%8D",
+        "pos": [
+          "noun"
+        ],
+        "definitions": [
+          "エビカズラの熟した実またはイセエビのような赤みを帯びた紫色。"
+        ]
+      }
+    ]
   }
 ];

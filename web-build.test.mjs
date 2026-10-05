@@ -18,7 +18,7 @@ test('new battle page versions stylesheet URL to avoid prior dictionary CSS cach
  const html=await readFile(new URL('./web/index.html',import.meta.url),'utf8');assert.match(html,/href="\.\/web\/styles\.css\?v=[a-zA-Z0-9-]+"/);
 });
 test('meaning release versions both changed entrypoints and grouping dependencies',async()=>{
- const token='20261005-meaning1';const html=await readFile(new URL('./web/index.html',import.meta.url),'utf8');
+ const token='20261005-meaning2';const html=await readFile(new URL('./web/index.html',import.meta.url),'utf8');
  for(const file of ['app.mjs','battle-app.mjs']){assert.ok(html.includes(`src="./web/${file}?v=${token}"`),file+' entrypoint must bypass prior cache');const source=await readFile(new URL('./web/'+file,import.meta.url),'utf8');assert.ok(source.includes(`'./candidate-groups.mjs?v=${token}'`));}
  const groups=await readFile(new URL('./web/candidate-groups.mjs',import.meta.url),'utf8');assert.ok(groups.includes(`'./meaning-equivalences.mjs?v=${token}'`));
 });

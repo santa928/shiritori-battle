@@ -1,4 +1,4 @@
-import {meaningEquivalences} from './meaning-equivalences.mjs?v=20261005-meaning1';
+import {meaningEquivalences} from './meaning-equivalences.mjs?v=20261005-meaning2';
 const compare=(a,b)=>a<b?-1:a>b?1:0;
 const sorted=values=>[...new Set(values)].sort(compare);
 const same=(a,b)=>JSON.stringify([...(a??[])].sort(compare))===JSON.stringify([...(b??[])].sort(compare));
