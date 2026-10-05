@@ -14,3 +14,6 @@ test('reuse published dictionary preserves every byte and rejects tampered shard
  await writeFile(join(base,'data',version,'00.json'),'tampered');await assert.rejects(rebuildWebFromPublished({siteDir:base,releaseManifest:manifest,outputDir:join(dir,'bad')}),/mismatch/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+test('new battle page versions stylesheet URL to avoid prior dictionary CSS cache',async()=>{
+ const html=await readFile(new URL('./web/index.html',import.meta.url),'utf8');assert.match(html,/href="\.\/web\/styles\.css\?v=[a-zA-Z0-9-]+"/);
+});
