@@ -16,6 +16,8 @@ function check(line,reading,expected) {
   assert.deepEqual(candidates.map(c=>c.eligible),expected,`line ${line}: ${reading}`);
   assert.ok(candidates.every(c=>c.source.sha256===source.sha256 && c.definitions.every(d=>d.language==='ja')));
 }
+check(402337,'こうら',[true,true,true]);
+check(402337,'コウラ',[true,true,true]);
 check(207997,'ごま',[true,true,false]);
 check(200572,'こんにゃく',[true,true]);
 check(170595,'こんぶ',[true]);
@@ -89,3 +91,15 @@ for(const mode of ['individual','shared']) {
  controller.destroy();
 }
 console.log('Real corpus battle: りんご → ごま succeeds in individual and shared modes.');
+
+// Source-backed missing reading: all three original 甲羅 senses stay separate.
+for(const mode of ['individual','shared']) {
+ let state;
+ const controller=createBattleController({game:createGame({mode,start:'こ'}),now:()=>0,onState:s=>{state=s;},client:{search:async reading=>({...db.lookup(reading),reading,version:'pinned-corpus',sources:data.sources})}});
+ controller.ready();controller.edit('こうら');await controller.submit();
+ assert.equal(state.game.phase,'success',`こうら must be accepted in ${mode} battle`);
+ assert.equal(state.game.start,'ら');assert.deepEqual(state.game.history.at(-1).consumed,['う','ら']);
+ assert.deepEqual(state.game.history.at(-1).candidates.filter(c=>c.entryId===`${source.id}:402337`).map(c=>c.eligible),[true,true,true]);
+ controller.destroy();
+}
+console.log('Real corpus battle: こうら succeeds and consumes only う・ら in both modes.');

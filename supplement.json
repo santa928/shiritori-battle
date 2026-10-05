@@ -677,6 +677,39 @@
       ]
     },
     {
+      "line": 402337,
+      "word": "甲羅",
+      "pos": "noun",
+      "rawSha256": "ff69d2ace1165350471603497256c1641d18663220d85fe221024e712be6318f",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%94%B2%E7%BE%85",
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出し「甲 羅（こうら）」が3語義（カメやカニの甲、人の背中、年功）全体に対応。確認ページの表示oldid=1936427。読みのみ補い、原文・品詞・分類は変更しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "こうら"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "こうら"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "こうら"
+          ]
+        }
+      ]
+    },
+    {
       "line": 462905,
       "word": "多聞",
       "pos": "noun",
