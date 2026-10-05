@@ -1,4 +1,4 @@
-import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning2';
+import {groupCandidates} from './candidate-groups.mjs?v=20261005-meaning3';
 import {KANA,KANA_ROWS,TURN_SECONDS,baseKana,createGame} from './battle-rules.mjs?v=20261005-longmark1';
 import {createBattleController} from './battle-controller.mjs?v=20261005-retry1';
 import {createDictionaryClient} from './dictionary-client.mjs?v=20261005-retry1';

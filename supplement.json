@@ -862,6 +862,593 @@
           ]
         }
       ]
+    },
+    {
+      "line": 18723,
+      "word": "眉毛",
+      "pos": "noun",
+      "rawSha256": "96ad5784c32918eef7adbee364fd2b21ac8d73568ec3dab15a2a3a273aa2541c",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%9C%89%E6%AF%9B",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E7%9C%89%E6%AF%9B&oldid=2337072",
+        "revisionId": 2337072,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "見出し「びもう 訓：まゆげ」。眉の毛の単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "まゆげ",
+            "びもう"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 30637,
+      "word": "大豆",
+      "pos": "noun",
+      "rawSha256": "fe0ba645b4c9d339e8d14e8ec4459449e501e4ebd93ef772941f392cc30e936e",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%A4%A7%E8%B1%86",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E5%A4%A7%E8%B1%86&oldid=2217587",
+        "revisionId": 2217587,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "見出し「だ↗いず」をアクセント記号除去。植物と種の2語義。稀なおおまめは今回保留。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "だいず"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "だいず"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 44111,
+      "word": "鯨",
+      "pos": "noun",
+      "rawSha256": "1e03ed8d1206fd6be073a300a01a628f846d6806d79730944466d1ae0b1923b0",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%AF%A8",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E9%AF%A8&oldid=2178657",
+        "revisionId": 2178657,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出し「くじら」とクジラ目哺乳類の単一語義。漢字音読みは追加しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "くじら"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 45669,
+      "word": "甘納豆",
+      "pos": "noun",
+      "rawSha256": "68170793c4e6c5fc9811163d9ff625f912dfb54d3d0f6991af8b854232641e8e",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%94%98%E7%B4%8D%E8%B1%86",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E7%94%98%E7%B4%8D%E8%B1%86&oldid=2110905",
+        "revisionId": 2110905,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出し「あまなっとう」と豆の和菓子の単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "あまなっとう"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 51230,
+      "word": "箪笥",
+      "pos": "noun",
+      "rawSha256": "adb417c4232e653b9e4a617967b3f3772fdbf5172b4440c85004225f09aac4e9",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%AE%AA%E7%AC%A5",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E7%AE%AA%E7%AC%A5&oldid=2018901",
+        "revisionId": 2018901,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出し「たんす 又は たんし」。家具の単一語義。中国語の食器義は対象外。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "たんす",
+            "たんし"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 59247,
+      "word": "提灯",
+      "pos": "noun",
+      "rawSha256": "f3363495dbfca9840b0899c593ea36f4a452472114a611aa7b927c860576a9c9",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%8F%90%E7%81%AF",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E6%8F%90%E7%81%AF&oldid=1418428",
+        "revisionId": 1418428,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出し「ちょうちん」。照明具の単一語義。稀なていとうは保留。関連語欄の焼き鳥部位を混ぜない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ちょうちん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 61603,
+      "word": "胡瓜",
+      "pos": "noun",
+      "rawSha256": "ff1f8b7ce7d9804963b020fe1cc0b351ace948f55c00a54bda94fa5d24cbc284",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%83%A1%E7%93%9C",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%83%A1%E7%93%9C&oldid=982691",
+        "revisionId": 982691,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出し「コカ 和語の漢字表記:きゅうり」。つる性一年草の単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "きゅうり",
+            "こか"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 422627,
+      "word": "蓮根",
+      "pos": "noun",
+      "rawSha256": "55ef224911fb5bac290e399239023d5cea0a8ea01d9133546bdfc6dd3624ddc8",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%93%AE%E6%A0%B9",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%93%AE%E6%A0%B9&oldid=1941864",
+        "revisionId": 1941864,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出し「れんこん、はすね」。食用の地下茎の単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "れんこん",
+            "はすね"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 47629,
+      "word": "頬",
+      "pos": "noun",
+      "rawSha256": "9d043dc6eed5b3ead77d6e619c6ad66c5a63fa3e5ca545b59e3350fbe6a25a48",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%A0%AC",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E9%A0%AC&oldid=2301561",
+        "revisionId": 2301561,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞語義先頭に「ほお、ほほ」。顔の脇の部分に限定。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ほお",
+            "ほほ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 47923,
+      "word": "顎",
+      "pos": "noun",
+      "rawSha256": "c7522984937329610960443d8d3ec52d90af1ace0cc2faf180e29cc6f52ca588",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%A1%8E",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E9%A1%8E&oldid=2121415",
+        "revisionId": 2121415,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞語義先頭に「あご、古:あぎと」。現代のあごだけを補う。古い別読みあぎとは保留。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "あご"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 50672,
+      "word": "脛",
+      "pos": "noun",
+      "rawSha256": "94f9d7f65f39d06da0914a792ebe5fa93ba278b4d952e70a6641ff16073a11cc",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%84%9B",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%84%9B&oldid=2034880",
+        "revisionId": 2034880,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞語義先頭に「すね、はぎ」。膝からくるぶしまでの単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "すね",
+            "はぎ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 48066,
+      "word": "鍵",
+      "pos": "noun",
+      "rawSha256": "d30884a2005fdf31358567eb061588e268dc3df15c7b2b9cc6ed8887d47b7c8d",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%8D%B5",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E9%8D%B5&oldid=2279907",
+        "revisionId": 2279907,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞語義1〜3は各々かぎを明示。語義4はケンかつ略語で、かぎを絶対に付けない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "かぎ"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "かぎ"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "かぎ"
+          ]
+        },
+        {
+          "id": "4",
+          "excludeLabels": [
+            "abbreviation"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 48213,
+      "word": "鮫",
+      "pos": "noun",
+      "rawSha256": "c607fcee4b0daff1a7fabde3bd3332117709cd0cc632ab500582d59f79dbb4cf",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E9%AE%AB",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E9%AE%AB&oldid=2093363",
+        "revisionId": 2093363,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞語義1だけがさめ。語義2のみずち（伝説上の竜）をさめに割り当てない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "さめ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 55663,
+      "word": "秋刀魚",
+      "pos": "noun",
+      "rawSha256": "4e0f0801bfbcc8c6978caaf029cadbd37f4d2d509a730c91370e8ceee91b2cfa",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%A7%8B%E5%88%80%E9%AD%9A",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E7%A7%8B%E5%88%80%E9%AD%9A&oldid=1693174",
+        "revisionId": 1693174,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "最初の日本語名詞節の見出しにさんま、魚類の語義。別raw55664の三人麻雀義は補わない。しゅうとうぎょは保留。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "さんま"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 62781,
+      "word": "行灯",
+      "pos": "noun",
+      "rawSha256": "58ea5d4697a1a6115ed1db3bdba5f9e4ec01beef4436028278d6964a510a20f2",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%A1%8C%E7%81%AF",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%A1%8C%E7%81%AF&oldid=1681690",
+        "revisionId": 1681690,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しあんどん、照明具の単一語義。稀なあんどう・あんどは保留。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "あんどん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 104154,
+      "word": "蜂蜜",
+      "pos": "noun",
+      "rawSha256": "c622553e5ed363f1cc3c8bf820d0677a8cc54aa3c2aff8160923ff84ef493f7e",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%9C%82%E8%9C%9C",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%9C%82%E8%9C%9C&oldid=2199344",
+        "revisionId": 2199344,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出しはちみつ又はほうみつ。蜂が蓄える蜜とそれを使う甘味料の2語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "はちみつ",
+            "ほうみつ"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "はちみつ",
+            "ほうみつ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 161942,
+      "word": "豚肉",
+      "pos": "noun",
+      "rawSha256": "7a269ca1ed901498fe7345de4718153fb6ce07679e9fba3d3dfe644aec8f5060",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%B1%9A%E8%82%89",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%B1%9A%E8%82%89&oldid=2278958",
+        "revisionId": 2278958,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出しぶたにく又はとんにく。食用の豚の肉の単一語義。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ぶたにく",
+            "とんにく"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 56682,
+      "word": "人参",
+      "pos": "noun",
+      "rawSha256": "10d2f255aef2b5f7d9d0905ab1e1db917be9a756ec72698168483850bc45f1f6",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%BA%BA%E5%8F%82",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E4%BA%BA%E5%8F%82&oldid=2185882",
+        "revisionId": 2185882,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しにんじん又はねんじん。野菜の第1義だけ対応。生薬の第2義・俗語の誘導棒第3義は今回読みを補わない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "にんじん",
+            "ねんじん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 48139,
+      "word": "蝶",
+      "pos": "noun",
+      "rawSha256": "b49402ead6ca483136f87e6d904c7b4a7ff91c713db6b3d39055c8e0c30efd0d",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%9D%B6",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%9D%B6&oldid=2267485",
+        "revisionId": 2267485,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出しちょう。歴史的仮名遣いてふを現代読みとして追加しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ちょう"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 44062,
+      "word": "菊",
+      "pos": "noun",
+      "rawSha256": "b87d00d0552757ac9f950683ba1d2d471dc219b91d5ba1f7bcbf91037daad2c4",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%8F%8A",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%8F%8A&oldid=2155329",
+        "revisionId": 2155329,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出しきくの植物第1義だけ対応。古典の衣類第2義は今回補わない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "きく"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 45191,
+      "word": "瓶",
+      "pos": "noun",
+      "rawSha256": "8505ee49f669f80bdf74f88ef10d7f4f86a2e996a3f5f79f32aabf579c2460ba",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%93%B6",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E7%93%B6&oldid=2288518",
+        "revisionId": 2288518,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "日本語名詞見出しびんの3語義を対応。漢字の訓読みかめ・ほとぎや熟字訓つるべをこれらに一律追加しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "びん"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "びん"
+          ]
+        },
+        {
+          "id": "3",
+          "readings": [
+            "びん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 29414,
+      "word": "便所",
+      "pos": "noun",
+      "rawSha256": "8d1b794e53179a437cb6bc1d7a2583183e348a27f4638f5908befbd896072cb1",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%BE%BF%E6%89%80",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E4%BE%BF%E6%89%80&oldid=2071422",
+        "revisionId": 2071422,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式階層のべんじょ下の排泄場所と遊びの待機場所はraw4・5。見出しのみのraw3、びんしょのraw1・2は補わない。"
+      },
+      "senses": [
+        {
+          "id": "4",
+          "readings": [
+            "べんじょ"
+          ]
+        },
+        {
+          "id": "5",
+          "readings": [
+            "べんじょ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 369,
+      "word": "象",
+      "pos": "noun",
+      "rawSha256": "f0e5dde29380ab2a1730123ba88b25c3a8d637e39fc4c99fec9ecf892d6bef15",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E8%B1%A1",
+        "revisionUrl": "https://ja.wiktionary.org/w/index.php?title=%E8%B1%A1&oldid=2194541",
+        "revisionId": 2194541,
+        "accessedAt": "2026-10-05",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式名詞第1義のゾウ目動物だけ。第2義俗語、第3義シャンチー駒にはぞうを付けない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ぞう"
+          ]
+        }
+      ]
     }
   ]
 }

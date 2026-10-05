@@ -1241,9 +1241,20 @@
       "category": "food",
       "spelling": "蜂蜜",
       "expectedReading": "はちみつ",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:104154",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9C%82%E8%9C%9C"
+        },
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:104154",
+          "senseId": "2",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9C%82%E8%9C%9C"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:104154",
@@ -1436,9 +1447,15 @@
       "category": "food",
       "spelling": "豚肉",
       "expectedReading": "ぶたにく",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:161942",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%B1%9A%E8%82%89"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:161942",
@@ -1586,9 +1603,15 @@
       "category": "food",
       "spelling": "人参",
       "expectedReading": "にんじん",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:56682",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%BA%BA%E5%8F%82"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:56682",
@@ -2335,9 +2358,15 @@
       "category": "animals_plants",
       "spelling": "象",
       "expectedReading": "ぞう",
-      "expectedAcceptance": "source-supported-acceptance-unindexed",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:369",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%B1%A1"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:369",
@@ -3316,9 +3345,15 @@
       "category": "animals_plants",
       "spelling": "蝶",
       "expectedReading": "ちょう",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:48139",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9D%B6"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:48139",
@@ -3694,9 +3729,15 @@
       "category": "animals_plants",
       "spelling": "菊",
       "expectedReading": "きく",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:44062",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8F%8A"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:44062",
@@ -4224,9 +4265,20 @@
       "category": "everyday",
       "spelling": "便所",
       "expectedReading": "べんじょ",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:29414",
+          "senseId": "4",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%BE%BF%E6%89%80"
+        },
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:29414",
+          "senseId": "5",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E4%BE%BF%E6%89%80"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:29414",
@@ -5522,9 +5574,25 @@
       "category": "everyday",
       "spelling": "瓶",
       "expectedReading": "びん",
-      "expectedAcceptance": "ambiguous-or-policy-unresolved",
-      "acceptanceEvidenceKind": null,
-      "acceptedSenseEvidence": [],
+      "expectedAcceptance": "accept-source-backed",
+      "acceptanceEvidenceKind": "exact-spelling-source-meaning",
+      "acceptedSenseEvidence": [
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:45191",
+          "senseId": "1",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%93%B6"
+        },
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:45191",
+          "senseId": "2",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%93%B6"
+        },
+        {
+          "entryId": "jawiktionary-20261001-wiktextract-20261002:45191",
+          "senseId": "3",
+          "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%93%B6"
+        }
+      ],
       "sourceReferences": [
         {
           "entryId": "jawiktionary-20261001-wiktextract-20261002:45191",

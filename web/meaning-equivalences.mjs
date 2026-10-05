@@ -2316,6 +2316,20 @@ export const meaningEquivalences = [
         "pos": [
           "noun"
         ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48213",
+        "senseId": "1",
+        "spellings": [
+          "鮫"
+        ],
+        "definitions": [
+          "（さめ）軟骨魚綱板鰓亜綱に属する動物で鰓が体の側面に開くものの総称。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%AE%AB",
+        "pos": [
+          "noun"
+        ]
       }
     ]
   },
@@ -14976,6 +14990,620 @@ export const meaningEquivalences = [
         ],
         "definitions": [
           "エビカズラの熟した実またはイセエビのような赤みを帯びた紫色。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-a5ac1466a3b5e1be",
+    "reading": "まゆげ",
+    "representative": "眉毛",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:18623",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:18623",
+        "senseId": "1",
+        "spellings": [
+          "まゆげ"
+        ],
+        "definitions": [
+          "まぶたの上方に横長（弓状）に生える毛。また、その一本一本の毛。眉。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BE%E3%82%86%E3%81%92",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:18723",
+        "senseId": "1",
+        "spellings": [
+          "眉毛"
+        ],
+        "definitions": [
+          "まゆげ、まゆに生えている毛。まみげ。人に対してはまゆと言うだけで、眉毛を示す場合がある。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%9C%89%E6%AF%9B",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-920fa30b833d9980",
+    "reading": "たんす",
+    "representative": "箪笥",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:51230",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51230",
+        "senseId": "1",
+        "spellings": [
+          "箪笥"
+        ],
+        "definitions": [
+          "衣服、小道具などを収納する箱形の家具。抽斗や戸があり、木製で大きく、一人で持ち運べないものが多い。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%AE%AA%E7%AC%A5",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:57360",
+        "senseId": "1",
+        "spellings": [
+          "たんす"
+        ],
+        "definitions": [
+          "衣服、小道具などを収納する家具。抽斗や戸があり、木製が多い。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%9F%E3%82%93%E3%81%99",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-9c901256aca377d2",
+    "reading": "きゅうり",
+    "representative": "胡瓜",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:61602",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:61602",
+        "senseId": "1",
+        "spellings": [
+          "きゅうり"
+        ],
+        "definitions": [
+          "ウリ科キュウリ属のつる性一年草。学名は Cucumis sativus。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8D%E3%82%85%E3%81%86%E3%82%8A",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:61603",
+        "senseId": "1",
+        "spellings": [
+          "胡瓜"
+        ],
+        "definitions": [
+          "ウリ科キュウリ属のつる性一年草。きゅうり参照。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%83%A1%E7%93%9C",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-ee6c6e9559c797f6",
+    "reading": "ほお",
+    "representative": "頬",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:30424",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:30424",
+        "senseId": "1",
+        "spellings": [
+          "ほお"
+        ],
+        "definitions": [
+          "顔の脇の、やや肉の付いたやわらかい部分。ほほ。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BB%E3%81%8A",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47629",
+        "senseId": "1",
+        "spellings": [
+          "頬"
+        ],
+        "definitions": [
+          "（ほお、ほほ）顔の脇の、やや肉の付いたやわらかい部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%A0%AC",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-8218ebb812798279",
+    "reading": "ほほ",
+    "representative": "頬",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:30426",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:30426",
+        "senseId": "1",
+        "spellings": [
+          "ほほ"
+        ],
+        "definitions": [
+          "顔の脇の、やや肉の付いた柔らかい部分。ほお。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%BB%E3%81%BB",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47629",
+        "senseId": "1",
+        "spellings": [
+          "頬"
+        ],
+        "definitions": [
+          "（ほお、ほほ）顔の脇の、やや肉の付いたやわらかい部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%A0%AC",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-9b8847b7b7e68ef9",
+    "reading": "あご",
+    "representative": "顎",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:187956",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:47923",
+        "senseId": "1",
+        "spellings": [
+          "顎"
+        ],
+        "definitions": [
+          "（あご、古:あぎと）生物一般においては、口の部分にあって、開け閉めができるようになっている硬い部分、特にヒトにあっては顔の下部にある、上下の歯の生える硬い部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%A1%8E",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:187956",
+        "senseId": "1",
+        "spellings": [
+          "あご",
+          "顎",
+          "齶",
+          "腭",
+          "諤",
+          "顋",
+          "腮",
+          "頤",
+          "頷"
+        ],
+        "definitions": [
+          "人間をはじめとする動物の口の上下にある、口を開閉する部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%82%E3%81%94",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-b18b8e1daad4e965",
+    "reading": "すね",
+    "representative": "脛",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:11744",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:11744",
+        "senseId": "1",
+        "spellings": [
+          "すね"
+        ],
+        "definitions": [
+          "ひざより下、くるぶしより上の部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%99%E3%81%AD",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50672",
+        "senseId": "1",
+        "spellings": [
+          "脛"
+        ],
+        "definitions": [
+          "（すね、はぎ）脚のうち膝からくるぶしまでの部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%84%9B",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-bf1dca8e175500bd",
+    "reading": "はぎ",
+    "representative": "脛",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:61453",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:50672",
+        "senseId": "1",
+        "spellings": [
+          "脛"
+        ],
+        "definitions": [
+          "（すね、はぎ）脚のうち膝からくるぶしまでの部分。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%84%9B",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:61453",
+        "senseId": "1",
+        "spellings": [
+          "はぎ"
+        ],
+        "definitions": [
+          "脚のうち膝からくるぶしまでの部分。すね。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%AF%E3%81%8E",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-4ad31ae3f7e2516a",
+    "reading": "かぎ",
+    "representative": "鍵",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48066",
+        "senseId": "1",
+        "spellings": [
+          "鍵"
+        ],
+        "definitions": [
+          "（かぎ）門扉を閉鎖するのに用いる仕掛け（錠）の開閉に用いる道具。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%8D%B5",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+        "senseId": "1",
+        "spellings": [
+          "かぎ",
+          "鍵",
+          "鑰"
+        ],
+        "definitions": [
+          "門扉等を閉鎖するのに用いる仕掛け（錠前）の穴に差し込むなどして、開閉するのに用いる道具。キー。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%8E",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-3b163bc78f5131af",
+    "reading": "かぎ",
+    "representative": "鍵",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+      "senseId": "2"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48066",
+        "senseId": "2",
+        "spellings": [
+          "鍵"
+        ],
+        "definitions": [
+          "（かぎ）（「錠」をふくめた）門扉を閉鎖するのに用いる仕掛け。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%8D%B5",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+        "senseId": "2",
+        "spellings": [
+          "かぎ",
+          "鍵",
+          "鑰"
+        ],
+        "definitions": [
+          "門扉等を閉鎖するのに用いる仕掛け、錠。錠前。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%8E",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-13c9c4e48438c970",
+    "reading": "かぎ",
+    "representative": "鍵",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+      "senseId": "4"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48066",
+        "senseId": "3",
+        "spellings": [
+          "鍵"
+        ],
+        "definitions": [
+          "（かぎ）物事を解決するのにきっかけとなるもの。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E9%8D%B5",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:62880",
+        "senseId": "4",
+        "spellings": [
+          "かぎ",
+          "鍵",
+          "鑰"
+        ],
+        "definitions": [
+          "パズル、事件などを解くためのヒントとなったり、事象を理解したりするのに重要な手がかりとなる言葉や事実、人物のこと。キーワード。キーポイント。キーパーソン。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%81%8B%E3%81%8E",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-8e92d6a7c4144db6",
+    "reading": "さんま",
+    "representative": "秋刀魚",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:55663",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:55663",
+        "senseId": "1",
+        "spellings": [
+          "秋刀魚"
+        ],
+        "definitions": [
+          "魚類の、サンマ。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E7%A7%8B%E5%88%80%E9%AD%9A",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:479279",
+        "senseId": "1",
+        "spellings": [
+          "サンマ"
+        ],
+        "definitions": [
+          "秋刀魚の学術的表記。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%B5%E3%83%B3%E3%83%9E",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-a213450dfb1fcbf2",
+    "reading": "ちょう",
+    "representative": "蝶",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:48139",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:22020",
+        "senseId": "1",
+        "spellings": [
+          "チョウ"
+        ],
+        "definitions": [
+          "鱗翅類の一種である蝶の学術的表記。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%83%81%E3%83%A7%E3%82%A6",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:48139",
+        "senseId": "1",
+        "spellings": [
+          "蝶"
+        ],
+        "definitions": [
+          "鱗翅目昆虫のうち、アゲハチョウ上科とセセリチョウ上科に属するものの総称。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%9D%B6",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-13e1c5c2631c1e8a",
+    "reading": "きく",
+    "representative": "菊",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:44062",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:44062",
+        "senseId": "1",
+        "spellings": [
+          "菊"
+        ],
+        "definitions": [
+          "キク科キク属の植物で、一般的には秋季に多弁の花を咲かせる。天皇家の紋章となり、日本国の国章に替えられる。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%8F%8A",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:108219",
+        "senseId": "1",
+        "spellings": [
+          "キク"
+        ],
+        "definitions": [
+          "植物の一種である菊の学術的表記。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%AD%E3%82%AF",
+        "pos": [
+          "noun"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "equivalent-542714c5486ec8d0",
+    "reading": "ぞう",
+    "representative": "象",
+    "sourceId": "jawiktionary-20261001-wiktextract-20261002",
+    "primaryMember": {
+      "entryId": "jawiktionary-20261001-wiktextract-20261002:369",
+      "senseId": "1"
+    },
+    "members": [
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:369",
+        "senseId": "1",
+        "spellings": [
+          "象"
+        ],
+        "definitions": [
+          "（ゾウ）ゾウ目ゾウ科の動物。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E8%B1%A1",
+        "pos": [
+          "noun"
+        ]
+      },
+      {
+        "entryId": "jawiktionary-20261001-wiktextract-20261002:51516",
+        "senseId": "1",
+        "spellings": [
+          "ゾウ"
+        ],
+        "definitions": [
+          "哺乳類の一種である象の学術的表記。"
+        ],
+        "sourceUrl": "https://ja.wiktionary.org/wiki/%E3%82%BE%E3%82%A6",
+        "pos": [
+          "noun"
         ]
       }
     ]

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check dictionary.mjs && node --check import-jawiktionary.mjs && node --check build.mjs && node --check verify-corpus.mjs && node --check check-regression-sample.mjs && node --check reading-bucket.mjs && node --check build-web-dictionary.mjs && node --check build-web.mjs && node --check serve-web.mjs && node --check web/dictionary-client.mjs && node --check web/candidate-groups.mjs && node --check web/meaning-equivalences.mjs && node --check web/app.mjs && node --check web/battle-rules.mjs && node --check web/battle-controller.mjs && node --check web/battle-app.mjs",
+    "check": "node --check dictionary.mjs && node --check import-jawiktionary.mjs && node --check build.mjs && node --check verify-corpus.mjs && node --check check-regression-sample.mjs && node --check reading-bucket.mjs && node --check build-web-dictionary.mjs && node --check build-web.mjs && node --check serve-web.mjs && node --check web/dictionary-client.mjs && node --check web/candidate-groups.mjs && node --check web/meaning-equivalences.mjs && node --check web/app.mjs && node --check web/battle-rules.mjs && node --check web/battle-controller.mjs && node --check web/battle-app.mjs && node --check verify-similar-readings.mjs",
     "build:web": "node build-web.mjs",
     "preview": "node serve-web.mjs"
   },
