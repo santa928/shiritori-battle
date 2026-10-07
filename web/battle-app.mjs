@@ -1,6 +1,6 @@
 import { KANA, createGame } from './battle-rules.mjs?v=20261006-maintainability1';
 import { createBattleController } from './battle-controller.mjs?v=20261006-maintainability1';
-import { createBattleView } from './ui/battle-view.mjs?v=20261006-maintainability1';
+import { createBattleView } from './ui/battle-view.mjs?v=20261007-gojuon1';
 import {
   animateInput,
   preserveInteraction,

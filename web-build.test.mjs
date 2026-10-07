@@ -173,12 +173,15 @@ test('new battle page versions stylesheet URL to avoid prior dictionary CSS cach
 });
 test('page bootstrap and changed runtime imports bypass cached modules', async () => {
   const token = '20261006-maintainability1';
+  const cacheVersion = '20261007-gojuon1';
   const read = (file) => readFile(new URL('./web/' + file, import.meta.url), 'utf8');
   const html = await read('index.html');
-  assert.ok(html.includes(`src="./web/bootstrap.mjs?v=${token}"`));
+  assert.ok(html.includes(`src="./web/bootstrap.mjs?v=${cacheVersion}"`));
+  assert.ok(html.includes(`href="./web/styles.css?v=${cacheVersion}"`));
   const bootstrap = await read('bootstrap.mjs');
-  for (const file of ['app.mjs', 'battle-app.mjs', 'dictionary-client.mjs'])
+  for (const file of ['app.mjs', 'dictionary-client.mjs'])
     assert.ok(bootstrap.includes(`'./${file}?v=${token}'`));
+  assert.ok(bootstrap.includes(`'./battle-app.mjs?v=${cacheVersion}'`));
   assert.ok((await read('app.mjs')).includes(`'./candidate-groups.mjs?v=${token}'`));
   assert.ok((await read('app.mjs')).includes(`'./search-controller.mjs?v=${token}'`));
   assert.ok(
@@ -198,11 +201,11 @@ test('battle runtime keeps versioned rule and extracted view dependencies', asyn
   for (const file of [
     'battle-controller.mjs',
     'battle-rules.mjs',
-    'ui/battle-view.mjs',
     'ui/battle-feedback.mjs',
     'input/transform-kana.mjs',
   ])
     assert.ok(battle.includes(`'./${file}?v=${token}'`));
+  assert.ok(battle.includes("'./ui/battle-view.mjs?v=20261007-gojuon1'"));
   assert.ok((await read('battle-controller.mjs')).includes(`'./battle-rules.mjs?v=${token}'`));
   for (const file of ['ui/battle-view.mjs', 'input/transform-kana.mjs'])
     assert.ok((await read(file)).includes(`'../battle-rules.mjs?v=${token}'`));

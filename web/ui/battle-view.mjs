@@ -1,4 +1,4 @@
-import { KANA, KANA_ROWS, TURN_SECONDS } from '../battle-rules.mjs?v=20261006-maintainability1';
+import { KANA_ROWS, TURN_SECONDS } from '../battle-rules.mjs?v=20261006-maintainability1';
 import { summarizeCandidates } from './candidate-summary.mjs?v=20261006-maintainability1';
 import { updateClock } from './battle-feedback.mjs?v=20261006-maintainability1';
 
@@ -276,12 +276,22 @@ export function createBattleView(root) {
       el('summary', g.mode === 'shared' ? '共通の残り文字を見る' : '相手の残り文字を見る'),
     );
     const other = el('div', undefined, 'opponent-letters');
-    for (const c of KANA) {
-      const present = g.pools[1 - g.turn].includes(c);
-      const tile = el('span', c, present ? '' : 'spent');
-      tile.setAttribute('aria-label', c + (present ? ' 使用可' : ' 使用済み'));
-      other.append(tile);
-    }
+    other.setAttribute('aria-label', '残り文字の五十音表。右からあ行、か行。');
+    // 各行を縦に読み、右からあ行・か行と並べる。や行・わ行の空マスも保つ。
+    for (let vowel = 0; vowel < 5; vowel++)
+      for (const row of [...KANA_ROWS].reverse()) {
+        const c = row[vowel];
+        if (c === ' ') {
+          const blank = el('span', undefined, 'opponent-blank');
+          blank.setAttribute('aria-hidden', 'true');
+          other.append(blank);
+          continue;
+        }
+        const present = g.pools[1 - g.turn].includes(c);
+        const tile = el('span', c, present ? '' : 'spent');
+        tile.setAttribute('aria-label', c + (present ? ' 使用可' : ' 使用済み'));
+        other.append(tile);
+      }
     opponent.append(other, el('p', '見ている間も時間は進みます', 'battle-hint'));
     opponent.addEventListener('toggle', () => {
       onOpponentOpen(opponent.open);

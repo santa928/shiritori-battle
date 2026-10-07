@@ -763,6 +763,9 @@ nav > button:disabled {
   background: #e1e5de;
   text-decoration: line-through;
 }
+.opponent-letters .opponent-blank {
+  background: transparent;
+}
 .opponent-pool[open] .opponent-letters {
   position: absolute;
   top: 30px;

@@ -223,3 +223,20 @@ for (const mode of ['individual', 'shared'])
     controller.destroy();
   }
 console.log('Real corpus battle: コーヒー → ひ and タクシー → し succeed in both modes.');
+
+// 複数読みを共通名詞見出しに持つ語。語義対応を一次記事で確認したものだけ回復。
+check(591846, 'そしな', [true, true]);
+check(591846, 'そひん', [true, true]);
+check(5967, 'しちがつ', [true]);
+check(5967, 'なながつ', [true]);
+check(5977, 'くがつ', [true]);
+check(5977, 'くげつ', [true]);
+check(55586, 'がんぐ', [true]);
+check(55586, 'おもちゃ', [true]);
+check(61626, 'ふうふ', [true]);
+check(61626, 'おっとめ', [true]);
+check(61626, 'みょうと', [true]);
+check(135785, 'はくはつ', [true, true]);
+check(135785, 'しらが', [true, true]);
+check(363593, 'あっこう', [true, true]);
+check(363593, 'わるぐち', [true, true]);

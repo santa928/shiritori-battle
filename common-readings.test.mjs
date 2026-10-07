@@ -44,3 +44,32 @@ test('Japanese confection reading does not leak into separate mantou reference r
   const other = supplement.records.find((p) => p.line === 107844);
   assert.ok(!other?.senses.some((s) => s.readings?.includes('まんじゅう')));
 });
+
+// 同じ名詞見出しの別読みを、確認済みの語義範囲に限定する。
+for (const [word, line, readings, count] of [
+  ['粗品', 591846, ['そしな', 'そひん'], 2],
+  ['七月', 5967, ['しちがつ', 'なながつ'], 1],
+  ['九月', 5977, ['くがつ', 'くげつ'], 1],
+  ['玩具', 55586, ['がんぐ', 'おもちゃ'], 1],
+  ['夫婦', 61626, ['ふうふ', 'おっとめ', 'みょうと'], 1],
+  ['白髪', 135785, ['はくはつ', 'しらが'], 2],
+  ['悪口', 363593, ['あっこう', 'わるぐち'], 2],
+])
+  test(`reviewed alternate noun readings: ${word}`, () => {
+    const patch = supplement.records.find((record) => record.line === line);
+    assert.ok(patch);
+    assert.equal(patch.word, word);
+    assert.equal(patch.pos, 'noun');
+    assert.match(patch.rawSha256, /^[a-f0-9]{64}$/);
+    assert.equal(patch.evidence.url, 'https://ja.wiktionary.org/wiki/' + encodeURIComponent(word));
+    assert.equal(patch.evidence.license, 'CC-BY-SA-4.0');
+    assert.deepEqual(
+      patch.senses.map((sense) => sense.id),
+      Array.from({ length: count }, (_, index) => String(index + 1)),
+    );
+    for (const sense of patch.senses) {
+      assert.deepEqual(sense.readings, readings);
+      assert.equal(sense.excludeLabels, undefined);
+      assert.equal(sense.place, undefined);
+    }
+  });

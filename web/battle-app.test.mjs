@@ -54,6 +54,45 @@ test('DOM match flow uses tile keys, opponent disclosure preserves input, succes
   assert.match(root.textContent, /準備OK/);
   root.querySelector('[data-action=ready]').click();
   const initial = root.querySelector('[data-draft]').textContent;
+  const opponentCells = [...root.querySelector('.opponent-letters').children];
+  assert.equal(opponentCells.length, 50);
+  assert.equal(opponentCells.filter((cell) => cell.classList.contains('opponent-blank')).length, 4);
+  assert.deepEqual(
+    Array.from({ length: 5 }, (_, row) =>
+      opponentCells
+        .slice(row * 10, row * 10 + 10)
+        .map((cell) => cell.textContent || ' ')
+        .join(''),
+    ),
+    [
+      'わらやまはなたさかあ',
+      ' り みひにちしきい',
+      'をるゆむふぬつすくう',
+      ' れ めへねてせけえ',
+      'んろよもほのとそこお',
+    ],
+  );
+  assert.ok(
+    opponentCells
+      .filter((cell) => cell.classList.contains('opponent-blank'))
+      .every((cell) => cell.getAttribute('aria-hidden') === 'true'),
+  );
+  const inputCells = [...root.querySelector('.battle-board').children];
+  assert.equal(inputCells.length, 50);
+  assert.equal(
+    inputCells
+      .slice(0, 5)
+      .map((cell) => cell.textContent)
+      .join(''),
+    'あいうえお',
+  );
+  assert.equal(
+    inputCells
+      .slice(-5)
+      .map((cell) => cell.textContent || ' ')
+      .join(''),
+    'わ を ん',
+  );
   root.querySelector('[data-kana=え]').click();
   root.querySelector('[data-kana=る]').click();
   assert.equal(root.querySelector('[data-kana=え]').disabled, true);
@@ -75,6 +114,10 @@ test('DOM match flow uses tile keys, opponent disclosure preserves input, succes
   root.querySelector('[data-action=next]').click();
   root.querySelector('[data-action=ready]').click();
   assert.equal(root.querySelector('[data-draft]').textContent, 'る');
+  assert.deepEqual(
+    [...root.querySelectorAll('.opponent-letters .spent')].map((cell) => cell.textContent).sort(),
+    ['え', 'る'],
+  );
   root.querySelector('[data-action=resign]').click();
   assert.ok(root.querySelector('[data-action=confirm-resign]'));
   root.querySelector('[data-action=confirm-resign]').click();

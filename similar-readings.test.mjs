@@ -23,5 +23,5 @@ test('bounded review count and held records remain separate', () => {
       false,
       held.word,
     );
-  assert.equal(supplement.records.length, 56);
+  assert.equal(supplement.records.length, 63);
 });

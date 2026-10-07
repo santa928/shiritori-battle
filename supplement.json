@@ -1449,6 +1449,182 @@
           ]
         }
       ]
+    },
+    {
+      "line": 591846,
+      "word": "粗品",
+      "pos": "noun",
+      "rawSha256": "f51ef24dab89a9a4ee198e0bbc6e41923a1ad79731ec1336fec2a10fd6983bee",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%B2%97%E5%93%81",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "名詞見出しに「そしな 又は そひん」と併記され、以下の2語義に別読みの限定はない。固定rawの両transliterationと照合。芸名ではなく普通名詞の語義だけを回復する。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "そしな",
+            "そひん"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "そしな",
+            "そひん"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 5967,
+      "word": "七月",
+      "pos": "noun",
+      "rawSha256": "2fffcdfcfeccd0bcfa4561bd7a1c6a5f79fdddf03ef3ce7c5b470278e0073335",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%B8%83%E6%9C%88",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにしちがつ・なながつを併記。以下の1語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "しちがつ",
+            "なながつ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 5977,
+      "word": "九月",
+      "pos": "noun",
+      "rawSha256": "72b9d7993068c88c39591ba0b174a6ffbc044179f1ffea872727cce41f4d2847",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E4%B9%9D%E6%9C%88",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにくがつ・くげつを併記。以下の1語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "くがつ",
+            "くげつ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 55586,
+      "word": "玩具",
+      "pos": "noun",
+      "rawSha256": "356c05b2ae03a53ed2da4339b7d2fa3a5d013a6fca177a127fe8195d677fa3d2",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%8E%A9%E5%85%B7",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにがんぐ・おもちゃを併記。以下の1語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "がんぐ",
+            "おもちゃ"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 61626,
+      "word": "夫婦",
+      "pos": "noun",
+      "rawSha256": "15f474334d5a6634cd393a635d4a9f44d5d985193fa950c69c74991ce80f617a",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E5%A4%AB%E5%A9%A6",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにふうふ・おっとめ・みょうとを併記。以下の1語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "ふうふ",
+            "おっとめ",
+            "みょうと"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 135785,
+      "word": "白髪",
+      "pos": "noun",
+      "rawSha256": "34d8c9f1c3da46d5e569e2ef1955f67d84f345e437da7c8350d15c2a579de4ef",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E7%99%BD%E9%AB%AA",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにはくはつ・しらがを併記。以下の2語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "はくはつ",
+            "しらが"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "はくはつ",
+            "しらが"
+          ]
+        }
+      ]
+    },
+    {
+      "line": 363593,
+      "word": "悪口",
+      "pos": "noun",
+      "rawSha256": "fa1844c69de906c2b5d0c4f5e2d58b9a8fe496244937aa89850ba12cda155c77",
+      "evidence": {
+        "url": "https://ja.wiktionary.org/wiki/%E6%82%AA%E5%8F%A3",
+        "accessedAt": "2026-10-07",
+        "license": "CC-BY-SA-4.0",
+        "section": "日本語 / 名詞",
+        "note": "公式記事の共通名詞見出しにあっこう・わるぐちを併記。以下の2語義に読み別の限定はない。固定rawのbare transliteration・名詞語義と照合。別品詞・他言語・和語の漢字表記へ転用しない。"
+      },
+      "senses": [
+        {
+          "id": "1",
+          "readings": [
+            "あっこう",
+            "わるぐち"
+          ]
+        },
+        {
+          "id": "2",
+          "readings": [
+            "あっこう",
+            "わるぐち"
+          ]
+        }
+      ]
     }
   ]
 }

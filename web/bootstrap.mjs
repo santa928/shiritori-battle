@@ -1,5 +1,5 @@
 import { mountDictionaryApp } from './app.mjs?v=20261006-maintainability1';
-import { mountBattleApp } from './battle-app.mjs?v=20261006-maintainability1';
+import { mountBattleApp } from './battle-app.mjs?v=20261007-gojuon1';
 import { createDictionaryClient } from './dictionary-client.mjs?v=20261006-maintainability1';
 
 /**
