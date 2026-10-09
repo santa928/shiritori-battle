@@ -1,0 +1,38 @@
+name: 問題を報告する
+description: 単語の不受理や表示・操作の問題を報告します。
+body:
+  - type: markdown
+    attributes:
+      value: |
+        投稿内容は公開されます。氏名・メールアドレスなどの個人情報は書かないでください。
+        ゲームからプレイ履歴や端末情報は自動送信されません。必要な情報だけをご記入ください。
+  - type: dropdown
+    id: category
+    attributes:
+      label: 問題の種類
+      options:
+        - 単語が認められない
+        - 表示・操作の不具合
+        - その他
+    validations:
+      required: true
+  - type: input
+    id: word
+    attributes:
+      label: 対象の単語・読み（任意）
+      description: 単語が認められない場合は、入力したひらがなと想定した漢字・意味を書いてください。
+      placeholder: 例：そしな（粗品）
+  - type: textarea
+    id: situation
+    attributes:
+      label: 発生状況
+      description: どの画面で何をしたか、実際の表示と期待した動作を教えてください。単語の場合は辞書検索でも同じ結果になるか書くと調査に役立ちます。
+      placeholder: 操作手順、表示されたメッセージ、期待した動作など
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: 端末・ブラウザ（任意）
+      description: 分かる範囲でご記入ください。端末を特定する番号などは不要です。
+      placeholder: 例：iPhone / Safari

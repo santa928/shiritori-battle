@@ -67,3 +67,17 @@ test('public dictionary bootstrap discovers the current release on retry', async
     globalThis.fetch = oldFetch;
   }
 });
+
+test('problem report opens the fixed public form without game data', async () => {
+  const { document } = parseHTML(await readFile(new URL('./index.html', import.meta.url), 'utf8'));
+  const link = document.querySelector('footer .problem-report');
+  const url = new URL(link.getAttribute('href'));
+  assert.equal(url.origin, 'https://github.com');
+  assert.equal(url.pathname, '/santa928/shiritori-battle/issues/new');
+  assert.deepEqual([...url.searchParams], [['template', 'problem-report.yml']]);
+  assert.equal(link.getAttribute('target'), '_blank');
+  assert.equal(link.getAttribute('rel'), 'noopener noreferrer');
+  const notice = document.getElementById(link.getAttribute('aria-describedby')).textContent;
+  for (const text of ['ログインが必要', '公開されます', '個人情報', '自動送信しません'])
+    assert.ok(notice.includes(text));
+});

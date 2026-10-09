@@ -444,6 +444,27 @@ footer span {
   font-size: 11px;
   font-weight: 400;
 }
+footer .problem-report {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 0 12px;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+footer .problem-report:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+footer #report-notice {
+  margin: 4px 0 0;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+}
 @media (min-width: 600px) {
   .app-shell {
     padding-top: 36px;
@@ -658,7 +679,7 @@ nav > button:disabled {
 .battle-ready .battle-primary {
   margin-top: 20px;
 }
-.is-battle footer {
+.match-active footer {
   display: none;
 }
 .is-battle .app-shell {

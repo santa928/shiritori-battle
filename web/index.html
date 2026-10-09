@@ -10,7 +10,7 @@
     />
     <title>しりとりバトル | ふたりでことばの対戦</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./web/styles.css?v=20261007-gojuon1" />
+    <link rel="stylesheet" href="./web/styles.css?v=20261009-report1" />
   </head>
   <body>
     <div class="app-shell">
@@ -59,7 +59,21 @@
           <noscript>辞書の検索にはJavaScriptを有効にしてください。</noscript>
         </main>
       </div>
-      <footer>しりとりバトル <span>ことばを知ると、もっと楽しい。</span></footer>
+      <footer>
+        しりとりバトル <span>ことばを知ると、もっと楽しい。</span>
+        <a
+          class="problem-report"
+          href="https://github.com/santa928/shiritori-battle/issues/new?template=problem-report.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-describedby="report-notice"
+          >問題を報告する（別タブ）</a
+        >
+        <p id="report-notice">
+          GitHubへのログインが必要です。投稿内容は公開されます。<br />
+          個人情報は書かないでください。プレイ履歴や端末情報は自動送信しません。
+        </p>
+      </footer>
     </div>
     <script type="module" src="./web/bootstrap.mjs?v=20261007-gojuon1"></script>
   </body>

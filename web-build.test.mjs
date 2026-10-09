@@ -177,7 +177,7 @@ test('page bootstrap and changed runtime imports bypass cached modules', async (
   const read = (file) => readFile(new URL('./web/' + file, import.meta.url), 'utf8');
   const html = await read('index.html');
   assert.ok(html.includes(`src="./web/bootstrap.mjs?v=${cacheVersion}"`));
-  assert.ok(html.includes(`href="./web/styles.css?v=${cacheVersion}"`));
+  assert.ok(html.includes(`href="./web/styles.css?v=20261009-report1"`));
   const bootstrap = await read('bootstrap.mjs');
   for (const file of ['app.mjs', 'dictionary-client.mjs'])
     assert.ok(bootstrap.includes(`'./${file}?v=${token}'`));
